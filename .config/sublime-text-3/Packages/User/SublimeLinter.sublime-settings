@@ -1,0 +1,41 @@
+// SublimeLinter Settings - User
+{
+    "linters": {
+        "pylint": {
+            "python": 3,
+            "disable": false,
+            "args": [
+                "--rcfile", "${folder}/pyproject.toml",
+            ],
+            "excludes": [
+                "(?!${folder}).",
+                "*/venv*",
+            ],
+            "executable": "${folder}/venv/bin/pylint",
+        },
+        "flake8": {
+            "python": 3,
+            "disable": false,
+            "args": [
+                "--config", "${folder}/pyproject.toml",
+            ],
+            "excludes": [
+                "(?!${folder}).",
+                "*/venv*",
+            ],            
+            "executable": "${folder}/venv/bin/flake8",
+        },
+    },
+    "paths": {
+        "linux": [
+            "/home/abs/anaconda3/bin"
+        ],
+        "osx": [],
+        "windows": []
+    },
+    "debug": false,
+    "lint_mode": "manual",
+    "styles": [{
+        "icon": "bookmark",
+    }]
+}

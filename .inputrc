@@ -1,0 +1,24 @@
+# cycle through completion options with TAB/SHIFT-TAB
+# (press ESC to accept completion)
+$if Bash
+    TAB: menu-complete
+    "\e[Z": menu-complete-backward
+$endif
+
+# show options on multiple matches
+set show-all-if-ambiguous on
+
+# ignore case, e.g. cd dir -> cd Dir
+set completion-ignore-case on
+
+# colorize matches
+set colored-completion-prefix on
+
+# colorize files
+set colored-stats on
+
+# remap CTRL-w: cut only /dir3 instead of /dir1/dir2/dir3 
+set bind-tty-special-chars off
+$if Bash
+    Control-w: unix-filename-rubout
+$endif

@@ -1,0 +1,7 @@
+*.pyc
+tags
+.git/
+__pycache__/
+node_modules/
+snap/
+.cache/

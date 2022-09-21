@@ -1,0 +1,227 @@
+" EDITOR {{{1 -----------------------------------------------------------------
+set nocompatible  " arrows + etc @ vi cmd
+set mouse=iv  " enable mouse
+set number relativenumber  " add line numbers
+set splitbelow splitright  " change default positioning
+set showtabline=2  " show tab bar
+set laststatus=2  " show statusline
+set noshowmode  " already displayed in statusline
+set showcmd  " show pending keys
+set hlsearch incsearch  " highlight search matches on typing
+set ignorecase smartcase  " case-insensitive search for lowercase
+set path+=**  " tab completion for file-related tasks
+set wildmenu  " display all matching files when we tab-complete
+set wildmode=list:longest,full
+set wildignore=*.pyc,*.swp,*.bak,tags,*.o,*.obj,*.class
+set complete-=i  " don't scan included files (C), use .tags
+set scrolloff=9  " keep lines under cursor on scroll
+set textwidth=0  " don't force line wrapping
+set history=1000  " more history
+set autoread  " reload unchanged files automatically
+set nofsync  " no disk flush force
+set undofile  " persistent undo
+set undodir=~/.vim/undo/
+set noswapfile
+set nobackup
+set backspace=indent,eol,start  " ctrl-w,ctrl-u in insert mode
+set matchpairs+=<:>   " % to jump between pairs
+set nostartofline  " don't move cursor to line start
+set nolangremap   " for hotkeys
+set nomodeline   " security
+set shortmess+=sAI  " hide search hit & swapfile warnings, intro message
+set switchbuf=usetab  " if opening buffer, search first in opened windows
+
+" SYNTAX {{{1 -----------------------------------------------------------------
+syntax enable  " hightlight syntax
+filetype plugin indent on  " filetype-based rules
+set nofoldenable  " disable folding
+set redrawtime=1000  " more time for loading syntax on large file
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set autoindent  " continue on new line
+set breakindent  " continue on wrapped line
+autocmd BufWinEnter,BufNewFile * set formatoptions-=cro  " no comment continuation
+set listchars=tab:▶▶,trail:■,nbsp:■ " show invisible chars
+set nolist  " hide invisible chars by default
+autocmd FileType vim,conf set foldmethod=marker
+autocmd FileType markdown set foldmethod=expr
+autocmd FileType json,yaml set foldmethod=syntax
+autocmd FileType json,csv,txt,xml set redrawtime=10000
+let g:is_bash = 1  " force bash syntax for .sh
+let g:markdown_folding = 1  " enable markdown folding
+
+" PLUGINS {{{1 ----------------------------------------------------------------
+" autoinstall vim-plug {{{2
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+" editor {{{2
+Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
+Plug 'https://github.com/sickill/vim-pasta'  " indent-aware pasting (p,P)
+Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
+Plug 'https://github.com/ervandew/supertab'  " <TAB> for all autocomplete
+Plug 'https://github.com/tpope/vim-rsi'  " readline key bindings
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer
+Plug 'https://github.com/vimwiki/vimwiki'  " help files
+" objects & motions {{{2
+Plug 'https://github.com/tpope/vim-surround'  " brackets, tags (s)
+Plug 'https://github.com/tpope/vim-repeat'  " vim-surround patch 
+Plug 'https://github.com/tpope/vim-commentary'  " comments (gc)
+Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines
+Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves
+" style {{{2
+Plug 'https://github.com/gruvbox-community/gruvbox'
+    let g:gruvbox_contrast_dark='soft'
+    let g:gruvbox_italic = 1
+Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " highlight HEX/RGBA colors
+Plug 'https://github.com/junegunn/limelight.vim', { 'do': 'Limelight', 'on': 'Limelight' }  " fade text
+" devops {{{2
+" Plug 'https://github.com/editorconfig/editorconfig-vim'
+Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
+    let g:polyglot_disabled = ['sensible']
+Plug 'https://github.com/sirver/ultisnips'  " snippet engine
+Plug 'https://github.com/honza/vim-snippets'  " snippet files
+Plug 'https://github.com/fladson/vim-kitty'  " syntax highlight for kitty.conf
+Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEToggle' }   " lint
+Plug 'https://github.com/sbdchd/neoformat'  " format
+Plug 'https://github.com/preservim/tagbar', { 'on': 'TagbarToggle' }  " navigation
+Plug 'https://github.com/mhinz/vim-signify', { 'on': 'SignifyToggle' }  " git
+Plug 'https://github.com/vim-test/vim-test'  " tests
+" Plug 'https://github.com/dstein64/vim-startuptime'  " debug vim
+call plug#end()
+
+" KEYS {{{1 -------------------------------------------------------------------
+map <Space> <Leader>
+map q <Nop>
+map s <Nop>
+map Q <Nop>
+" save changes {{{2
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
+" save as sudo {{{2
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+" quit vim {{{2
+nnoremap ZQ :q!<CR>
+" quickfix navigation {{{2
+nnoremap qn :cnext<CR>
+nnoremap qp :cprevious<CR>
+nnoremap qo :copen<CR>
+nnoremap qc :cclose<CR>
+" missing readline shortcuts {{{2
+cnoremap <c-k> <c-\>egetcmdline()[:getcmdpos()-2]<CR>
+" remap indent due to C-d usage {{{2
+inoremap <C-g> <C-o><<
+" newtab {{{2
+nnoremap tn :tabnew
+nnoremap tc :tabclose
+" copypaths {{{2
+nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
+nnoremap <Leader>cn :let @+ = expand("%:t")<CR>
+" prefill substitute command {{{2
+nnoremap S :%s///ge<Left><Left><Left><Left><C-r>=expand("<cword>")<CR><Right>
+" search / color / hidden symbols / code highlight / tags / git / lint {{{2
+nnoremap <F1> :let @/=""<CR>
+nnoremap <F2> :set list! list?<CR>
+nnoremap <F3> :HexokinaseToggle<CR>
+nnoremap <F4> :Limelight!!<CR>
+nnoremap <F5> :TagbarToggle<CR>
+nnoremap <F6> :SignifyToggle<CR>
+nnoremap <F7> :ALEToggle<CR>
+" insert mode navigation
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" abbreviations (<leader> to activate) {{{2
+iab ldash —
+iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
+
+" COMMANDS {{{1 ---------------------------------------------------------------
+command! Evim execute ':tabnew $MYVIMRC'
+command! Ebash execute ':tabnew ~/.bashrc'
+command! Rvim execute ':source $MYVIMRC'
+command! Rbash execute ':silent !source ~/.bashrc' | execute ':redraw!'
+command! RemoveTrailing call RemoveTrailingSpaces()
+command! RemoveEmpty execute 'g/^\s*$/d'
+" command MakeTags !ctags -R .  " create tags
+
+" FUNCTIONS {{{1 --------------------------------------------------------------
+" remove trailing spaces {{{2
+function! RemoveTrailingSpaces()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+
+" create directories when saving file {{{2
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
+" THEME {{{1 ------------------------------------------------------------------
+" general {{{2
+set background=dark
+if &t_Co >= 256
+  set termguicolors
+endif
+colors gruvbox
+hi QuickScopePrimary gui=underline cterm=underline
+hi QuickScopeSecondary gui=underline cterm=underline
+hi Normal guibg=#3a3a3a ctermbg=237
+hi VertSplit guibg=#3a3a3a ctermbg=237
+hi SpecialKey guifg=#ebdbb2 ctermfg=223
+hi LineNr guifg=#b8bb26 ctermfg=142
+hi LineNrAbove guifg=#bdae93 ctermfg=248
+hi LineNrBelow guifg=#bdae93 ctermfg=248
+" tabline {{{2
+hi TabLine guibg=#504945 ctermbg=239 guifg=#bdae93 ctermfg=248 cterm=NONE term=NONE
+hi TabLineSel guibg=#bdae93 ctermbg=248 guifg=#3a3a3a ctermfg=237 cterm=NONE term=NONE
+hi TabLineFill guibg=#3a3a3a ctermbg=237 guifg=#504945 ctermfg=239 cterm=NONE term=NONE
+hi TabLinePointer guibg=#bdae93 ctermbg=248 guifg=#504945 ctermfg=239
+hi link TabLinePointerSel TabLine
+hi TabLinePointerNC guibg=#504945 ctermbg=239 guifg=#504945 ctermfg=239
+hi link TabLinePointerFirst TabLineSel
+hi TabLinePointerFirstNC guibg=#504945 ctermbg=239 guifg=#3a3a3a ctermfg=237
+hi TabLinePointerLast guibg=#3a3a3a ctermbg=237 guifg=#bdae93 ctermfg=248
+hi link TabLinePointerLastNC TabLineFill
+" statusline {{{2
+hi StatusLine guibg=#665c54  ctermbg=241 guifg=#bdae93 ctermfg=248 cterm=NONE
+hi StatusLineNC guibg=#504945  ctermbg=239 guifg=#bdae93 ctermfg=248 cterm=NONE
+hi StatusLineNormal guibg=#bdae93 ctermbg=248 guifg=#3a3a3a ctermfg=237
+hi StatusLineInsert guibg=#fabd2f ctermbg=214 guifg=#3a3a3a ctermfg=237
+hi StatusLineVisual guibg=#ebdbb2 ctermbg=223 guifg=#3a3a3a ctermfg=237
+hi StatusLineCommand guibg=#b8bb26 ctermbg=142 guifg=#3a3a3a ctermfg=237
+hi! link StatusLineTerm StatusLine
+hi! link StatusLineTermNC StatusLineNC
+
+" PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
+let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
+let config_list = [
+    \ 'plugin_settings/*.vim'
+    \]
+for files in config_list
+    for f in glob(g:vim_home.files, 1, 1)
+        exec 'source' f
+    endfor
+endfor
+

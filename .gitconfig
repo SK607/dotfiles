@@ -1,0 +1,60 @@
+[core]
+    pager = delta
+    editor = vim
+[color]
+    ui = true
+[color "status"]
+    changed = yellow
+[init]
+    defaultBranch = main
+[commit]
+    gpgsign = true
+[push]
+    default = simple
+[merge]
+    conflictstyle = diff3
+[diff]
+    tool = vimdiff
+[fetch]
+    prune = true
+[user]
+    email = sergey.konkin.eth@gmail.com
+    name = Sergey Konkin
+[interactive]
+    diffFilter = delta --color-only
+[add.interactive]
+    useBuiltin = false  # required for git 2.37.0
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    syntax-theme = gruvbox-adj
+    features = theme
+[delta "theme"]
+    dark = true
+    zero-style = syntax
+    file-added-label = [+]
+    file-copied-label = [C]
+    file-modified-label = [M]
+    file-removed-label = [-]
+    file-renamed-label = [R]
+    file-style = "#928374"
+    file-decoration-style = "#928374"
+    hunk-header-file-style = "#928374"
+    hunk-header-decoration-style = none
+    hunk-header-line-number-style = bold "#b16286"
+    hunk-header-style = file line-number syntax
+    minus-style = syntax "#66110e"
+    minus-emph-style = syntax bold "#8e1914"
+    plus-style = syntax "#4c4b0c"
+    plus-emph-style = syntax bold "#6a6912"
+    whitespace-error-style = "#224244" reverse
+    commit-style = "#b8bb26"
+    commit-decoration-style = "#b8bb26" box
+    blame-code-style = syntax
+    blame-format = "{author:<15.14} ({commit:<8}) {timestamp:<15}"
+    blame-palette = "#3a3a3a" "#504945"
+    merge-conflict-ours-diff-header-style = "#ebdbb2"
+    merge-conflict-ours-diff-header-decoration-style = "#928374" box
+    merge-conflict-theirs-diff-header-style = "#ebdbb2"
+    merge-conflict-theirs-diff-header-decoration-style = "#928374" box
+[alias]
+    lsu = ls-files --others --exclude-standard 

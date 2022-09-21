@@ -1,0 +1,102 @@
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+env:
+  TERM: alacritty
+window:
+  class:
+    instance: Alacritty
+    general: Alacritty
+  padding:
+    x: 6
+    y: 0
+  decorations: none
+  opacity: 1.0
+font:
+  normal:
+    family: mononoki Nerd Font Mono
+    style: Regular
+  bold:
+    family: mononoki Nerd Font Mono
+    style: Bold
+  italic:
+    family: mononoki Nerd Font Mono
+    style: Italic
+  bold_italic:
+    family: mononoki Nerd Font Mono
+    style: BoldItalic
+  size: 16.0
+  draw_bold_text_with_bright_colors: true
+schemes:
+  DoomOne: &DoomOne
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text: CellBackground
+      cursor: '#528bff'
+    selection:
+      text: CellForeground
+      background: '#3e4451'
+    normal:
+      black:   '#1c1f24'
+      red:     '#ff6c6b'
+      green:   '#98be65'
+      yellow:  '#da8548'
+      blue:    '#51afef'
+      magenta: '#c678dd'
+      cyan:    '#5699af'
+      white:   '#202328'
+    bright:
+      black:   '#5b6268'
+      red:     '#da8548'
+      green:   '#4db5bd'
+      yellow:  '#ecbe7b'
+      blue:    '#3071db'   # 2257a0.
+      magenta: '#a9a1e1'
+      cyan:    '#46d9ff'
+      white:   '#dfdfdf'
+  Nord: &Nord
+    primary:
+      background: '#3a3a3a'  # 02e3440
+      foreground: '#D8DEE9'
+    normal:
+      black:   '#3B4252'
+      red:     '#BF616A'
+      green:   '#A3BE8C'
+      yellow:  '#EBCB8B'
+      blue:    '#81A1C1'
+      magenta: '#B48EAD'
+      cyan:    '#88C0D0'
+      white:   '#E5E9F0'
+    bright:
+      black:   '#4C566A'
+      red:     '#BF616A'
+      green:   '#A3BE8C'
+      yellow:  '#EBCB8B'
+      blue:    '#81A1C1'
+      magenta: '#B48EAD'
+      cyan:    '#8FBCBB'
+      white:   '#ECEFF4'
+  SK: &SK
+    primary:
+      background: '#3a3a3a'
+      foreground: '#d7d7d7'
+    normal:
+      black:   '#7b7b7b'
+      red:     '#ff8787'
+      green:   '#87af87'
+      yellow:  '#ffd7af'
+      blue:    '#afafd7'
+      magenta: '#ff87af'
+      cyan:    '#87d7d7'
+      white:   '#d7d7d7'
+    bright:
+      black:   '#626262'
+      red:     '#e1a5a5'
+      green:   '#91a591'
+      yellow:  '#ebd7c3'
+      blue:    '#b9b9cd'
+      magenta: '#e1a5b9'
+      cyan:    '#9bc3c3'
+      white:   '#acacac'
+colors: *Nord
+

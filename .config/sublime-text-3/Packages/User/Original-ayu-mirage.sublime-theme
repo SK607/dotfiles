@@ -1,0 +1,42 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+    "variables":
+    {
+    },
+    "rules":
+    [
+        {
+            "class": "sidebar_heading",
+            "font.size": 14
+        },
+        {
+            "class": "sidebar_label",
+            "fg": "#c5c9d1",
+            "font.size": 14
+        },
+        {
+            "class": "sidebar_label",
+            "parents": [
+                {
+                    "class": "file_system_entry",
+                    "attributes": [
+                        "ignored"
+                    ]
+                }
+            ],
+            "fg": "#707a8c"
+        },        
+        {
+            "class": "sidebar_label",
+            "parents": [
+                {
+                    "class": "tree_row",
+                    "attributes": [
+                        "hover", 
+                    ]
+                }
+            ],
+            "fg": "#ffcc66"
+        },
+    ]
+}

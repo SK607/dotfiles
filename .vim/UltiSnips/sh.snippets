@@ -1,0 +1,15 @@
+priority -50
+
+snippet #cwd "Working Directory Detection" b
+CWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+endsnippet
+
+snippet #cv "Command Presence" b
+[ -x "$(command -v ${0:word})" ] &&
+endsnippet
+
+snippet #cvif "Command Presence" b
+if [ -x "$(command -v ${1:word})" ]; then
+	${0:${VISUAL}}
+fi
+endsnippet
