@@ -13,7 +13,7 @@ yellow="\[\e[0;33m\]"
 blue="\[\e[0;34m\]"
 magenta="\[\e[0;35m\]"
 teal="\[\e[0;36m\]"
-base=$yellow
+base=$black
 reset="\[\e[m\]"
 
 __prompt_icons (){
@@ -36,12 +36,12 @@ __prompt_pyenv (){
     fi
 }
 
-PS1="$base┌─"'$(__prompt_icons)'
-PS1+=" $black\u"
-PS1+=" $base$ICON_WD\W"
+PS1="$base┌───"' $(__prompt_icons)'
+PS1+="$black\u"
+PS1+=" $yellow$ICON_WD\W"
 PS1+="$green"'$(__git_ps1 " $ICON_GIT%s")'  # TODO: simplify git 
 PS1+="$blue"'$(__prompt_pyenv)'
-PS1+="\n$base└────> $reset"
+PS1+="\n$base└─> $reset"
 
 unset black red green yellow blue magenta teal base reset
 
