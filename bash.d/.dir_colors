@@ -585,6 +585,7 @@ STICKY_OTHER_WRITABLE   03;38;5;223 # dir that is sticky and other-writable (+t,
 .jks                    00;38;5;109  # certificate
 .key                    00;38;5;109  # certificate
 .keystore               00;38;5;109  # certificate
+.list                   00;38;5;109  # mime.list
 .ovpn                   00;38;5;109
 .p12                    00;38;5;109  # certificate
 .p7b                    00;38;5;109  # certificate

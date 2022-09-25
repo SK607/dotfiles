@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+pkill swaybg
+swaybg -o eDP-1 -i '/usr/share/wallpapers/garuda-wallpapers/Darkwing Beast.jpg' -m fill &
+

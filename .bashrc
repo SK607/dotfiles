@@ -36,6 +36,9 @@ export VISUAL="vim"
 # ls date style
 export TIME_STYLE=long-iso
 
+# gnome-ssh-agent
+[ -z "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK=/run/user/$(id -u)/keyring/ssh
+
 # set bat as manpager
 [ -x "$(command -v bat)" ] && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -111,9 +114,10 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 [ -x "$(command -v bat)" ] && alias bat='bat -p'
 if [ -x "$(command -v pacman)" ]; then
     alias pacman='sudo pacman --color auto'
-    alias pacupdate='sudo pacman --color auto -Syyu'
-    alias pacunlock='sudo rm /var/lib/pacman/db.lck'
+    alias pacupda='sudo pacman --color auto -Syyu'
+    alias paclock='sudo rm /var/lib/pacman/db.lck'
     alias pacclean='sudo pacman -Rns $(pacman -Qtdq)'
+    alias pacrecent="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
     alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
     alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
     alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
@@ -143,6 +147,9 @@ fi
 
 # find dotfile dir and file in it
 # edot() {}
+
+# Advanced command-not-found hook
+# source /usr/share/doc/find-the-command/ftc.bash
 
 # extract archive
 ex ()

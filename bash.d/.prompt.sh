@@ -36,6 +36,11 @@ __prompt_pyenv (){
     fi
 }
 
+! [ -x "$(command -v __git_ps_1)" ] && source /usr/share/git/git-prompt.sh
+
+# git rev-parse --git-dir --is-inside-git-dit --is-bar-repository --is-inside-work-tree --short HEAD
+# git describe --contains --all head
+
 PS1="$base┌───"' $(__prompt_icons)'
 PS1+="$black\u"
 PS1+=" $yellow$ICON_WD\W"

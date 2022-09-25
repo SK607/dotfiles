@@ -187,30 +187,31 @@ endif
 colors gruvbox
 hi QuickScopePrimary gui=underline cterm=underline
 hi QuickScopeSecondary gui=underline cterm=underline
-hi Normal guibg=#3a3a3a ctermbg=237
-hi VertSplit guibg=#3a3a3a ctermbg=237
+" hi Normal guibg=#282c34 ctermbg=237
+hi Normal guibg=#282c34 ctermbg=237
+hi VertSplit guibg=#282c34 ctermbg=237
 hi SpecialKey guifg=#ebdbb2 ctermfg=223
 hi LineNr guifg=#b8bb26 ctermfg=142
 hi LineNrAbove guifg=#bdae93 ctermfg=248
 hi LineNrBelow guifg=#bdae93 ctermfg=248
 " tabline {{{2
 hi TabLine guibg=#504945 ctermbg=239 guifg=#bdae93 ctermfg=248 cterm=NONE term=NONE
-hi TabLineSel guibg=#bdae93 ctermbg=248 guifg=#3a3a3a ctermfg=237 cterm=NONE term=NONE
-hi TabLineFill guibg=#3a3a3a ctermbg=237 guifg=#504945 ctermfg=239 cterm=NONE term=NONE
+hi TabLineSel guibg=#bdae93 ctermbg=248 guifg=#282c34 ctermfg=237 cterm=NONE term=NONE
+hi TabLineFill guibg=#282c34 ctermbg=237 guifg=#504945 ctermfg=239 cterm=NONE term=NONE
 hi TabLinePointer guibg=#bdae93 ctermbg=248 guifg=#504945 ctermfg=239
 hi link TabLinePointerSel TabLine
 hi TabLinePointerNC guibg=#504945 ctermbg=239 guifg=#504945 ctermfg=239
 hi link TabLinePointerFirst TabLineSel
-hi TabLinePointerFirstNC guibg=#504945 ctermbg=239 guifg=#3a3a3a ctermfg=237
-hi TabLinePointerLast guibg=#3a3a3a ctermbg=237 guifg=#bdae93 ctermfg=248
+hi TabLinePointerFirstNC guibg=#504945 ctermbg=239 guifg=#282c34 ctermfg=237
+hi TabLinePointerLast guibg=#282c34 ctermbg=237 guifg=#bdae93 ctermfg=248
 hi link TabLinePointerLastNC TabLineFill
 " statusline {{{2
 hi StatusLine guibg=#665c54  ctermbg=241 guifg=#bdae93 ctermfg=248 cterm=NONE
 hi StatusLineNC guibg=#504945  ctermbg=239 guifg=#bdae93 ctermfg=248 cterm=NONE
-hi StatusLineNormal guibg=#bdae93 ctermbg=248 guifg=#3a3a3a ctermfg=237
-hi StatusLineInsert guibg=#fabd2f ctermbg=214 guifg=#3a3a3a ctermfg=237
-hi StatusLineVisual guibg=#ebdbb2 ctermbg=223 guifg=#3a3a3a ctermfg=237
-hi StatusLineCommand guibg=#b8bb26 ctermbg=142 guifg=#3a3a3a ctermfg=237
+hi StatusLineNormal guibg=#bdae93 ctermbg=248 guifg=#282c34 ctermfg=237
+hi StatusLineInsert guibg=#fabd2f ctermbg=214 guifg=#282c34 ctermfg=237
+hi StatusLineVisual guibg=#ebdbb2 ctermbg=223 guifg=#282c34 ctermfg=237
+hi StatusLineCommand guibg=#b8bb26 ctermbg=142 guifg=#282c34 ctermfg=237
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 

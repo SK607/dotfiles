@@ -1,7 +1,7 @@
 priority -50
 
 snippet #cwd "Working Directory Detection" b
-CWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+CWD="$( dirname -- "$( readlink -f -- "$0"; )"; )"
 endsnippet
 
 snippet #cv "Command Presence" b
