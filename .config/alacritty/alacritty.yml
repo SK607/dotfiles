@@ -17,16 +17,16 @@ live_config_reload: true
 dynamic_padding: true
 font:
   normal:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     style: Regular
   bold:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     style: Bold
   italic:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     style: Italic
   bold_italic:
-    family: mononoki Nerd Font Mono
+    family: mononoki Nerd Font
     style: BoldItalic
   size: 16
   draw_bold_text_with_bright_colors: true
