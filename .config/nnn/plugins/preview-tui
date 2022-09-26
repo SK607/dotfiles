@@ -80,16 +80,16 @@
 # Authors: Todd Yamakawa, Léo Villeveygoux, @Recidiviste, Mario Ortiz Manero, Luuk van Baal, @WanderLanz
 
 #SPLIT="$SPLIT"  # you can set a permanent split here
-#TERMINAL="$TERMINAL"  # same goes for the terminal
+TERMINAL="alacritty"  # same goes for the terminal
 SPLIT_SIZE="${SPLIT_SIZE:-50}" # split size in percentage for supported previewers
 USE_SCOPE="${USE_SCOPE:-0}"
 USE_PISTOL="${USE_PISTOL:-0}"
 ICONLOOKUP="${ICONLOOKUP:-0}"
 PAGER="${PAGER:-less -P?n -R}"
 TMPDIR="${TMPDIR:-/tmp}"
-BAT_STYLE="${BAT_STYLE:-numbers}"
-BAT_THEME="${BAT_THEME:-ansi}"
-# Consider setting NNN_PREVIEWDIR to $XDG_CACHE_HOME/nnn/previews if you want to keep previews on disk between reboots
+BAT_STYLE="${BAT_STYLE:-plain}"
+BAT_THEME="${BAT_THEME:-gruvbox-adj}"
+# Consider setting NNN_PREVIEWgruvbox-adjto $XDG_CACHE_HOME/nnn/previews if you want to keep previews on disk between reboots
 NNN_PREVIEWDIR="${NNN_PREVIEWDIR:-$TMPDIR/nnn/previews}"
 NNN_PREVIEWWIDTH="${NNN_PREVIEWWIDTH:-1920}"
 NNN_PREVIEWHEIGHT="${NNN_PREVIEWHEIGHT:-1080}"
@@ -339,10 +339,10 @@ preview_file() {
             [ "$SPLIT" = v ] && BSTR="\n"
             # shellcheck disable=SC2012
             ls -F --group-directories-first | head -n "$((lines - 3))" | "$(dirname "$0")"/.iconlookup -l "$cols" -B "$BSTR" -b " "
+        elif exists exa; then
+            fifo_pager exa --group-directories-first --colour=always --icons --all --tree -L 1
         elif exists tree; then
             fifo_pager tree --filelimit "$(find . -maxdepth 1 | wc -l)" -L 3 -C -F --dirsfirst --noreport
-        elif exists exa; then
-            exa -G --group-directories-first --colour=always
         else
             fifo_pager ls -F --group-directories-first --color=always
         fi

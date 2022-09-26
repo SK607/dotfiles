@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+FILES=$(swayimg -mf -w 282c34 $PWD)
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+if [ -d "$1" ]; then
+    git -c color.status=always status -s "$1" | less -R
+elif [ -f "$1" ]; then
+    git diff "$1"
+fi

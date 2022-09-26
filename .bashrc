@@ -43,15 +43,8 @@ export TIME_STYLE=long-iso
 [ -x "$(command -v bat)" ] && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # nnn configuration
-if [ -x "$(command -v nnn)" ]; then
-    export NNN_OPTS='e'
-    export NNN_PLUG='p:preview-tui;d:dragdrop;i:imgview;f:fzcd'
-    export NNN_FCOLORS='bcbcdfd2bc74747474d2d2bc'
-    export NNN_COLORS='#dfdfdfdf;1234'
-    export NNN_ARCHIVE='\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$'
-    export NNN_FIFO='/tmp/nnn.fifo'
-    export SPLIT='v'
-fi
+[ -f /etc/bash.d/.nnn.sh ] && source /etc/bash.d/.nnn.sh
+[ -f ~/.nnn.bash ] && source ~/.nnn.bash
 
 # fzf configuration
 [ -f /etc/bash.d/.fzf.sh ] && source /etc/bash.d/.fzf.sh
@@ -106,15 +99,15 @@ alias biggest="du -h --max-depth=1 | sort -hr"
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 # extensions
-[ -x "$(command -v exa)" ] && alias exa='exa --group-directories-first --icons -a'
-[ -x "$(command -v exa)" ] && alias exagit='exa --group-directories-first --icons -a --git'
-[ -x "$(command -v tree)" ] && alias tree='tree -C -I "__pycache__|.git" -tr --dirsfirst'
-[ -x "$(command -v cpg)" ] && alias cp='cpg -gi'
-[ -x "$(command -v mvg)" ] && alias mv='mvg -gi'
-[ -x "$(command -v bat)" ] && alias bat='bat -p'
+[ -x "$(command -v exa)" ] && alias exad='exa --group-directories-first --icons -a'
+[ -x "$(command -v tree)" ] && alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
+[ -x "$(command -v cpg)" ] && alias cp='advcp -gi'
+[ -x "$(command -v mvg)" ] && alias mv='advmv -gi'
+[ -x "$(command -v nnn)" ] && alias n='LC_COLLATE="C" nnn'
+[ -x "$(command -v bat)" ] && alias batd='bat -p'
 if [ -x "$(command -v pacman)" ]; then
     alias pacman='sudo pacman --color auto'
-    alias pacupda='sudo pacman --color auto -Syyu'
+    alias pacupd='sudo pacman --color auto -Syyu'
     alias paclock='sudo rm /var/lib/pacman/db.lck'
     alias pacclean='sudo pacman -Rns $(pacman -Qtdq)'
     alias pacrecent="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
@@ -140,13 +133,17 @@ fi
 help() { "$@" --help 2>&1 | bat --plain --language=help; }
 
 # copy current prompt to clipboard
-if [ -x "$(command -v xclip)" ]; then
-    copyline() { printf %s "$READLINE_LINE" | xclip -sel clip; }
-    bind -x '"\C-xc":copyline'
+if [ -x "$(command -v wl-copy)" ]; then
+    copyline() { printf %s "$READLINE_LINE" | wl-copy; }
+elif [ -x "$(command -v xsel)" ]; then
+    copyline() { printf %s "$READLINE_LINE" | xsel -ib; }
 fi
+[ $(type -t copyline) == function ] && bind -x '"\C-xc":copyline'
 
 # find dotfile dir and file in it
-# edot() {}
+edot() {
+    $EDITOR $(fd --type file --unrestricted --ignore-case --absolute-path "$@"  "$HOME/code-projects/devops/dotfiles/")
+}
 
 # Advanced command-not-found hook
 # source /usr/share/doc/find-the-command/ftc.bash
