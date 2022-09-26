@@ -32,3 +32,4 @@ link_dotfile .config/nnn/plugins $HOME
 link_dotfile .config/bat $HOME
 link_dotfile .config/sublime-text-3/Packages/User $HOME
 
+/usr/bin/bat cache --build

@@ -187,7 +187,6 @@ endif
 colors gruvbox
 hi QuickScopePrimary gui=underline cterm=underline
 hi QuickScopeSecondary gui=underline cterm=underline
-" hi Normal guibg=#282c34 ctermbg=237
 hi Normal guibg=#282c34 ctermbg=237
 hi VertSplit guibg=#282c34 ctermbg=237
 hi SpecialKey guifg=#ebdbb2 ctermfg=223
