@@ -1,7 +1,7 @@
 priority -50
 
 snippet #cwd "Working Directory Detection" b
-CWD="$( dirname -- "$( readlink -f -- "$0"; )"; )"
+CWD="$( dirname -- "$( readlink -f -- "\$0"; )"; )"
 endsnippet
 
 snippet #cv "Command Presence" b
