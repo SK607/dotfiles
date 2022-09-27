@@ -79,7 +79,7 @@ source /usr/share/bash-completion/completions/git
 # https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo='sudo '
 
-# defaults
+# harmless defaults
 alias rm='rm -i'
 alias chmod='chmod --preserve-root'
 alias grep='grep --color=auto'
@@ -87,18 +87,18 @@ alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ls='LC_COLLATE=C ls --group-directories-first --color=auto'
-alias df='df -h'
-alias env='env | sort'
-alias path='echo "${PATH//:/$'"'"'\n'"'"'}" | sort'
+alias ls='ls --color=auto'
 
 # commands
 alias jctl='journalctl -p 3 -xb'
 alias termbin='nc termbin.com 9999'
 alias biggest="du -h --max-depth=1 | sort -hr"
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+alias path='echo "${PATH//:/$'"'"'\n'"'"'}" | sort'
 
 # extensions
+alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'
+alias envd='env | sort'
 [ -x "$(command -v exa)" ] && alias exad='exa --group-directories-first --icons -a'
 [ -x "$(command -v exa)" ] && alias exagit='exa --group-directories-first --icons -al --git'
 [ -x "$(command -v tree)" ] && alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
