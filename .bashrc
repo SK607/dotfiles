@@ -142,7 +142,7 @@ fi
 
 # find dotfile dir and file in it
 edot() {
-    $EDITOR $(fd --type file --unrestricted --ignore-case --absolute-path "$@"  "$HOME/code-projects/devops/dotfiles/")
+    $EDITOR $(fd --type file --unrestricted --ignore-case --full-path --absolute-path "$@"  "$HOME/code-projects/devops/dotfiles/")
 }
 
 # Advanced command-not-found hook
