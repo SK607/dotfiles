@@ -8,7 +8,7 @@ window:
     general: Alacritty
   padding:
     x: 6
-    y: 6
+    y: 0
   decorations: none
   opacity: 1.0
 shell:
