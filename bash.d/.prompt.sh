@@ -6,7 +6,7 @@ if [ -n "$NERD_ENABLED" ]; then
     ICON_PY=' '
 fi
 
-black="\[\e[0;38;5;246m\]"
+black="\[\e[2;37m\]"
 red="\[\e[0;31m\]"
 green="\[\e[0;32m\]"
 yellow="\[\e[0;33m\]"

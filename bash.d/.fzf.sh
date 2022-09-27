@@ -1,9 +1,9 @@
 # AUTO-COMPLETION
-[[ $- == *i* ]] && source "$HOME/.local/opt/fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source '/usr/share/completion.bash' 2> /dev/null
 
 
 # DEFAULTS
-export FZF_DEFAULT_OPTS='--color=bg+:#282c34,bg:#282c34,spinner:#fb4934,hl:#928374,fg:#ebdbb2,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,fg+:#ebdbb2,prompt:#fb4934,hl+:#fb4934 --bind up:preview-up,down:preview-down'
+export FZF_DEFAULT_OPTS="$FZF_THEME --bind up:preview-up,down:preview-down"
 
 
 # HISTORY search

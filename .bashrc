@@ -19,15 +19,8 @@ export HISTCONTROL=ignoreboth
 # exclude commands from history
 export HISTIGNORE='[ \t]*:exit:pwd'
 
-# color support
+# for vim themes
 export TERM="xterm-256color"
-if [ -x "$(command -v dircolors)" ]; then
-    if [ -r /etc/bash.d/.dir_colors ]; then
-        eval "$(dircolors -b /etc/bash.d/.dir_colors)"
-    else
-        eval "$(dircolors -b)"
-    fi
-fi
 
 # default text editor
 export EDITOR="vim"
@@ -41,6 +34,10 @@ export TIME_STYLE=long-iso
 
 # set bat as manpager
 [ -x "$(command -v bat)" ] && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# nnn, fzf, ls themes
+[ -f /etc/bash.d/.theme.sh ] && source /etc/bash.d/.theme.sh
+[ -f ~/.theme.sh ] && source ~/.theme.sh
 
 # nnn configuration
 [ -f /etc/bash.d/.nnn.sh ] && source /etc/bash.d/.nnn.sh
