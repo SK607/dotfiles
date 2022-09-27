@@ -50,6 +50,9 @@ export TIME_STYLE=long-iso
 [ -f /etc/bash.d/.fzf.sh ] && source /etc/bash.d/.fzf.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# z.lua configuration
+[ -d ~/.local/opt/z.lua ] && eval "$(lua ~/.local/opt/z.lua/z.lua --init bash enhanced once)"
+
 # path
 [ -d /usr/local/cuda-10.0/bin ] && export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 [ -d /usr/local/go/bin ] && export PATH=/usr/local/go/bin${PATH:+:${PATH}}
