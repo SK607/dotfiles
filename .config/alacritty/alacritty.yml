@@ -4,9 +4,11 @@ import:
   - ~/.config/alacritty/theme-nord.yml
   - ~/.config/alacritty/fonts.yml
 env:
-  TERM: screen-256color
+  TERM: xterm-256color
 shell:
   program: /bin/bash  # /bin/fish
+  args:
+    - --login
 window:
   class:
     instance: Alacritty
