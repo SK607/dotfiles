@@ -64,6 +64,7 @@ Plug 'https://github.com/sickill/vim-pasta'  " indent-aware pasting (p,P)
 Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
 Plug 'https://github.com/ervandew/supertab'  " <TAB> for all autocomplete
 Plug 'https://github.com/tpope/vim-rsi'  " readline key bindings
+Plug 'https://github.com/jasonccox/vim-wayland-clipboard'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer
