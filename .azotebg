@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
 pkill swaybg
-swaybg -o eDP-1 -i '/usr/share/wallpapers/garuda-wallpapers/Darkwing Beast.jpg' -m fill &
+
+WP_FILE='/usr/share/wallpapers/garuda-wallpapers/Darkwing Beast.jpg' 
+
+WP_PATH="$HOME/.local/share/wallpapers"
+if [ -d $WP_PATH ]; then
+    WP_FILE="$WP_PATH/$(ls $WP_PATH | shuf -n 1)"
+fi
+
+swaybg -o eDP-1 -i "$WP_FILE" -m fill &
 
