@@ -148,10 +148,8 @@ iab ldash —
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
 
 " COMMANDS {{{1 ---------------------------------------------------------------
-command! Evim execute ':tabnew $MYVIMRC'
-command! Ebash execute ':tabnew ~/.bashrc'
+command! -nargs=1 Edot call s:EditDotfile(<f-args>)
 command! Rvim execute ':source $MYVIMRC'
-command! Rbash execute ':silent !source ~/.bashrc' | execute ':redraw!'
 command! RemoveTrailing call RemoveTrailingSpaces()
 command! RemoveEmpty execute 'g/^\s*$/d'
 " command MakeTags !ctags -R .  " create tags
@@ -178,6 +176,12 @@ augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
+
+" edit dotfile {{{2
+function! s:EditDotfile(name)
+    let dotpath=system('fd --type file --unrestricted --ignore-case --full-path --absolute-path ' . shellescape(a:name) . ' "$HOME/code-projects/devops/dotfiles"')
+    execute "tabnew " . dotpath 
+endfunction
 
 " THEME {{{1 ------------------------------------------------------------------
 " general {{{2
