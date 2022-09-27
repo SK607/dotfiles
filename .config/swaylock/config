@@ -3,7 +3,7 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image=$HOME/.config/swaylock/swaylock.png
+image="/usr/share/wallpapers/garuda-wallpapers/$(ls /usr/share/wallpapers/garuda-wallpapers/ | shuf -n 1)"
 scaling=fill
 font=UbuntuMono
 font-size=20
