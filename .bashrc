@@ -15,9 +15,9 @@ export HISTSIZE=
 # number of commands stored in .bash_history (empty=unlimited)
 export HISTFILESIZE=
 # (ignorespace) lines starting with a white space + (ignoredups) duplicated + (erasedups)
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=ignoreboth
 # exclude commands from history
-export HISTIGNORE='[ \t]*:exit:pwd:git commit*'
+export HISTIGNORE='[ \t]*:exit:pwd'
 
 # color support
 export TERM="xterm-256color"
@@ -103,6 +103,7 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 # extensions
 [ -x "$(command -v exa)" ] && alias exad='exa --group-directories-first --icons -a'
+[ -x "$(command -v exa)" ] && alias exagit='exa --group-directories-first --icons -al --git'
 [ -x "$(command -v tree)" ] && alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
 [ -x "$(command -v cpg)" ] && alias cp='advcp -gi'
 [ -x "$(command -v mvg)" ] && alias mv='advmv -gi'
