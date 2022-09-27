@@ -3,14 +3,14 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image="/usr/share/wallpapers/garuda-wallpapers/$(ls /usr/share/wallpapers/garuda-wallpapers/ | shuf -n 1)"
+image="$HOME/.local/share/wallpapers/$(ls $HOME/.local/share/wallpapers | shuf -n 1)"
 scaling=fill
 font=UbuntuMono
 font-size=20
 
 
 # Ring
-indicator-radius=360
+indicator-radius=90
 # line-uses-ring
 line-color=#3b4252
 text-color=#d8dee9
