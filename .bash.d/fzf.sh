@@ -1,7 +1,3 @@
-# AUTO-COMPLETION
-[[ $- == *i* ]] && source '/usr/share/completion.bash' 2> /dev/null
-
-
 # DEFAULTS
 export FZF_DEFAULT_OPTS="$FZF_THEME --bind up:preview-up,down:preview-down"
 
@@ -129,36 +125,36 @@ fi
 
 
 # FIREFOX HISTORY search
-if compgen -G "$HOME/.mozilla/firefox/*.default*/places.sqlite" &> /dev/null; then
-    fff() {
-        local last_update selected
-        last_update="$(date -r '/tmp/ffh' +%s 2> /dev/null)";
-        if (( $(date +%s) - ${last_update:-0} > 1000)); then
-            cp -f ~/.mozilla/firefox/*.default*/places.sqlite /tmp/ffh
-        fi
-        IFS=' ' read -ra selected < <(
-        sqlite3 -readonly \
-            -separator ' ' \
-            /tmp/ffh \
-            "SELECT DISTINCT
-                    (CASE WHEN mb.fk IS NOT NULL THEN '[B]' ELSE '[H]' END) as typ,
-                    '[' || mp.title || ']' as title,
-                    printf(\"%c[38;5;109m%s%c[0m\", char(27), url, char(27)) as url
-                    FROM moz_places mp
-                    LEFT JOIN moz_bookmarks mb ON mb.fk= mp.id
-                    WHERE mp.title is not null
-                    ORDER BY mp.last_visit_date;" |
-            fzf $FZF_DEFAULT_OPTS \
-            --ansi \
-            --multi \
-            --height ${FZF_TMUX_HEIGHT:-40%} \
-            --prompt 'firefox> ' \
-            --tiebreak=index |
-            sed 's#.*\(https*://\)#\1#'
-        )
-        [ -n "${selected}" ] && xdg-open "${selected}"
-    }
-fi
+#if compgen -G "$HOME/.mozilla/firefox/*.default*/places.sqlite" &> /dev/null; then
+#    fff() {
+#        local last_update selected
+#        last_update="$(date -r '/tmp/ffh' +%s 2> /dev/null)";
+#        if (( $(date +%s) - ${last_update:-0} > 1000)); then
+#            cp -f ~/.mozilla/firefox/*.default*/places.sqlite /tmp/ffh
+#        fi
+#        IFS=' ' read -ra selected < <(
+#        sqlite3 -readonly \
+#            -separator ' ' \
+#            /tmp/ffh \
+#            "SELECT DISTINCT
+#                    (CASE WHEN mb.fk IS NOT NULL THEN '[B]' ELSE '[H]' END) as typ,
+#                    '[' || mp.title || ']' as title,
+#                    printf(\"%c[38;5;109m%s%c[0m\", char(27), url, char(27)) as url
+#                    FROM moz_places mp
+#                    LEFT JOIN moz_bookmarks mb ON mb.fk= mp.id
+#                    WHERE mp.title is not null
+#                    ORDER BY mp.last_visit_date;" |
+#            fzf $FZF_DEFAULT_OPTS \
+#            --ansi \
+#            --multi \
+#            --height ${FZF_TMUX_HEIGHT:-40%} \
+#            --prompt 'firefox> ' \
+#            --tiebreak=index |
+#            sed 's#.*\(https*://\)#\1#'
+#        )
+#        [ -n "${selected}" ] && xdg-open "${selected}"
+#    }
+#fi
 
 # GIT LOG search
 __fdiff__() {

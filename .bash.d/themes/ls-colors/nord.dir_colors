@@ -1,0 +1,945 @@
+# dircolors theme: better visibility & extension support
+#
+# @author {SK@607}
+
+
+# REFERENCE
+# .r-normal               00;38;5;7
+# .r-exec                 00;38;5;1
+# .r-link                 04;38;5;12
+# .r-dir                  00;38;5;4
+# .r-archive              03;38;5;15
+# .r-audio                00;38;5;14
+# .r-video                00;38;5;13
+# .r-image                00;38;5;5
+# .r-font                 00;38;5;5
+# .r-document             00;38;5;3
+# .r-code                 00;38;5;2
+# .r-docs                 00;38;5;7
+# .r-data                 00;38;5;11
+# .r-config               00;38;5;6
+# .r-build                00;38;5;9
+# .r-log                  00;38;5;8
+
+
+# GLOBAL
+## enabled
+RESET                   0 # reset to "normal" color
+NORMAL                  00 # global default
+FILE                    00 # normal file
+MULTIHARDLINK           00;38;5;7 # regular file with more than one link
+DIR                     00;38;5;4 # directory
+STICKY                  00;38;5;4 # dir with the sticky bit set (+t) and not other-writable
+OTHER_WRITABLE          03;38;5;4 # dir that is other-writable (o+w) and not sticky
+STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+w)
+
+
+#  ARCHIVE
+## enabled
+.7z                     03;38;5;15
+.a                      03;38;5;15
+.apk                    03;38;5;15  # package
+.bz                     03;38;5;15
+.bz2                    03;38;5;15
+.cab                    03;38;5;15  # package
+.deb                    03;38;5;15  # package
+.dmg                    03;38;5;15  # package
+.crx                    03;38;5;15  # package
+.xpi                    03;38;5;15  # package
+.egg                    03;38;5;15
+.gz                     03;38;5;15
+.gzip                   03;38;5;15
+.iso                    03;38;5;15  # partition image
+.toast                  03;38;5;15  # partition image
+.img                    03;38;5;15  # partition image
+.bin                    03;38;5;15  # partition image
+.jar                    03;38;5;15  # package
+.jad                    03;38;5;15  # package
+.msi                    03;38;5;15
+.pak                    03;38;5;15  # package
+.pkg                    03;38;5;15
+.rar                    03;38;5;15
+.rpm                    03;38;5;15  # package
+.tar                    03;38;5;15
+.webarchive             03;38;5;15
+.whl                    03;38;5;15
+.s7z                    03;38;5;15
+.z                      03;38;5;15
+.zz                     03;38;5;15
+.xz                     03;38;5;15
+.Z                      03;38;5;15
+.zip                    03;38;5;15
+.ZIP                    03;38;5;15
+.zipx                   03;38;5;15
+.zlib                   03;38;5;15
+## disabled
+# .ace                    03;38;5;15
+# .nrg                    03;38;5;15  # partition image
+# .qcow                   03;38;5;15  # partition image
+# .fvd                    03;38;5;15  # partition image
+# .sparseimage            03;38;5;15  # partition image
+# .vcd                    03;38;5;15  # partition image
+# .vdi                    03;38;5;15  # partition image
+# .vhd                    03;38;5;15  # partition image
+# .vhdx                   03;38;5;15  # partition image
+# .vfd                    03;38;5;15  # partition image
+# .vmdk                   03;38;5;15  # partition image
+# .ipa                    03;38;5;15  # package
+# .pk3                    03;38;5;15  # package
+# .bsp                    03;38;5;15  # package
+# .vpk                    03;38;5;15  # package
+# .vdf                    03;38;5;15  # package
+# .alz                    03;38;5;15
+# .arc                    03;38;5;15
+# .arj                    03;38;5;15
+# .cpio                   03;38;5;15
+# .dwm                    03;38;5;15
+# .dz                     03;38;5;15
+# .gem                    03;38;5;15
+# .kgb                    03;38;5;15
+# .lha                    03;38;5;15
+# .lrz                    03;38;5;15
+# .lz                     03;38;5;15
+# .lz4                    03;38;5;15
+# .lzh                    03;38;5;15
+# .lzma                   03;38;5;15
+# .lzo                    03;38;5;15
+# .rz                     03;38;5;15
+# .sar                    03;38;5;15
+# .swm                    03;38;5;15
+# .sz                     03;38;5;15
+# .t7z                    03;38;5;15
+# .taz                    03;38;5;15
+# .tbz                    03;38;5;15
+# .tbz2                   03;38;5;15
+# .tgz                    03;38;5;15
+# .tlz                    03;38;5;15
+# .tx                     03;38;5;15
+# .txz                    03;38;5;15
+# .tz                     03;38;5;15
+# .tzo                    03;38;5;15
+# .tzst                   03;38;5;15
+# .war                    03;38;5;15  # package
+# .warc                   03;38;5;15
+# .wim                    03;38;5;15
+# .zoo                    03;38;5;15
+# .zpad                   03;38;5;15
+# .zst                    03;38;5;15
+# .zstd                   03;38;5;15
+
+
+#  AUDIO
+## enabled
+.aa                     00;38;5;14
+.aac                    00;38;5;14
+.amr                    00;38;5;14
+.aax                    00;38;5;14
+.aiff                   00;38;5;14
+.alac                   00;38;5;14
+.flac                   00;38;5;14
+.m4a                    00;38;5;14
+.mp3                    00;38;5;14
+.ogg                    00;38;5;14
+.wav                    00;38;5;14
+.wma                    00;38;5;14
+.mid                    00;38;5;14
+.midi                    00;38;5;14
+## disabled
+# .au                     00;38;5;14
+# .3ga                    00;38;5;14
+# .S3M                    00;38;5;14
+# .axa                    00;38;5;14
+# .dsd                    00;38;5;14
+# .mid                    00;38;5;14
+# .midi                   00;38;5;14
+# .mka                    00;38;5;14
+# .caf                    00;38;5;14
+# .dat                    00;38;5;14
+# .dts                    00;38;5;14
+# .fcm                    00;38;5;14
+# .mp4a                   00;38;5;14
+# .s3m                    00;38;5;14
+# .ape                    00;38;5;14
+# .cda                    00;38;5;14
+# .alac                   00;38;5;14
+# .mpa                    00;38;5;14
+# .mpc                    00;38;5;14
+# .oga                    00;38;5;14
+# .opus                   00;38;5;14
+# .pcm                    00;38;5;14
+# .ra                     00;38;5;14
+# .spx                    00;38;5;14
+# .tta                    00;38;5;14
+# .xspf                   00;38;5;14
+# .wv                     00;38;5;14
+# .wvc                    00;38;5;14
+
+
+#  VIDEO
+## enabled
+.avchd                  00;38;5;13
+.avi                    00;38;5;13
+.f4v                    00;38;5;13
+.flv                    00;38;5;13
+.m2v                    00;38;5;13
+.m4p                    00;38;5;13
+.m4v                    00;38;5;13
+.mkv                    00;38;5;13
+.mov                    00;38;5;13
+.MOV                    00;38;5;13
+.mp2                    00;38;5;13
+.mp4                    00;38;5;13
+.mpe                    00;38;5;13
+.mpeg                   00;38;5;13
+.mpg                    00;38;5;13
+.mpv                    00;38;5;13
+.ogg                    00;38;5;13
+.ogm                    00;38;5;13
+.qt                     00;38;5;13
+.swf                    00;38;5;13
+.vsh                    00;38;5;13  # editor
+.webm                   00;38;5;13
+.wmv                    00;38;5;13
+.sample                 00;38;5;13
+.vob                    00;38;5;13
+.VOB                    00;38;5;13
+## disabled
+# .3gp                    00;38;5;13
+# .3g2                    00;38;5;13
+# .gp4                    00;38;5;13
+# .gp3                    00;38;5;13
+# .asf                    00;38;5;13
+# .axv                    00;38;5;13
+# .divx                   00;38;5;13
+# .flc                    00;38;5;13
+# .fli                    00;38;5;13
+# .m2ts                   00;38;5;13
+# .mp4v                   00;38;5;13
+# .nuv                    00;38;5;13
+# .ogv                    00;38;5;13
+# .ogx                    00;38;5;13
+# .qt                     00;38;5;13
+# .rm                     00;38;5;13
+# .rmvb                   00;38;5;13
+# .yuv                    00;38;5;13
+# .IFO                    00;38;5;13
+
+
+#  IMAGE
+## enabled
+.ai                     00;38;5;5  # editor
+.apng                   00;38;5;5
+.avif                   00;38;5;5
+.bmp                    00;38;5;5
+.cdr                    00;38;5;5  # editor
+.cpt                    00;38;5;5  # editor
+.dl                     00;38;5;5  # editor
+.gif                    00;38;5;5
+.gl                     00;38;5;5  # editor
+.ico                    00;38;5;5
+.icns                   00;38;5;5
+.indd                   00;38;5;5  # editor
+.jpeg                   00;38;5;5
+.jpg                    00;38;5;5
+.JPG                    00;38;5;5
+.mjpeg                  00;38;5;5
+.mjpg                   00;38;5;5
+.png                    00;38;5;5
+.PNG                    00;38;5;5
+.ppm                    00;38;5;5  # editor
+.psd                    00;38;5;5  # editor
+.pxd                    00;38;5;5  # editor
+.pxm                    00;38;5;5  # editor
+.svg                    00;38;5;5
+.tif                    00;38;5;5
+.tiff                   00;38;5;5
+.TIFF                   00;38;5;5
+.bmp                    00;38;5;5
+.webp                   00;38;5;5
+.xcf                    00;38;5;5  # editor
+## disabled
+# .cgm                    00;38;5;5
+# .CR2                    00;38;5;5
+# .emf                    00;38;5;5
+# .esd                    00;38;5;5
+# .heic                   00;38;5;5
+# .heif                   00;38;5;5
+# .mng                    00;38;5;5
+# .pbm                    00;38;5;5
+# .dicom                  00;38;5;5
+# .pcx                    00;38;5;5
+# .jxl                    00;38;5;5
+# .nth                    00;38;5;5
+# .pgm                    00;38;5;5
+# .flif                   00;38;5;5
+# .svgz                   00;38;5;5
+# .tga                    00;38;5;5
+# .xbm                    00;38;5;5
+# .drw                    00;38;5;5
+# .xpm                    00;38;5;5
+# .xwd                    00;38;5;5
+
+
+#  FONT
+## enabled
+.eot                    00;38;5;5
+.fnt                    00;38;5;5
+.fon                    00;38;5;5
+.otf                    00;38;5;5
+.ttf                    00;38;5;5
+.flf                    00;38;5;5
+.woff                   00;38;5;5
+.woff2                  00;38;5;5
+## disabled
+# .afm                    00;38;5;5
+# .pfb                    00;38;5;5
+# .pfm                    00;38;5;5
+# .pfa                    00;38;5;5
+
+
+#  DOCUMENT
+## enabled
+.azw                    00;38;5;3  # ebook
+.azw3                   00;38;5;3  # ebook
+.djvu                   00;38;5;3  # ebook
+.doc                    00;38;5;3  # office (document)
+.docx                   00;38;5;3  # office (document)
+.docm                   00;38;5;3  # office (document)
+.dot                    00;38;5;3  # office (document)
+.dotx                   00;38;5;3  # office (document)
+.eps                    00;38;5;3  # ebook
+.epub                   00;38;5;3  # ebook
+.fb2                    00;38;5;3  # ebook
+.iba                    00;38;5;3  # ebook
+.ibooks                 00;38;5;3  # ebook
+.kf8                    00;38;5;3  # ebook
+.kfx                    00;38;5;3  # ebook
+.mmap                   00;38;5;3  # mindmap
+.mobi                   00;38;5;3  # ebook
+.numbers                00;38;5;3  # office (spreadsheet)
+.odp                    00;38;5;3  # office (presentation)
+.ods                    00;38;5;3  # office (spreadsheet)
+.odt                    00;38;5;3  # office (document)
+.otp                    00;38;5;3  # office
+.ots                    00;38;5;3  # office
+.ott                    00;38;5;3  # office
+.pages                  00;38;5;3
+.pdf                    00;38;5;3
+.PDF                    00;38;5;3
+.pps                    00;38;5;3  # office
+.ppsx                   00;38;5;3  # office
+.ppt                    00;38;5;3  # office (presentation)
+.pptx                   00;38;5;3  # office (presentation)
+.ppts                   00;38;5;3  # office (presentation)
+.pptxm                  00;38;5;3  # office (presentation)
+.pptsm                  00;38;5;3  # office (presentation)
+.ps                     00;38;5;3
+.epsf                   00;38;5;3
+.rtf                    00;38;5;3
+.xla                    00;38;5;3  # office (spreadsheet)
+.xls                    00;38;5;3  # office (spreadsheet)
+.xlsx                   00;38;5;3  # office (spreadsheet)
+.xlsxm                  00;38;5;3  # office (spreadsheet)
+.xltm                   00;38;5;3  # office (spreadsheet)
+.xltx                   00;38;5;3  # office (spreadsheet)
+.xmind                  00;38;5;3  # mindmap
+### disabled
+# .cb7                    00;38;5;3  # ebook (comic)
+# .cba                    00;38;5;3  # ebook (comic)
+# .cbr                    00;38;5;3  # ebook (comic)
+# .cbt                    00;38;5;3  # ebook (comic)
+# .cbz                    00;38;5;3  # ebook (comic)
+# .dvi                    00;38;5;3
+
+
+
+
+#  CODE
+## enabled
+.asa                    00;38;5;2  # html-family
+.ascx                   00;38;5;2  # html-family
+.asp                    00;38;5;2  # html-family
+.aspx                   00;38;5;2  # html-family
+.ahk                    00;38;5;2  # autohotkey
+.awk                    00;38;5;2  # shell (Linux)
+.sed                    00;38;5;2  # shell (Linux)
+.bash                   00;38;5;2  # shell (Linux)
+.bat                    00;38;5;2  # shell (Win)
+.btm                    00;38;5;2  # shell (Win)
+.c                      00;38;5;2  # C-family
+.C                      00;38;5;2  # C-family
+.c++                    00;38;5;2  # C-family
+.cc                     00;38;5;2  # C-family
+.cjs                    00;38;5;2  # js-family
+.cmd                    00;38;5;2  # shell (Win)
+.coffee                 00;38;5;2  # js-family
+.com                    00;38;5;2  # shell (Win)
+.cp                     00;38;5;2  # C-family
+.cpp                    00;38;5;2  # C-family
+.cppm                   00;38;5;2  # C-family
+.cs                     00;38;5;2  # C-family
+.cshtml                 00;38;5;2  # html-family
+.css                    00;38;5;2  # css
+.csx                    00;38;5;2  # C-family
+.ctp                    00;38;5;2  # php
+.cts                    00;38;5;2  # js-family
+.cu                     00;38;5;2  # C-family
+.cuh                    00;38;5;2  # C-family
+.cxx                    00;38;5;2  # C-family
+.dsql                   00;38;5;2  # sql
+.dtml                   00;38;5;2  # html-family
+.ebuild                 00;38;5;2  # shell (Linux)
+.edn                    00;38;5;2  # groovy
+.ejs                    00;38;5;2  # html-family
+.ejs.t                  00;38;5;2  # html-family
+.erb                    00;38;5;2  # ruby
+.es6                    00;38;5;2  # js-family
+.go                     00;38;5;2  # go
+.groovy                 00;38;5;2  # groovy
+.gvy                    00;38;5;2  # groovy
+.h                      00;38;5;2  # C-family
+.h++                    00;38;5;2  # C-family
+.h.in                   00;38;5;2  # C-family
+.handlebars             00;38;5;2  # html-family
+.hbs                    00;38;5;2  # html-family
+.hh                     00;38;5;2  # C-family
+.hpp                    00;38;5;2  # C-family
+.hpp.in                 00;38;5;2  # C-family
+.htm                    00;38;5;2  # html-family
+.html                   00;38;5;2  # html-family
+.hxx                    00;38;5;2  # C-family
+.i                      00;38;5;2  # C-family
+.iced                   00;38;5;2  # js-family
+.ii                     00;38;5;2  # C-family
+.inl                    00;38;5;2  # C-family
+.ino                    00;38;5;2  # C-family
+.ipp                    00;38;5;2  # C-family
+.ipy                    00;38;5;2  # python
+.ixx                    00;38;5;2  # C-family
+.jade                   00;38;5;2  # html-family
+.jav                    00;38;5;2  # java
+.java                   00;38;5;2  # java
+.jl                     00;38;5;2  # Julia
+.jmd                    00;38;5;2  # Julia
+.js                     00;38;5;2  # js-family
+.jsm                    00;38;5;2  # js-family
+.jsp                    00;38;5;2  # html-family
+.jsx                    00;38;5;2  # js-family
+.less                   00;38;5;2  # css
+.lua                    00;38;5;2  # Lua
+.m                      00;38;5;2  # C-family
+.mjs                    00;38;5;2  # js-family
+.mm                     00;38;5;2  # C-family
+.mts                    00;38;5;2  # js-family
+.nqp                    00;38;5;2  # perl
+.p6                     00;38;5;2  # perl
+.pac                    00;38;5;2  # js-family
+.php                    00;38;5;2  # php
+.php4                   00;38;5;2  # php
+.php5                   00;38;5;2  # php
+.phtml                  00;38;5;2  # php
+.pl                     00;38;5;2  # perl
+.PL                     00;38;5;2  # perl
+.pl6                    00;38;5;2  # perl
+.pm                     00;38;5;2  # perl
+.pm6                    00;38;5;2  # perl
+.py                     00;38;5;2  # python
+.pyw                    00;38;5;2  # python
+.r                      00;38;5;2  # R
+.R                      00;38;5;2  # R
+.razor                  00;38;5;2  # html-family
+.rb                     00;38;5;2  # ruby
+.rbi                    00;38;5;2  # ruby
+.rbx                    00;38;5;2  # ruby
+.rhtml                  00;38;5;2  # html-family
+.rjs                    00;38;5;2  # ruby
+.ru                     00;38;5;2  # ruby
+.scss                   00;38;5;2  # css
+.sh                     00;38;5;2  # shell (Linux)
+.vim                    00;38;5;2  # vimscript
+.shtml                  00;38;5;2  # html-family
+.sol                    00;38;5;2  # Solidity
+.sql                    00;38;5;2  # sql
+.msql                   00;38;5;2  # sql
+.mysql                  00;38;5;2  # sql
+.pgsql                  00;38;5;2  # sql
+.psql                   00;38;5;2  # sql
+.swift                  00;38;5;2  # swift
+.t                      00;38;5;2  # perl
+.tpp                    00;38;5;2  # C-family
+.ts                     00;38;5;2  # js-family
+.tsx                    00;38;5;2  # js-family
+.txx                    00;38;5;2  # C-family
+.vue                    00;38;5;2  # html-family
+.vy                     00;38;5;2  # Solidity
+.xht                    00;38;5;2  # html-family
+.xhtml                  00;38;5;2  # html-family
+.yul                    00;38;5;2  # Solidity
+.yulp                   00;38;5;2  # Solidity
+## disabled
+# .applescript            00;38;5;2  # applescript
+# .as                     00;38;5;2  # ActionScript
+# .bas                    00;38;5;2  # basic
+# .cairo                  00;38;5;2  # Cairo
+# .cginc                  00;38;5;2
+# .clj                    00;38;5;2  # closure
+# .cljc                   00;38;5;2  # closure
+# .cljs                   00;38;5;2  # closure
+# .cljx                   00;38;5;2  # closure
+# .compute                00;38;5;2
+# .dart                   00;38;5;2  # Dart
+# .erl                    00;38;5;2  # erlang
+# .escript                00;38;5;2  # erlang
+# .fs                     00;38;5;2  # F#
+# .fsi                    00;38;5;2  # F#
+# .fsscript               00;38;5;2  # F#
+# .fsx                    00;38;5;2  # F#
+# .hlsl                   00;38;5;2  # HLSL
+# .hlsli                  00;38;5;2  # HLSL
+# .hrl                    00;38;5;2  # erlang
+# .hs                     00;38;5;2  # Haskell
+# .hs-boot                00;38;5;2  # Haskell
+# .hsig                   00;38;5;2  # Haskell
+# .ps1                    00;38;5;2  # shell (Powershell)
+# .psd1                   00;38;5;2  # shell (Powershell)
+# .psm1                   00;38;5;2  # shell (Powershell)
+# .psrc                   00;38;5;2  # shell (Powershell)
+# .pssc                   00;38;5;2  # shell (Powershell)
+# .pug                    00;38;5;2  # Pug
+# .pyt                    00;38;5;2  # python (toolbox)
+# .rs                     00;38;5;2  # Rust
+# .sbt                    00;38;5;2  # scala
+# .sc                     00;38;5;2  # scala
+# .scala                  00;38;5;2  # scala
+# .shader                 00;38;5;2
+# .vb                     00;38;5;2  # basic
+# .vba                    00;38;5;2  # basic
+# .vbs                    00;38;5;2  # basic
+
+
+## DATA
+## enabled
+.accdb                  00;38;5;11  # office (db) 
+.accde                  00;38;5;11  # office (db) 
+.accdr                  00;38;5;11  # office (db) 
+.accdt                  00;38;5;11  # office (db) 
+.RData                  00;38;5;11
+.axaml                  00;38;5;11  # xml
+.axml                   00;38;5;11  # xml
+.cson                   00;38;5;11  # json
+.csv                    00;38;5;11  # spreadsheet
+.db                     00;38;5;11
+.drawio                 00;38;5;11  # xml
+.enex                   00;38;5;11  # Evernote
+.geojson                00;38;5;11  # json
+.gyp                    00;38;5;11  # python (gyp)
+.har                    00;38;5;11  # json
+.ipynb                  00;38;5;11  # python (jupyter)
+.json                   00;38;5;11  # json
+.jsonc                  00;38;5;11  # json
+.jsonld                 00;38;5;11  # json
+.localstorage           00;38;5;11
+.mdb                    00;38;5;11
+.msg                    00;38;5;11
+.odb                    00;38;5;11  # office (db) 
+.pickle                 00;38;5;11  # python
+.pkl                    00;38;5;11  # python
+.rdata                  00;38;5;11
+.rhistory               00;38;5;11  # R
+.rss                    00;38;5;11  # xml
+.sqlite                 00;38;5;11
+.torrent                00;38;5;11
+.tsv                    00;38;5;11  # spreadsheet
+.xaml                   00;38;5;11  # xml
+.xml                    00;38;5;11  # xml
+.xsd                    00;38;5;11  # xml
+## disabled
+# .bpmn                   00;38;5;11  # xml
+# .csl                    00;38;5;11  # xml
+# .dita                   00;38;5;11  # xml
+# .ditamap                00;38;5;11  # xml
+# .dtd                    00;38;5;11  # xml
+# .ent                    00;38;5;11  # xml
+# .fmp12                  00;38;5;11
+# .fp7                    00;38;5;11
+# .fxml                   00;38;5;11  # xml
+# .jmx                    00;38;5;11  # xml
+# .jsonl                  00;38;5;11  # json
+# .jsonnet                00;38;5;11  # json
+# .libsonnet              00;38;5;11
+# .mde                    00;38;5;11
+# .mxml                   00;38;5;11  # xml
+# .nc                     00;38;5;11
+# .ndjson                 00;38;5;11
+# .nuspec                 00;38;5;11  # xml
+# .opml                   00;38;5;11  # xml
+# .owl                    00;38;5;11  # xml
+# .pgn                    00;38;5;11
+# .publishsettings        00;38;5;11  # xml
+# .pubxml                 00;38;5;11  # xml
+# .pubxml.user            00;38;5;11  # xml
+# .rnc                    00;38;5;11
+# .rng                    00;38;5;11
+# .sgml                   00;38;5;11
+# .typelib                00;38;5;11
+
+
+#  DOCUMENTATION
+## enabled
+*LICENSE                00;38;5;7  # documentation
+*README                 00;38;5;7  # documentation
+*COPYING                00;38;5;7  # documentation
+*INSTALL                00;38;5;7  # documentation
+*COPYRIGHT              00;38;5;7  # documentation
+*AUTHORS                00;38;5;7  # documentation
+*HISTORY                00;38;5;7  # documentation
+*CONTRIBUTORS           00;38;5;7  # documentation
+*PATENTS                00;38;5;7  # documentation
+*VERSION                00;38;5;7  # documentation
+*NOTICE                 00;38;5;7  # documentation
+*CHANGES                00;38;5;7  # documentation
+.bib                    00;38;5;7  # tex-family
+.cbx                    00;38;5;7  # tex-family
+.cls                    00;38;5;7  # tex-family
+.ctx                    00;38;5;7  # tex-family
+.diff                   00;38;5;7
+.patch                  00;38;5;7
+.info                   00;38;5;7
+.ltx                    00;38;5;7  # tex-family
+.man                    00;38;5;7  # documentation
+.markdn                 00;38;5;7  # markdown
+.markdown               00;38;5;7  # markdown
+.md                     00;38;5;7  # markdown
+.mdown                  00;38;5;7  # markdown
+.mdtext                 00;38;5;7  # markdown
+.mdtxt                  00;38;5;7  # markdown
+.mdwn                   00;38;5;7  # markdown
+.mkd                    00;38;5;7  # markdown
+.pod                    00;38;5;7  # markup
+.rst                    00;38;5;7  # markup
+.sty                    00;38;5;7  # tex-family
+.tex                    00;38;5;7  # tex-family
+.txt                    00;38;5;7
+.ass                    00;38;5;7  # subtitles
+.srt                    00;38;5;7  # subtitles
+.ssa                    00;38;5;7  # subtitles
+.sub                    00;38;5;7  # subtitles
+.sup                    00;38;5;7  # subtitles
+.vtt                    00;38;5;7  # subtitles
+## disabled
+# .adoc                   00;38;5;7  # markup
+# .asciidoc               00;38;5;7  # markup
+# .etx                    00;38;5;7  # markup
+# .org                    00;38;5;7  # markup
+# .nfo                    00;38;5;7  # markup
+# .textfile               00;38;5;7  # markup
+
+
+#  CONFIG, CERTIFICATE
+## enabled
+*-theme                 00;38;5;6  # editor
+*-theme.json            00;38;5;6  # editor
+*config                 00;38;5;6
+*config.js              00;38;5;6  # js-familly
+*config.json            00;38;5;6
+*config.ts              00;38;5;6  # js-familly
+*configuration.json     00;38;5;6
+*cypress.json           00;38;5;6  # js-familly
+*extensions.json        00;38;5;6  # editor
+*fmt.json               00;38;5;6
+*ignore                 00;38;5;6
+*MANIFEST.in            00;38;5;6  # python
+*MANIFEST               00;38;5;6
+*manifest.json          00;38;5;6
+*package.json           00;38;5;6
+*product.json           00;38;5;6
+*rc                     00;38;5;6
+*rc.js                  00;38;5;6
+*rc.json                00;38;5;6
+*requirements.txt       00;38;5;6  # python
+*settings.json          00;38;5;6  # editor
+*spec                   00;38;5;6
+.arm                    00;38;5;6  # certificate
+*authorized_keys        00;38;5;6  # certificate
+*known_hosts            00;38;5;6  # certificate
+.allow                  00;38;5;6
+.deny                   00;38;5;6
+.service                00;38;5;6  # systemd
+*@.service              00;38;5;6  # systemd
+.socket                 00;38;5;6  # systemd
+.swap                   00;38;5;6  # systemd
+.device                 00;38;5;6  # systemd
+.mount                  00;38;5;6  # systemd
+.automount              00;38;5;6  # systemd
+.target                 00;38;5;6  # systemd
+.path                   00;38;5;6  # systemd
+.timer                  00;38;5;6  # systemd
+.snapshot               00;38;5;6  # systemd
+.bash_aliases           00;38;5;6  # shell
+.bash_completions       00;38;5;6  # shell
+.bash_functions         00;38;5;6  # shell
+.bash_login             00;38;5;6  # shell
+.bash_logout            00;38;5;6  # shell
+.bash_profile           00;38;5;6  # shell
+.bash_variables         00;38;5;6  # shell
+.ca-bundle              00;38;5;6  # certificate
+.merged-ca-bundle       00;38;5;6  # certificate
+.user-ca-bundle         00;38;5;6  # certificate
+.cer                    00;38;5;6  # certificate
+.cert                   00;38;5;6  # certificate
+.cff                    00;38;5;6  # yaml
+.cfg                    00;38;5;6
+.code-profile           00;38;5;6  # editor
+.code-snippets          00;38;5;6  # editor
+.code-workspace         00;38;5;6  # editor
+.conf                   00;38;5;6
+.conf.js                00;38;5;6
+.config.js              00;38;5;6
+.crl                    00;38;5;6  # certificate
+.crt                    00;38;5;6  # certificate
+.csr                    00;38;5;6  # certificate
+.der                    00;38;5;6  # certificate
+.directory              00;38;5;6  # OS (KDE)
+.application            00;38;5;6
+.description            00;38;5;6
+.properties             00;38;5;6
+.theme                  00;38;5;6
+.dir_colors   	        00;38;5;6  # OS (unix)
+.editorconfig           00;38;5;6  # editor
+.egg-info               00;38;5;6  # python
+.eyaml                  00;38;5;6  # yaml
+.eyml                   00;38;5;6  # yaml
+.git-blame-ignore       00;38;5;6  # git scm
+.gitattributes          00;38;5;6  # git scm
+.gitconfig              00;38;5;6  # git scm
+.gitignore              00;38;5;6  # git scm
+.gitignore_global       00;38;5;6  # git scm
+.gitmodules             00;38;5;6  # git scm
+.gpg                    00;38;5;6  # encrypted
+.pgp                    00;38;5;6  # encrypted
+.sig                    00;38;5;6  # encrypted
+.signature              00;38;5;6  # encrypted
+.enc                    00;38;5;6  # encrypted
+.asc                    00;38;5;6  # encrypted
+.bfe                    00;38;5;6  # encrypted
+*id_rsa                 00;38;5;6  # encrypted
+*id_dsa                 00;38;5;6  # encrypted
+*id_ecdnsa              00;38;5;6  # encrypted
+*id_ed25519             00;38;5;6  # encrypted
+.ini                    00;38;5;6
+.md5                    00;38;5;6
+.jks                    00;38;5;6  # certificate
+.key                    00;38;5;6  # certificate
+.keystore               00;38;5;6  # certificate
+.list                   00;38;5;6  # mime.list
+.ovpn                   00;38;5;6
+.fish                   00;38;5;6  # shell
+.p12                    00;38;5;6  # certificate
+.p7b                    00;38;5;6  # certificate
+.p7c                    00;38;5;6  # certificate
+.p7s                    00;38;5;6  # certificate
+.pem                    00;38;5;6  # certificate
+.pfx                    00;38;5;6  # certificate
+.profile                00;38;5;6  # shell
+.properties             00;38;5;6  # java
+.pyi                    00;38;5;6  # python
+.rprofile               00;38;5;6  # R
+.rsa                    00;38;5;6  # certificate
+.spc                    00;38;5;6  # certificate
+.sublime-*              00;38;5;6  # editor
+.tmLanguage             00;38;5;6  # editor
+.tmPreferences          00;38;5;6  # editor
+.tmSnippet              00;38;5;6  # editor
+.tmTheme                00;38;5;6  # editor
+.toml                   00;38;5;6
+.tox                    00;38;5;6  # python
+.vim                    00;38;5;6  # editor
+.xprofile               00;38;5;6  # shell
+.xsession               00;38;5;6  # shell
+.Xsession               00;38;5;6  # shell
+.yaml                   00;38;5;6  # yaml
+.yml                    00;38;5;6  # yaml
+.zlogin                 00;38;5;6  # shell
+.zlogout                00;38;5;6  # shell
+.zprofile               00;38;5;6  # shell
+.zsh                    00;38;5;6  # shell
+.zshenv                 00;38;5;6  # shell
+.zlua                   00;38;5;6
+.rstheme                00;38;5;6
+.epf                    00;38;5;6
+.entitlements           00;38;5;6  # Xcode
+.pbxproj                00;38;5;6  # Xcode
+.strings                00;38;5;6  # Xcode
+.storyboard             00;38;5;6  # Xcode
+.xconfig                00;38;5;6  # Xcode
+.xcsettings             00;38;5;6  # Xcode
+.xcuserstate            00;38;5;6  # Xcode
+.xcworkspacedata        00;38;5;6  # Xcode
+## disabled
+# .atom                   00;38;5;6  # editor
+# .csh                    00;38;5;6  # shell
+# .csproj                 00;38;5;6  # editor
+# .csproj.user            00;38;5;6  # editor
+# .fsproj                 00;38;5;6  # editor
+# .iml                    00;38;5;6  # editor
+# .ksh                    00;38;5;6  # shell
+# .plst                   00;38;5;6
+# .proj                   00;38;5;6  # editor
+# .project                00;38;5;6  # editor
+# .props                  00;38;5;6  # editor
+# .shproj                 00;38;5;6  # editor
+# .vbproj                 00;38;5;6  # editor
+# .vbproj.user            00;38;5;6  # editor
+# .vcxproj                00;38;5;6  # editor
+# .vcxproj.filters        00;38;5;6  # editor
+# .webmanifest            00;38;5;6  # pwa
+# .yash_profile           00;38;5;6  # shell
+# .pcf                    00;38;5;6
+# .psf                    00;38;5;6
+
+
+# BUILD
+## enabled
+*Dockerfile             00;38;5;9  # container
+*Makefile               00;38;5;9
+*Makefile.am            00;38;5;9
+*Makefile.in            00;38;5;9
+*Rakefile               00;38;5;9
+.cake                   00;38;5;9
+.containerfile          00;38;5;9  # container
+.docker-compose.yml     00;38;5;9  # container
+.dockerfile             00;38;5;9  # container
+.gradle                 00;38;5;9
+.jenkinsfile            00;38;5;9
+.mak                    00;38;5;9
+.make                   00;38;5;9
+.mk                     00;38;5;9
+.rake                   00;38;5;9  # Ruby
+.pm_to_blib             00;38;5;9  # Perl
+.am                     00;38;5;9  # Automake
+.in                     00;38;5;9  # Automake
+.hin                    00;38;5;9  # Automake
+.scan                   00;38;5;9  # Automake
+.m4                     00;38;5;9  # Automake
+.SKIP                   00;38;5;9  # Automake
+## disabled
+
+
+#  LOG, BACKUP, ...
+## enabled
+*#                      00;38;5;8
+*.log.?                 00;38;5;8
+*_history               00;38;5;8
+*lock.json              00;38;5;8
+*~                      00;38;5;8
+.0                      00;38;5;8
+.1                      00;38;5;8
+.2                      00;38;5;8
+.3                      00;38;5;8
+.4                      00;38;5;8
+.5                      00;38;5;8
+.6                      00;38;5;8
+.7                      00;38;5;8
+.8                      00;38;5;8
+.9                      00;38;5;8
+.aux                    00;38;5;8
+.bak                    00;38;5;8
+.BAK                    00;38;5;8
+.bbl                    00;38;5;8
+.blg                    00;38;5;8
+.cache                  00;38;5;8
+.class                  00;38;5;8
+.coverage               00;38;5;8  # python
+.coverage.*             00;38;5;8  # python
+.dist                   00;38;5;8
+.DIST                   00;38;5;8
+.dll                    00;38;5;8  # unix system lib 
+*lock                   00;38;5;8
+*lockfile               00;38;5;8
+.dump                   00;38;5;8  # dump
+.stackdump              00;38;5;8  # dump
+.zcompdump              00;38;5;8  # dump
+.zwc                    00;38;5;8  # dump
+.aria2                  00;38;5;8  # dump
+.example                00;38;5;8
+.ind                    00;38;5;8
+.idx                    00;38;5;8
+.log                    00;38;5;8
+.map                    00;38;5;8
+.pid                    00;38;5;8
+.state                  00;38;5;8
+.err                    00;38;5;8
+.error                  00;38;5;8
+.stderr                 00;38;5;8
+.o                      00;38;5;8  # unix system lib
+.a                      00;38;5;8  # unix system lib
+.old                    00;38;5;8
+.OLD                    00;38;5;8
+.orig                   00;38;5;8
+.ORIG                   00;38;5;8
+.part                   00;38;5;8
+.pyc                    00;38;5;8
+.pyc                    00;38;5;8  # python
+.pyd                    00;38;5;8  # python
+.pyo                    00;38;5;8  # python
+.reg                    00;38;5;8  # WIN
+.rbc                    00;38;5;8
+.so                     00;38;5;8  # unix system lib
+.swo                    00;38;5;8
+.swp                    00;38;5;8
+.temp                   00;38;5;8
+.tmp                    00;38;5;8
+.sassc                  00;38;5;8
+.pacnew                 00;38;5;8
+.un~                    00;38;5;8
+.viminfo                00;38;5;8
+## disabled
+# .DS_Store               00;38;5;8  # OSX
+# .localized              00;38;5;8  # OSX
+# .CFUserTextEncoding     00;38;5;8  # OSX
+# *CodeResources          00;38;5;8  # OSX
+# *PkgInfoe               00;38;5;8  # OSX
+# .nib                    00;38;5;8  # OSX
+# .car                    00;38;5;8  # OSX
+# .dylib                  00;38;5;8  # OSX
+
+
+# GLOBAL
+## enabled
+LINK                    04;38;5;12 # symboliA link
+ORPHAN                  04;38;5;12 # broken link
+MISSING                 04;38;5;12 # broken file
+FIFO                    00;48;5;8;38;5;1 # pipe
+SOCK                    00;48;5;8;38;5;1 # socket (also used by readline colored-completion-prefix)
+DOOR                    00;48;5;8;38;5;1 # door
+BLK                     00;48;5;8;38;5;7 # block device driver
+CHR                     00;48;5;8;38;5;7 # character device driver
+EXEC                    00;38;5;1  # Unix
+SETUID                  00;38;5;1  # file that is setuid (u+s)
+SETGID                  00;38;5;1  # file that is setgid (g+s)
+CAPABILITY              00;38;5;1  # file with capability
+.desktop                00;38;5;1  # Linux
+.exe                    00;38;5;1  # Win
+.app                    00;38;5;1
+
+
+# Term Section
+TERM gnome
+TERM alacritty
+TERM gnome-256color
+TERM konsole
+TERM konsole-256color
+TERM st
+TERM st-meta
+TERM st-256color
+TERM st-meta-256color
+TERM tmux
+TERM tmux-256color
+TERM xterm
+TERM xterm-256color
+TERM xterm-256color-italic
+TERM xterm-color
+TERM xterm-debian
+TERM xterm-termite
+TERM xterm-kitty
+

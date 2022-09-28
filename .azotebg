@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 pkill swaybg
 
-WP_FILE='/usr/share/wallpapers/garuda-wallpapers/Darkwing Beast.jpg' 
-
-WP_PATH="$HOME/.local/share/wallpapers"
-if [ -d $WP_PATH ]; then
-    WP_FILE="$WP_PATH/$(ls $WP_PATH | shuf -n 1)"
+if [[ -d "$HOME/.local/share/wallpapers" ]]; then
+    WP_PATH="$HOME/.local/share/wallpapers"
+else
+    WP_PATH='/usr/share/wallpapers' 
 fi
 
-swaybg -o eDP-1 -i "$WP_FILE" -m fill &
+if [[ -d $WP_PATH ]]; then
+    WP_FILE="$(find $WP_PATH -type f | shuf -n 1)"
+    swaybg -o eDP-1 -i "$WP_FILE" -m fill &
+fi
+
 

@@ -30,6 +30,13 @@ set nolangremap   " for hotkeys
 set nomodeline   " security
 set shortmess+=sAI  " hide search hit & swapfile warnings, intro message
 set switchbuf=usetab  " if opening buffer, search first in opened windows
+set background=dark
+if &term == "alacritty"        
+  let &term = "xterm-256color"
+endif
+if &t_Co >= 256
+  set termguicolors
+endif
 
 " SYNTAX {{{1 -----------------------------------------------------------------
 syntax enable  " hightlight syntax

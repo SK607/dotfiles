@@ -1,35 +1,32 @@
 #!/usr/bin/env bash
 
-CWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+CWD="$( dirname -- "$( readlink -f -- "$0"; )"; )"
 
-link_dotfile() {
-    local file=$1
-    local dst=$2
-    ! [ -d $dst] && mkdir -p $dst
-    [[ $3 -ne 'f' ]] && dst=$dst/$file
-    ! [ -L $dst ] && ln -s $CWD/$file $dst
-    ls -l $dst
+link_dot() {
+    local src=$1
+    local tgt=$2
+    if ! [[ -d "$(dirname $tgt)" ]]; then
+        mkdir -p "$(dirname $tgt)"
+    elif [[ -d "$tgt" && ! -L "$tgt" ]]; then
+        [[ "$3" = '--backup' ]] && cp -rv "$tgt" "${tgt}~"
+        rm -rv "$tgt"
+    fi
+    ln -sfvn $3 "$CWD/$src" "$tgt"
 }
 
 
-if ! [ -d /etc/bash.d ]; then
-    link_dotfile .bashrc $HOME
-    link_dotfile .dir_colors $HOME
-    link_dotfile .prompt.sh $HOME
-    link_dotfile .fzf.sh $HOME
-fi
+#link_dot .profile $HOME/.profile --backup
+#link_dot .bash_profile $HOME/.bash_profile --backup
+#link_dot .bashrc $HOME/.bashrc --backup
+#link_dot .bash.d $HOME/.bash.d
 
-link_dotfile .gitconfig $HOME
-link_dotfile .ignore $HOME
-link_dotfile .inputrc $HOME
-link_dotfile .fzf.bash $HOME
+#link_dot .gitconfig $HOME/.gitconfig
+#link_dot .ignore $HOME/.ignore
+#link_dot .inputrc $HOME/.inputrc
+#link_dot .azotebg $HOME/.azotebg
 
-link_dotfile .config/kitty/kitty.conf $HOME
-link_dotfile .config/kitty/ssh.conf $HOME
-link_dotfile .config/alacritty $HOME
-link_dotfile .config/neofetch $HOME
-link_dotfile .config/nnn/plugins $HOME
-link_dotfile .config/bat $HOME
-link_dotfile .config/sublime-text-3/Packages/User $HOME
+link_dot .vim $HOME/.vim
 
-/usr/bin/bat cache --build
+#link_dot .config/alacritty $HOME
+#link_dot .config/bat $HOME
+#bat cache --build

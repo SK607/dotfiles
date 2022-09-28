@@ -1,25 +1,6 @@
 # dircolors theme: better visibility & extension support
 #
-# @author  {SK@github}
-
-# Term Section
-TERM gnome
-TERM gnome-256color
-TERM konsole
-TERM konsole-256color
-TERM st
-TERM st-meta
-TERM st-256color
-TERM st-meta-256color
-TERM tmux
-TERM tmux-256color
-TERM xterm
-TERM xterm-256color
-TERM xterm-256color-italic
-TERM xterm-color
-TERM xterm-debian
-TERM xterm-termite
-TERM xterm-kitty
+# @author {SK@607}
 
 
 # REFERENCE
@@ -45,7 +26,7 @@ TERM xterm-kitty
 ## enabled
 RESET                   0 # reset to "normal" color
 NORMAL                  00 # global default
-FILE                    00;38;5;188 # normal file
+FILE                    00 # normal file
 MULTIHARDLINK           00;38;5;188 # regular file with more than one link
 DIR                     00;38;5;222 # directory
 STICKY                  00;38;5;222 # dir with the sticky bit set (+t) and not other-writable
@@ -56,26 +37,36 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 #  ARCHIVE
 ## enabled
 .7z                     00;38;5;180
-.apk                    00;38;5;180
+.a                      00;38;5;180
+.apk                    00;38;5;180  # package
 .bz                     00;38;5;180
 .bz2                    00;38;5;180
-.cab                    00;38;5;180
-.deb                    00;38;5;180
-.dmg                    00;38;5;180
+.cab                    00;38;5;180  # package
+.deb                    00;38;5;180  # package
+.dmg                    00;38;5;180  # package
+.crx                    00;38;5;180  # package
+.xpi                    00;38;5;180  # package
 .egg                    00;38;5;180
 .gz                     00;38;5;180
 .gzip                   00;38;5;180
-.iso                    00;38;5;180
-.jar                    00;38;5;180
+.iso                    00;38;5;180  # partition image
+.toast                  00;38;5;180  # partition image
+.img                    00;38;5;180  # partition image
+.bin                    00;38;5;180  # partition image
+.jar                    00;38;5;180  # package
+.jad                    00;38;5;180  # package
 .msi                    00;38;5;180
-.pak                    00;38;5;180
+.pak                    00;38;5;180  # package
 .pkg                    00;38;5;180
 .rar                    00;38;5;180
-.rpm                    00;38;5;180
+.rpm                    00;38;5;180  # package
 .tar                    00;38;5;180
 .webarchive             00;38;5;180
 .whl                    00;38;5;180
+.s7z                    00;38;5;180
 .z                      00;38;5;180
+.zz                     00;38;5;180
+.xz                     00;38;5;180
 .Z                      00;38;5;180
 .zip                    00;38;5;180
 .ZIP                    00;38;5;180
@@ -83,6 +74,21 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .zlib                   00;38;5;180
 ## disabled
 # .ace                    00;38;5;180
+# .nrg                    00;38;5;180  # partition image
+# .qcow                   00;38;5;180  # partition image
+# .fvd                    00;38;5;180  # partition image
+# .sparseimage            00;38;5;180  # partition image
+# .vcd                    00;38;5;180  # partition image
+# .vdi                    00;38;5;180  # partition image
+# .vhd                    00;38;5;180  # partition image
+# .vhdx                   00;38;5;180  # partition image
+# .vfd                    00;38;5;180  # partition image
+# .vmdk                   00;38;5;180  # partition image
+# .ipa                    00;38;5;180  # package
+# .pk3                    00;38;5;180  # package
+# .bsp                    00;38;5;180  # package
+# .vpk                    00;38;5;180  # package
+# .vdf                    00;38;5;180  # package
 # .alz                    00;38;5;180
 # .arc                    00;38;5;180
 # .arj                    00;38;5;180
@@ -98,10 +104,10 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 # .lzh                    00;38;5;180
 # .lzma                   00;38;5;180
 # .lzo                    00;38;5;180
-# .lzo                    00;38;5;180
 # .rz                     00;38;5;180
 # .sar                    00;38;5;180
 # .swm                    00;38;5;180
+# .sz                     00;38;5;180
 # .t7z                    00;38;5;180
 # .taz                    00;38;5;180
 # .tbz                    00;38;5;180
@@ -113,17 +119,20 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 # .tz                     00;38;5;180
 # .tzo                    00;38;5;180
 # .tzst                   00;38;5;180
-# .war                    00;38;5;180
+# .war                    00;38;5;180  # package
+# .warc                   00;38;5;180
 # .wim                    00;38;5;180
-# .xz                     00;38;5;180
 # .zoo                    00;38;5;180
+# .zpad                   00;38;5;180
 # .zst                    00;38;5;180
+# .zstd                   00;38;5;180
 
 
 #  AUDIO
 ## enabled
 .aa                     00;38;5;194
 .aac                    00;38;5;194
+.amr                    00;38;5;194
 .aax                    00;38;5;194
 .aiff                   00;38;5;194
 .alac                   00;38;5;194
@@ -133,13 +142,26 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .ogg                    00;38;5;194
 .wav                    00;38;5;194
 .wma                    00;38;5;194
+.mid                    00;38;5;194
+.midi                    00;38;5;194
 ## disabled
 # .au                     00;38;5;194
+# .3ga                    00;38;5;194
+# .S3M                    00;38;5;194
 # .axa                    00;38;5;194
 # .dsd                    00;38;5;194
 # .mid                    00;38;5;194
 # .midi                   00;38;5;194
 # .mka                    00;38;5;194
+# .caf                    00;38;5;194
+# .dat                    00;38;5;194
+# .dts                    00;38;5;194
+# .fcm                    00;38;5;194
+# .mp4a                   00;38;5;194
+# .s3m                    00;38;5;194
+# .ape                    00;38;5;194
+# .cda                    00;38;5;194
+# .alac                   00;38;5;194
 # .mpa                    00;38;5;194
 # .mpc                    00;38;5;194
 # .oga                    00;38;5;194
@@ -149,6 +171,8 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 # .spx                    00;38;5;194
 # .tta                    00;38;5;194
 # .xspf                   00;38;5;194
+# .wv                     00;38;5;194
+# .wvc                    00;38;5;194
 
 
 #  VIDEO
@@ -170,13 +194,20 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .mpg                    00;38;5;114
 .mpv                    00;38;5;114
 .ogg                    00;38;5;114
+.ogm                    00;38;5;114
 .qt                     00;38;5;114
 .swf                    00;38;5;114
 .vsh                    00;38;5;114  # editor
 .webm                   00;38;5;114
 .wmv                    00;38;5;114
+.sample                 00;38;5;114
+.vob                    00;38;5;114
+.VOB                    00;38;5;114
 ## disabled
 # .3gp                    00;38;5;114
+# .3g2                    00;38;5;114
+# .gp4                    00;38;5;114
+# .gp3                    00;38;5;114
 # .asf                    00;38;5;114
 # .axv                    00;38;5;114
 # .divx                   00;38;5;114
@@ -185,14 +216,13 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 # .m2ts                   00;38;5;114
 # .mp4v                   00;38;5;114
 # .nuv                    00;38;5;114
-# .ogm                    00;38;5;114
 # .ogv                    00;38;5;114
 # .ogx                    00;38;5;114
 # .qt                     00;38;5;114
 # .rm                     00;38;5;114
 # .rmvb                   00;38;5;114
-# .vob                    00;38;5;114
 # .yuv                    00;38;5;114
+# .IFO                    00;38;5;114
 
 
 #  IMAGE
@@ -207,6 +237,7 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .gif                    00;38;5;108
 .gl                     00;38;5;108  # editor
 .ico                    00;38;5;108
+.icns                   00;38;5;108
 .indd                   00;38;5;108  # editor
 .jpeg                   00;38;5;108
 .jpg                    00;38;5;108
@@ -217,26 +248,34 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .PNG                    00;38;5;108
 .ppm                    00;38;5;108  # editor
 .psd                    00;38;5;108  # editor
+.pxd                    00;38;5;108  # editor
+.pxm                    00;38;5;108  # editor
 .svg                    00;38;5;108
 .tif                    00;38;5;108
 .tiff                   00;38;5;108
+.TIFF                   00;38;5;108
+.bmp                    00;38;5;108
 .webp                   00;38;5;108
 .xcf                    00;38;5;108  # editor
 ## disabled
 # .cgm                    00;38;5;108
 # .CR2                    00;38;5;108
-# .ear                    00;38;5;108
 # .emf                    00;38;5;108
 # .esd                    00;38;5;108
 # .heic                   00;38;5;108
 # .heif                   00;38;5;108
 # .mng                    00;38;5;108
 # .pbm                    00;38;5;108
+# .dicom                  00;38;5;108
 # .pcx                    00;38;5;108
+# .jxl                    00;38;5;108
+# .nth                    00;38;5;108
 # .pgm                    00;38;5;108
+# .flif                   00;38;5;108
 # .svgz                   00;38;5;108
 # .tga                    00;38;5;108
 # .xbm                    00;38;5;108
+# .drw                    00;38;5;108
 # .xpm                    00;38;5;108
 # .xwd                    00;38;5;108
 
@@ -248,9 +287,14 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .fon                    00;38;5;108
 .otf                    00;38;5;108
 .ttf                    00;38;5;108
+.flf                    00;38;5;108
 .woff                   00;38;5;108
 .woff2                  00;38;5;108
 ## disabled
+# .afm                    00;38;5;108
+# .pfb                    00;38;5;108
+# .pfm                    00;38;5;108
+# .pfa                    00;38;5;108
 
 
 #  DOCUMENT
@@ -258,10 +302,11 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .azw                    00;38;5;181  # ebook
 .azw3                   00;38;5;181  # ebook
 .djvu                   00;38;5;181  # ebook
-.doc                    00;38;5;181  # office
-.docx                   00;38;5;181  # office
-.dot                    00;38;5;181  # office
-.dotx                   00;38;5;181  # office
+.doc                    00;38;5;181  # office (document)
+.docx                   00;38;5;181  # office (document)
+.docm                   00;38;5;181  # office (document)
+.dot                    00;38;5;181  # office (document)
+.dotx                   00;38;5;181  # office (document)
 .eps                    00;38;5;181  # ebook
 .epub                   00;38;5;181  # ebook
 .fb2                    00;38;5;181  # ebook
@@ -271,21 +316,32 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .kfx                    00;38;5;181  # ebook
 .mmap                   00;38;5;181  # mindmap
 .mobi                   00;38;5;181  # ebook
-.odp                    00;38;5;181  # office
-.ods                    00;38;5;181  # office
-.odt                    00;38;5;181  # office
+.numbers                00;38;5;181  # office (spreadsheet)
+.odp                    00;38;5;181  # office (presentation)
+.ods                    00;38;5;181  # office (spreadsheet)
+.odt                    00;38;5;181  # office (document)
 .otp                    00;38;5;181  # office
 .ots                    00;38;5;181  # office
 .ott                    00;38;5;181  # office
+.pages                  00;38;5;181
 .pdf                    00;38;5;181
+.PDF                    00;38;5;181
 .pps                    00;38;5;181  # office
 .ppsx                   00;38;5;181  # office
-.ppt                    00;38;5;181  # office
-.pptx                   00;38;5;181  # office
+.ppt                    00;38;5;181  # office (presentation)
+.pptx                   00;38;5;181  # office (presentation)
+.ppts                   00;38;5;181  # office (presentation)
+.pptxm                  00;38;5;181  # office (presentation)
+.pptsm                  00;38;5;181  # office (presentation)
 .ps                     00;38;5;181
+.epsf                   00;38;5;181
 .rtf                    00;38;5;181
-.xls                    00;38;5;181  # office
-.xlsx                   00;38;5;181  # office
+.xla                    00;38;5;181  # office (spreadsheet)
+.xls                    00;38;5;181  # office (spreadsheet)
+.xlsx                   00;38;5;181  # office (spreadsheet)
+.xlsxm                  00;38;5;181  # office (spreadsheet)
+.xltm                   00;38;5;181  # office (spreadsheet)
+.xltx                   00;38;5;181  # office (spreadsheet)
 .xmind                  00;38;5;181  # mindmap
 ### disabled
 # .cb7                    00;38;5;181  # ebook (comic)
@@ -304,6 +360,9 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .ascx                   00;38;5;229  # html-family
 .asp                    00;38;5;229  # html-family
 .aspx                   00;38;5;229  # html-family
+.ahk                    00;38;5;229  # autohotkey
+.awk                    00;38;5;229  # shell (Linux)
+.sed                    00;38;5;229  # shell (Linux)
 .bash                   00;38;5;229  # shell (Linux)
 .bat                    00;38;5;229  # shell (Win)
 .btm                    00;38;5;229  # shell (Win)
@@ -387,6 +446,7 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .py                     00;38;5;229  # python
 .pyw                    00;38;5;229  # python
 .r                      00;38;5;229  # R
+.R                      00;38;5;229  # R
 .razor                  00;38;5;229  # html-family
 .rb                     00;38;5;229  # ruby
 .rbi                    00;38;5;229  # ruby
@@ -396,9 +456,14 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .ru                     00;38;5;229  # ruby
 .scss                   00;38;5;229  # css
 .sh                     00;38;5;229  # shell (Linux)
+.vim                    00;38;5;229  # vimscript
 .shtml                  00;38;5;229  # html-family
 .sol                    00;38;5;229  # Solidity
 .sql                    00;38;5;229  # sql
+.msql                   00;38;5;229  # sql
+.mysql                  00;38;5;229  # sql
+.pgsql                  00;38;5;229  # sql
+.psql                   00;38;5;229  # sql
 .swift                  00;38;5;229  # swift
 .t                      00;38;5;229  # perl
 .tpp                    00;38;5;229  # C-family
@@ -454,10 +519,16 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 
 ## DATA
 ## enabled
+.accdb                  00;38;5;216  # office (db) 
+.accde                  00;38;5;216  # office (db) 
+.accdr                  00;38;5;216  # office (db) 
+.accdt                  00;38;5;216  # office (db) 
+.RData                  00;38;5;216
 .axaml                  00;38;5;216  # xml
 .axml                   00;38;5;216  # xml
 .cson                   00;38;5;216  # json
-.csv                    00;38;5;216
+.csv                    00;38;5;216  # spreadsheet
+.db                     00;38;5;216
 .drawio                 00;38;5;216  # xml
 .enex                   00;38;5;216  # Evernote
 .geojson                00;38;5;216  # json
@@ -467,12 +538,18 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .json                   00;38;5;216  # json
 .jsonc                  00;38;5;216  # json
 .jsonld                 00;38;5;216  # json
+.localstorage           00;38;5;216
+.mdb                    00;38;5;216
+.msg                    00;38;5;216
+.odb                    00;38;5;216  # office (db) 
 .pickle                 00;38;5;216  # python
 .pkl                    00;38;5;216  # python
+.rdata                  00;38;5;216
 .rhistory               00;38;5;216  # R
 .rss                    00;38;5;216  # xml
 .sqlite                 00;38;5;216
 .torrent                00;38;5;216
+.tsv                    00;38;5;216  # spreadsheet
 .xaml                   00;38;5;216  # xml
 .xml                    00;38;5;216  # xml
 .xsd                    00;38;5;216  # xml
@@ -483,29 +560,53 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 # .ditamap                00;38;5;216  # xml
 # .dtd                    00;38;5;216  # xml
 # .ent                    00;38;5;216  # xml
+# .fmp12                  00;38;5;216
+# .fp7                    00;38;5;216
 # .fxml                   00;38;5;216  # xml
 # .jmx                    00;38;5;216  # xml
+# .jsonl                  00;38;5;216  # json
+# .jsonnet                00;38;5;216  # json
+# .libsonnet              00;38;5;216
+# .mde                    00;38;5;216
 # .mxml                   00;38;5;216  # xml
+# .nc                     00;38;5;216
+# .ndjson                 00;38;5;216
 # .nuspec                 00;38;5;216  # xml
 # .opml                   00;38;5;216  # xml
 # .owl                    00;38;5;216  # xml
+# .pgn                    00;38;5;216
 # .publishsettings        00;38;5;216  # xml
 # .pubxml                 00;38;5;216  # xml
 # .pubxml.user            00;38;5;216  # xml
+# .rnc                    00;38;5;216
+# .rng                    00;38;5;216
+# .sgml                   00;38;5;216
+# .typelib                00;38;5;216
 
 
 #  DOCUMENTATION
 ## enabled
-*LICENSE                00;38;5;255
-*README                 00;38;5;255
-.bbx                    00;38;5;255  # tex-family
+*LICENSE                00;38;5;255  # documentation
+*README                 00;38;5;255  # documentation
+*COPYING                00;38;5;255  # documentation
+*INSTALL                00;38;5;255  # documentation
+*COPYRIGHT              00;38;5;255  # documentation
+*AUTHORS                00;38;5;255  # documentation
+*HISTORY                00;38;5;255  # documentation
+*CONTRIBUTORS           00;38;5;255  # documentation
+*PATENTS                00;38;5;255  # documentation
+*VERSION                00;38;5;255  # documentation
+*NOTICE                 00;38;5;255  # documentation
+*CHANGES                00;38;5;255  # documentation
 .bib                    00;38;5;255  # tex-family
 .cbx                    00;38;5;255  # tex-family
 .cls                    00;38;5;255  # tex-family
 .ctx                    00;38;5;255  # tex-family
 .diff                   00;38;5;255
+.patch                  00;38;5;255
+.info                   00;38;5;255
 .ltx                    00;38;5;255  # tex-family
-.man                    00;38;5;255
+.man                    00;38;5;255  # documentation
 .markdn                 00;38;5;255  # markdown
 .markdown               00;38;5;255  # markdown
 .md                     00;38;5;255  # markdown
@@ -514,13 +615,24 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .mdtxt                  00;38;5;255  # markdown
 .mdwn                   00;38;5;255  # markdown
 .mkd                    00;38;5;255  # markdown
-.patch                  00;38;5;255
-.pod                    00;38;5;255
-.rst                    00;38;5;255
+.pod                    00;38;5;255  # markup
+.rst                    00;38;5;255  # markup
 .sty                    00;38;5;255  # tex-family
 .tex                    00;38;5;255  # tex-family
 .txt                    00;38;5;255
+.ass                    00;38;5;255  # subtitles
+.srt                    00;38;5;255  # subtitles
+.ssa                    00;38;5;255  # subtitles
+.sub                    00;38;5;255  # subtitles
+.sup                    00;38;5;255  # subtitles
+.vtt                    00;38;5;255  # subtitles
 ## disabled
+# .adoc                   00;38;5;255  # markup
+# .asciidoc               00;38;5;255  # markup
+# .etx                    00;38;5;255  # markup
+# .org                    00;38;5;255  # markup
+# .nfo                    00;38;5;255  # markup
+# .textfile                    00;38;5;255  # markup
 
 
 #  CONFIG, CERTIFICATE
@@ -537,6 +649,7 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 *fmt.json               00;38;5;109
 *ignore                 00;38;5;109
 *MANIFEST.in            00;38;5;109  # python
+*MANIFEST               00;38;5;109
 *manifest.json          00;38;5;109
 *package.json           00;38;5;109
 *product.json           00;38;5;109
@@ -547,6 +660,21 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 *settings.json          00;38;5;109  # editor
 *spec                   00;38;5;109
 .arm                    00;38;5;109  # certificate
+*authorized_keys        00;38;5;109  # certificate
+*known_hosts            00;38;5;109  # certificate
+.allow                  00;38;5;109
+.deny                   00;38;5;109
+.service                00;38;5;109  # systemd
+*@.service              00;38;5;109  # systemd
+.socket                 00;38;5;109  # systemd
+.swap                   00;38;5;109  # systemd
+.device                 00;38;5;109  # systemd
+.mount                  00;38;5;109  # systemd
+.automount              00;38;5;109  # systemd
+.target                 00;38;5;109  # systemd
+.path                   00;38;5;109  # systemd
+.timer                  00;38;5;109  # systemd
+.snapshot               00;38;5;109  # systemd
 .bash_aliases           00;38;5;109  # shell
 .bash_completions       00;38;5;109  # shell
 .bash_functions         00;38;5;109  # shell
@@ -555,6 +683,8 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .bash_profile           00;38;5;109  # shell
 .bash_variables         00;38;5;109  # shell
 .ca-bundle              00;38;5;109  # certificate
+.merged-ca-bundle       00;38;5;109  # certificate
+.user-ca-bundle         00;38;5;109  # certificate
 .cer                    00;38;5;109  # certificate
 .cert                   00;38;5;109  # certificate
 .cff                    00;38;5;109  # yaml
@@ -570,6 +700,10 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .csr                    00;38;5;109  # certificate
 .der                    00;38;5;109  # certificate
 .directory              00;38;5;109  # OS (KDE)
+.application            00;38;5;109
+.description            00;38;5;109
+.properties             00;38;5;109
+.theme                  00;38;5;109
 .dir_colors   	        00;38;5;109  # OS (unix)
 .editorconfig           00;38;5;109  # editor
 .egg-info               00;38;5;109  # python
@@ -581,12 +715,25 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .gitignore              00;38;5;109  # git scm
 .gitignore_global       00;38;5;109  # git scm
 .gitmodules             00;38;5;109  # git scm
+.gpg                    00;38;5;109  # encrypted
+.pgp                    00;38;5;109  # encrypted
+.sig                    00;38;5;109  # encrypted
+.signature              00;38;5;109  # encrypted
+.enc                    00;38;5;109  # encrypted
+.asc                    00;38;5;109  # encrypted
+.bfe                    00;38;5;109  # encrypted
+*id_rsa                 00;38;5;109  # encrypted
+*id_dsa                 00;38;5;109  # encrypted
+*id_ecdnsa              00;38;5;109  # encrypted
+*id_ed25519             00;38;5;109  # encrypted
 .ini                    00;38;5;109
+.md5                    00;38;5;109
 .jks                    00;38;5;109  # certificate
 .key                    00;38;5;109  # certificate
 .keystore               00;38;5;109  # certificate
 .list                   00;38;5;109  # mime.list
 .ovpn                   00;38;5;109
+.fish                   00;38;5;109  # shell
 .p12                    00;38;5;109  # certificate
 .p7b                    00;38;5;109  # certificate
 .p7c                    00;38;5;109  # certificate
@@ -612,15 +759,31 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .Xsession               00;38;5;109  # shell
 .yaml                   00;38;5;109  # yaml
 .yml                    00;38;5;109  # yaml
+.zlogin                 00;38;5;109  # shell
+.zlogout                00;38;5;109  # shell
+.zprofile               00;38;5;109  # shell
+.zsh                    00;38;5;109  # shell
+.zshenv                 00;38;5;109  # shell
+.zlua                   00;38;5;109
+.rstheme                00;38;5;109
+.epf                    00;38;5;109
+.entitlements           00;38;5;109  # Xcode
+.pbxproj                00;38;5;109  # Xcode
+.strings                00;38;5;109  # Xcode
+.storyboard             00;38;5;109  # Xcode
+.xconfig                00;38;5;109  # Xcode
+.xcsettings             00;38;5;109  # Xcode
+.xcuserstate            00;38;5;109  # Xcode
+.xcworkspacedata        00;38;5;109  # Xcode
 ## disabled
 # .atom                   00;38;5;109  # editor
 # .csh                    00;38;5;109  # shell
 # .csproj                 00;38;5;109  # editor
 # .csproj.user            00;38;5;109  # editor
-# .fish                   00;38;5;109  # shell
 # .fsproj                 00;38;5;109  # editor
 # .iml                    00;38;5;109  # editor
 # .ksh                    00;38;5;109  # shell
+# .plst                   00;38;5;109
 # .proj                   00;38;5;109  # editor
 # .project                00;38;5;109  # editor
 # .props                  00;38;5;109  # editor
@@ -631,16 +794,13 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 # .vcxproj.filters        00;38;5;109  # editor
 # .webmanifest            00;38;5;109  # pwa
 # .yash_profile           00;38;5;109  # shell
-# .zlogin                 00;38;5;109  # shell
-# .zlogout                00;38;5;109  # shell
-# .zprofile               00;38;5;109  # shell
-# .zsh                    00;38;5;109  # shell
-# .zshenv                 00;38;5;109  # shell
+# .pcf                    00;38;5;109
+# .psf                    00;38;5;109
 
 
 # BUILD
 ## enabled
-*Dockerfile             00;38;5;211 # container
+*Dockerfile             00;38;5;211  # container
 *Makefile               00;38;5;211
 *Makefile.am            00;38;5;211
 *Makefile.in            00;38;5;211
@@ -654,7 +814,14 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .mak                    00;38;5;211
 .make                   00;38;5;211
 .mk                     00;38;5;211
-.rake                   00;38;5;211
+.rake                   00;38;5;211  # Ruby
+.pm_to_blib             00;38;5;211  # Perl
+.am                     00;38;5;211  # Automake
+.in                     00;38;5;211  # Automake
+.hin                    00;38;5;211  # Automake
+.scan                   00;38;5;211  # Automake
+.m4                     00;38;5;211  # Automake
+.SKIP                   00;38;5;211  # Automake
 ## disabled
 
 
@@ -686,14 +853,24 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .coverage.*             00;38;5;59  # python
 .dist                   00;38;5;59
 .DIST                   00;38;5;59
-.DS_Store               00;38;5;59  # OSX
 .dll                    00;38;5;59  # unix system lib 
-.lock                   00;38;5;59
+*lock                   00;38;5;59
+*lockfile               00;38;5;59
+.dump                   00;38;5;59  # dump
+.stackdump              00;38;5;59  # dump
+.zcompdump              00;38;5;59  # dump
+.zwc                    00;38;5;59  # dump
+.aria2                  00;38;5;59  # dump
 .example                00;38;5;59
 .ind                    00;38;5;59
 .idx                    00;38;5;59
 .log                    00;38;5;59
 .map                    00;38;5;59
+.pid                    00;38;5;59
+.state                  00;38;5;59
+.err                    00;38;5;59
+.error                  00;38;5;59
+.stderr                 00;38;5;59
 .o                      00;38;5;59  # unix system lib
 .a                      00;38;5;59  # unix system lib
 .old                    00;38;5;59
@@ -707,14 +884,24 @@ STICKY_OTHER_WRITABLE   03;38;5;222 # dir that is sticky and other-writable (+t,
 .pyo                    00;38;5;59  # python
 .reg                    00;38;5;59  # WIN
 .rbc                    00;38;5;59
-.sample                 00;38;5;59
 .so                     00;38;5;59  # unix system lib
 .swo                    00;38;5;59
 .swp                    00;38;5;59
 .temp                   00;38;5;59
 .tmp                    00;38;5;59
+.sassc                  00;38;5;59
+.pacnew                 00;38;5;59
+.un~                    00;38;5;59
 .viminfo                00;38;5;59
 ## disabled
+# .DS_Store               00;38;5;59  # OSX
+# .localized              00;38;5;59  # OSX
+# .CFUserTextEncoding     00;38;5;59  # OSX
+# *CodeResources          00;38;5;59  # OSX
+# *PkgInfoe               00;38;5;59  # OSX
+# .nib                    00;38;5;59  # OSX
+# .car                    00;38;5;59  # OSX
+# .dylib                  00;38;5;59  # OSX
 
 
 # GLOBAL
@@ -734,4 +921,25 @@ CAPABILITY              00;38;5;210  # file with capability
 .desktop                00;38;5;210  # Linux
 .exe                    00;38;5;210  # Win
 .app                    00;38;5;210
+
+
+# Term Section
+TERM gnome
+TERM alacritty
+TERM gnome-256color
+TERM konsole
+TERM konsole-256color
+TERM st
+TERM st-meta
+TERM st-256color
+TERM st-meta-256color
+TERM tmux
+TERM tmux-256color
+TERM xterm
+TERM xterm-256color
+TERM xterm-256color-italic
+TERM xterm-color
+TERM xterm-debian
+TERM xterm-termite
+TERM xterm-kitty
 

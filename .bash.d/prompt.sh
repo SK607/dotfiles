@@ -1,4 +1,4 @@
-if [ -n "$NERD_ENABLED" ]; then
+if [ -n "$PROMPT_NERD_ENABLED" ]; then
     ICON_SSH=' '
     ICON_CHUSER=' '
     ICON_GIT=' '
@@ -6,14 +6,13 @@ if [ -n "$NERD_ENABLED" ]; then
     ICON_PY=' '
 fi
 
-black="\[\e[2;37m\]"
-red="\[\e[0;31m\]"
-green="\[\e[0;32m\]"
-yellow="\[\e[0;33m\]"
-blue="\[\e[0;34m\]"
-magenta="\[\e[0;35m\]"
-teal="\[\e[0;36m\]"
-base=$black
+red="\[\e[00;38;5;1m\]"
+green="\[\e[0;38;5;2m\]"
+yellow="\[\e[0;38;5;3m\]"
+blue="\[\e[0;38;5;4m\]"
+magenta="\[\e[0;38;5;5m\]"
+teal="\[\e[0;38;5;6m\]"
+black="\[\e[00;38;5;8m\]"
 reset="\[\e[m\]"
 
 __prompt_icons (){
@@ -41,14 +40,14 @@ __prompt_pyenv (){
 # git rev-parse --git-dir --is-inside-git-dit --is-bar-repository --is-inside-work-tree --short HEAD
 # git describe --contains --all head
 
-PS1="$base┌───"' $(__prompt_icons)'
+PS1="$black┌───"' $(__prompt_icons)'
 PS1+="$black\u"
-PS1+=" $yellow$ICON_WD\W"
+PS1+=" $blue$ICON_WD\W"
 PS1+="$green"'$(__git_ps1 " $ICON_GIT%s")'  # TODO: simplify git 
-PS1+="$blue"'$(__prompt_pyenv)'
-PS1+="\n$base└─> $reset"
+PS1+="$magenta"'$(__prompt_pyenv)'
+PS1+="\n$black└─> $reset"
 
-unset black red green yellow blue magenta teal base reset
+unset red green yellow blue magenta teal black reset
 
 export PS1
 export -f __prompt_pyenv __prompt_icons

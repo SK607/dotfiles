@@ -1,7 +1,3 @@
-set background=dark
-if &t_Co >= 256
-  set termguicolors
-endif
 colors gruvbox
 
 hi QuickScopePrimary gui=underline
