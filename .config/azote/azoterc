@@ -6,6 +6,6 @@
   "color_icon_h": "50",
   "clip_prev_size": "30",
   "palette_quality": "10",
-  "tracking_interval_seconds": "5",
-  "screen_measurement_delay": "300"
+  "tracking_interval_seconds": "100000",
+  "screen_measurement_delay": "100"
 }
