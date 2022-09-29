@@ -29,8 +29,8 @@ ssh_only = false
 [git_status]
 format = '[$ahead_behind]($style)'
 style = 'bold green'
-ahead = '\[⇡\]'
-behind = '\[⇣\]'
+ahead = '⇡ '
+behind = '⇣ '
 ignore_submodules = true
 
 [git_branch]
