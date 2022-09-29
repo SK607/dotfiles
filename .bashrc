@@ -22,8 +22,6 @@ export HISTFILESIZE=
 export HISTCONTROL=ignoreboth
 # exclude commands from history
 export HISTIGNORE='[ \t]*:exit:pwd'
-# for vim themes
-# export TERM="xterm-256color"
 # ls date style
 export TIME_STYLE=long-iso
 # user-defined variables
@@ -47,8 +45,11 @@ shopt -s cdspell  # auto-correct minor dirname errors
 # z.lua configuration
 [[ -d $HOME/.local/opt/z.lua ]] && eval "$(lua $HOME/.local/opt/z.lua/z.lua --init bash enhanced once)"
 # prompt
-[[ -f $HOME/.bash.d/prompt.sh ]] && source $HOME/.bash.d/prompt.sh
-
+if [[ -x "$(command -v starship)" ]]; then
+    eval "$(starship init bash)"
+else
+    [[ -f $HOME/.bash.d/prompt.sh ]] && source $HOME/.bash.d/prompt.sh
+fi
 
 ### ADD COMPLETIONS
 if ! shopt -oq posix; then
