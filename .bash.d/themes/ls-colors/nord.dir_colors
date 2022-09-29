@@ -200,7 +200,6 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .vsh                    00;38;5;13  # editor
 .webm                   00;38;5;13
 .wmv                    00;38;5;13
-.sample                 00;38;5;13
 .vob                    00;38;5;13
 .VOB                    00;38;5;13
 ## disabled
@@ -654,6 +653,9 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 *package.json           00;38;5;6
 *product.json           00;38;5;6
 *rc                     00;38;5;6
+*gtkrc-2.0              00;38;5;6  # Linux
+.dirs                   00;38;5;6  # Linux
+.locale                 00;38;5;6  # Linux
 *rc.js                  00;38;5;6
 *rc.json                00;38;5;6
 *requirements.txt       00;38;5;6  # python
@@ -865,6 +867,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .ind                    00;38;5;8
 .idx                    00;38;5;8
 .log                    00;38;5;8
+.pack                   00;38;5;8
 .map                    00;38;5;8
 .pid                    00;38;5;8
 .state                  00;38;5;8
