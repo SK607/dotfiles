@@ -24,6 +24,27 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT '1'
 if test -x "$(command -v bat)"
   set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 end
+# configure fzf
+if test -x "$(command -v fzf)"
+  set -x FZF_DEFAULT_OPTS "$FZF_THEME --bind up:preview-up,down:preview-down"
+end
+if test -f ~/.config/fish/fish_plugins
+  if grep 'fzf' ~/.config/fish/fish_plugins 1> /dev/null
+    set fzf_preview_dir_cmd exa --group-directories-first --icons --all --oneline --color=always
+    set fzf_preview_file_cmd bat -p --color=always
+    set fzf_fd_opts --hidden
+  end
+end
+# configure nnn
+if test -x "$(command -v nnn)"
+  set -x NNN_OPTS 'cEHrx'
+  set -x NNN_BMS "c:$HOME/code-projects;d:$HOME/Downloads;p:$HOME/Pictures"
+  set -x NNN_ORDER "t:$HOME/Downloads;t:$HOME/Pictures"
+  set -x NNN_PLUG 'p:preview-tui;g:git-diff;i:swayimg'
+  set -x NNN_ARCHIVE '\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$'
+  set -x NNN_FIFO '/tmp/nnn.fifo'
+  set -x SPLIT 'v'
+end
 # user-defined variables
 set -x DOTFILES_PATH "$HOME/code-projects/devops/dotfiles"
 
