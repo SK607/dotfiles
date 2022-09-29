@@ -1,5 +1,5 @@
 format="""
-[┌──](bold black)\
+[┌──](bold dimmed white)\
 $username\
 $hostname\
 $git_status\
@@ -8,19 +8,19 @@ $directory\
 $python\
 $cmd_duration\
 $line_break\
-[└─> ](bold black)
+[└─> ](bold dimmed white)
 """
 add_newline = true
 
 [username]
 format = ' [$user]($style)'
-style_root = 'bold black'
-style_user = 'bold black'
+style_root = 'dimmed white'
+style_user = 'dimmed white'
 show_always = true
 
 [hostname]
 format = '[@$hostname$ssh_symbol]($style) '
-style = 'bold black'
+style = 'dimmed white'
 ssh_symbol = ' '
 trim_at = '-'
 disabled = false
