@@ -1,3 +1,21 @@
+## GREETING
+function fish_greeting
+  set -l LC_TIME 'en_US.UTF-8'
+  set -l blue '\e[0;34m'
+  set -l reset '\e[m'
+  printf "$blue"
+  printf '\n ███████╗██╗  ██╗'
+  printf '\n ██╔════╝██║ ██╔╝'
+  printf '  Sergey Konkin'
+  printf '\n ███████╗█████╔╝ '
+  printf '  https://github.com/SK607'
+  printf '\n ╚════██║██╔═██╗ ' 
+  printf "  $(date +'%A %d-%m-%Y %H:%M:%S')"  
+  printf '\n ███████║██║  ██╗'
+  printf '\n ╚══════╝╚═╝  ╚═╝'
+  printf "$reset\n"
+end
+
 ## CONFIGURE ENV VARIABLES
 # extend PATH
 if test -d ~/.local/bin
@@ -14,8 +32,6 @@ end
 if type "qtile" >> /dev/null 2>&1
    set -x QT_QPA_PLATFORMTHEME "qt5ct"
 end
-# hide welcome message
-set fish_greeting
 # ls date style
 set -x TIME_STYLE 'long-iso'
 # remove python shell prompt
