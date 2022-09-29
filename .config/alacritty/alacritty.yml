@@ -1,18 +1,15 @@
 # https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 # https://github.com/arcticicestudio/nord-alacritty
+
 import:
   - ~/.config/alacritty/theme-nord.yml
   - ~/.config/alacritty/fonts.yml
-env:
-  TERM: xterm-256color
 shell:
-  program: /bin/bash  # /bin/fish
-  args:
-    - --login
+  program: /bin/fish
+  # program: /bin/bash
+  # args:
+  #   - --login
 window:
-  class:
-    instance: Alacritty
-    general: Alacritty
   padding:
     x: 6
     y: 0
