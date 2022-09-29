@@ -4,7 +4,7 @@ export FZF_DEFAULT_OPTS="$FZF_THEME --bind up:preview-up,down:preview-down"
 
 # HISTORY search
 export FZF_HIST_PREVIEW='echo {}'
-if [ -x "$(command -v bat)" ]; then
+if [[ -x "$(command -v bat)" ]]; then
     export FZF_HIST_PREVIEW='echo {} | bat -l bash -p --color=always'
 fi
 

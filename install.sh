@@ -9,7 +9,7 @@ link_dot() {
         mkdir -p "$(dirname $tgt)"
     elif [[ -d "$tgt" && ! -L "$tgt" ]]; then
         [[ "$3" = '--backup' ]] && cp -rv "$tgt" "${tgt}~"
-        rm -rv "$tgt"
+        rm -rvi "$tgt"
     fi
     ln -sfvn $3 "$CWD/$src" "$tgt"
 }
@@ -24,9 +24,10 @@ link_dot() {
 #link_dot .ignore $HOME/.ignore
 #link_dot .inputrc $HOME/.inputrc
 #link_dot .azotebg $HOME/.azotebg
+#link_dot .vim $HOME/.vim
 
-link_dot .vim $HOME/.vim
-
-#link_dot .config/alacritty $HOME
-#link_dot .config/bat $HOME
+#link_dot .config/starship.toml $HOME/.config/starship.toml
+#link_dot .config/fish $HOME/.config/fish
+#link_dot .config/alacritty $HOME/.config/alacritty
+#link_dot .config/bat $HOME/.config/bat
 #bat cache --build

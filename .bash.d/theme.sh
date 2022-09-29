@@ -1,14 +1,15 @@
 # https://github.com/junegunn/fzf/wiki/Color-schemes
-export FZF_THEME="""
---color=fg:#d8dee9,bg:#282c34,hl:#88c0d0,fg+:#d8dee9,bg+:#282c34,hl+:#f9929b 
---color=pointer:#f9929b,info:#98c379,spinner:#f9929b,header:#81a1c1,prompt:#81a1c1,marker:#f9929b
-"""
-
+if [[ -x "$(command -v fzf)" ]]; then
+    export FZF_THEME="--color=fg:#d8dee9,bg:#282c34,hl:#88c0d0,fg+:#d8dee9,bg+:#282c34,hl+:#f9929b --color=pointer:#f9929b,info:#98c379,spinner:#f9929b,header:#81a1c1,prompt:#81a1c1,marker:#f9929b"
+fi
 
 # https://github.com/jarun/nnn/wiki/Usage#configuration
-export NNN_COLORS='#04050203;1234'
-export NNN_FCOLORS="0707040107070c0c0c010107"
-# export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+
+if [[ -x "$(command -v nnn)" ]]; then
+    export NNN_COLORS='#04050203;1234'
+    export NNN_FCOLORS="0707040107070c0c0c010107"
+    # export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+fi
 
 
 # ls color support

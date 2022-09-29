@@ -26,7 +26,6 @@ __prompt_icons (){
     echo -e "$icons"
 }
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
 __prompt_pyenv (){
     if ! [ -z ${VIRTUAL_ENV+x} ]; then
         echo -e " $ICON_PY$(basename "$VIRTUAL_ENV")"
