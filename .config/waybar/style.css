@@ -45,15 +45,16 @@ nord15 #b48ead
     border: 0;
     border-radius: 0;
     padding: 0 0;
-    font-family:UbuntuMono;
-    font-size: 15px;
+    /* font-family: IosevkaNerdFont; */
+    font-family: mononokiNerdFont;
+    font-size: 16px;
     margin-right: 5px;
     margin-left: 5px;
     padding-bottom:3px;
    }
 
 window#waybar {
-    background:#2e3440;
+    background: #2e3440;
 }
 
 #workspaces button {
@@ -74,8 +75,8 @@ window#waybar {
 }
 
 #clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #tray, #window,#custom-launcher,#custom-power,#custom-pacman {
-    padding: 0 3px;
-    border-bottom: 2px;
+    padding: 0px 3px;
+    border-bottom: 0px;
     border-style: solid;
 }
  
@@ -85,7 +86,7 @@ window#waybar {
 
  
 #clock {
- color:#a3be8c;
+    color: #eceff4;
 }
 
 #backlight {
@@ -93,7 +94,7 @@ window#waybar {
 }
 
 #battery {
-    color: #d8dee9;
+    color: #eceff4;
 }
 
 #battery.charging {
@@ -126,11 +127,11 @@ window#waybar {
 }
 
 #network.disabled {
-    color:#bf616a;
+    color: #bf616a;
 }
 
 #network{
-    color:#a3be8c;
+    color: #a3be8c;
 }
 
 #network.disconnected {
@@ -138,15 +139,15 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #b48ead;
+    color: #81a1c1;
 }
 
 #pulseaudio.muted {
-    color: #3b4252;
+    color: #4c566a;
 }
 
 #temperature {
-    color: #8fbcbb;
+    color: #81a1c1;
 }
 
 #temperature.critical {
@@ -154,7 +155,7 @@ window#waybar {
 }
 
 #idle_inhibitor {
-   color: #ebcb8b;
+   color: #81a1c1;
 }
 
 #tray {
@@ -174,7 +175,7 @@ window#waybar {
 }
 
 #custom-keyboard-layout{
-   color:#d08770;
+   color: #81a1c1;
 }   
 
 
