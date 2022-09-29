@@ -20,12 +20,12 @@ link_dot() {
 #link_dot .bashrc $HOME/.bashrc --backup
 #link_dot .bash.d $HOME/.bash.d
 
-#link_dot .gitconfig $HOME/.gitconfig
 #link_dot .ignore $HOME/.ignore
 #link_dot .inputrc $HOME/.inputrc
 #link_dot .azotebg $HOME/.azotebg
 #link_dot .vim $HOME/.vim
 
+#link_dot .config/git $HOME/.config/git
 #link_dot .config/starship.toml $HOME/.config/starship.toml
 #link_dot .config/fish $HOME/.config/fish
 #link_dot .config/alacritty $HOME/.config/alacritty
