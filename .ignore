@@ -5,3 +5,8 @@ __pycache__/
 node_modules/
 snap/
 .cache/
+.mozilla/
+.password_store/
+.ssh/
+.gnupg/
+.firedragon/
