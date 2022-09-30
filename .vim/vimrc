@@ -64,42 +64,44 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 call plug#begin('~/.vim/plugged')
-" editor {{{2
-Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
-Plug 'https://github.com/sickill/vim-pasta'  " indent-aware pasting (p,P)
-Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
-Plug 'https://github.com/ervandew/supertab'  " <TAB> for all autocomplete
-Plug 'https://github.com/tpope/vim-rsi'  " readline key bindings
-Plug 'https://github.com/jasonccox/vim-wayland-clipboard'
-Plug '~/.fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer
-Plug 'https://github.com/vimwiki/vimwiki'  " help files
-" objects & motions {{{2
-Plug 'https://github.com/tpope/vim-surround'  " brackets, tags (s)
-Plug 'https://github.com/tpope/vim-repeat'  " vim-surround patch 
-Plug 'https://github.com/tpope/vim-commentary'  " comments (gc)
-Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines
-Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves
 " style {{{2
 Plug 'https://github.com/gruvbox-community/gruvbox'
     let g:gruvbox_contrast_dark='soft'
     let g:gruvbox_italic = 1
-Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " highlight HEX/RGBA colors
-Plug 'https://github.com/junegunn/limelight.vim', { 'do': 'Limelight', 'on': 'Limelight' }  " fade text
+Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " highlight HEX/RGBA colors (F3)
+Plug 'https://github.com/junegunn/limelight.vim', { 'do': 'Limelight', 'on': 'Limelight' }  " fade text (F4)
+" editor {{{2
+Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
+Plug 'https://github.com/ervandew/supertab'  " <TAB> for autocomplete
+Plug 'https://github.com/tpope/vim-rsi'  " readline-like shortcuts
+Plug 'https://github.com/tpope/vim-repeat'  " patch for vim-surround
+Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)
+Plug 'https://github.com/tpope/vim-commentary'  " comment object (gc)
+Plug 'https://github.com/tpope/vim-endwise'  " autoclose if, for, ...
+Plug 'https://github.com/jiangmiao/auto-pairs'  " autoclose brackets
+if $XDG_SESSION_TYPE == 'wayland'
+    Plug 'https://github.com/jasonccox/vim-wayland-clipboard'
+endif
+Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
+Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines  (<L>w)
+Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>if)
+Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
+Plug 'https://github.com/vimwiki/vimwiki'  " help files
+Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
 " devops {{{2
 " Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
     let g:polyglot_disabled = ['sensible']
+" Plug 'https://github.com/fladson/vim-kitty'  " syntax for kitty.conf
 Plug 'https://github.com/sirver/ultisnips'  " snippet engine
-Plug 'https://github.com/honza/vim-snippets'  " snippet files
-Plug 'https://github.com/fladson/vim-kitty'  " syntax highlight for kitty.conf
-Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEToggle' }   " lint
+Plug 'https://github.com/honza/vim-snippets'  " snippets
+Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEToggle' }  " lint (F7, def, doc, err)
 Plug 'https://github.com/sbdchd/neoformat'  " format
-Plug 'https://github.com/preservim/tagbar', { 'on': 'TagbarToggle' }  " navigation
-Plug 'https://github.com/mhinz/vim-signify', { 'on': 'SignifyToggle' }  " git
-Plug 'https://github.com/vim-test/vim-test'  " tests
+Plug 'https://github.com/preservim/tagbar', { 'on': 'TagbarToggle' }  " navigation (F5)
+Plug 'https://github.com/mhinz/vim-signify', { 'on': 'SignifyToggle' }  " git (F6, <L>gd, <L>gp <L>gu)
+Plug 'https://github.com/vim-test/vim-test'  " tests (<L>tn, L<tf>, L<ta>, L<tl>, L<tv>)
 " Plug 'https://github.com/dstein64/vim-startuptime'  " debug vim
 call plug#end()
 

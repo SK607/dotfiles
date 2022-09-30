@@ -4,6 +4,10 @@ hi QuickScopePrimary gui=underline
 hi QuickScopeSecondary gui=underline
 hi Normal guibg=#282c34
 hi VertSplit guibg=#282c34
+hi SignColumn guibg=#282c34
+hi SignifySignAdd guibg=#282c34 guifg=#b8bb26
+hi SignifySignChange guibg=#282c34 guifg=#fe8019
+hi SignifySignDelete guibg=#282c34  guifg=#fb4934
 hi LineNr guifg=#b8bb26 
 hi LineNrAbove guifg=#bdae93 
 hi LineNrBelow guifg=#bdae93 
