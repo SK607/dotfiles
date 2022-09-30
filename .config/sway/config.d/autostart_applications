@@ -34,7 +34,8 @@ exec clipman restore
 exec wl-paste -t text --watch clipman store
 
 # Gnome Keyring
-exec gnome-keyring-daemon --daemonize --start --components=gpg,pkcs11,secrets,ssh
+# TODO: test --replace instead of --start
+# exec gnome-keyring-daemon --daemonize --start --components=gpg,pkcs11,secrets,ssh
 
 # for Touchpad gestures
 exec libinput-gestures-setup start
