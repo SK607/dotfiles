@@ -28,7 +28,7 @@ ssh_only = false
 
 [git_status]
 format = '[$all_status]($style) '
-style = 'bold green'
+style = 'green'
 conflicted = '!'
 ahead = '⇡'
 behind = '⇣' 
@@ -44,12 +44,12 @@ ignore_submodules = true
 
 [git_branch]
 format = '[$branch:]($style)'
-style = 'bold green'
+style = 'green'
 symbol = ''
 
 [directory]
 format = '[$path]($style) '
-style = 'bold blue'
+style = 'blue'
 truncate_to_repo = true
 truncation_length = 1
 truncation_symbol = ''
