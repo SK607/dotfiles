@@ -19,6 +19,13 @@ colors:
     bar:
       background: '#434c5e'
       foreground: '#d8dee9'
+  hints:
+    start:
+      foreground: '#282c34'
+      background: '#88c0d0'
+    end:
+      foreground: '#282c34'
+      background: '#88c0d0'
   normal:
     black: '#434c5e'
     red: '#f9929b'
