@@ -1,19 +1,21 @@
 ## GREETING
 function fish_greeting
-  set -l LC_TIME 'en_US.UTF-8'
-  set -l blue '\e[0;34m'
-  set -l reset '\e[m'
-  printf "$blue"
-  printf '\n ███████╗██╗  ██╗'
-  printf '\n ██╔════╝██║ ██╔╝'
-  printf '  Sergey Konkin'
-  printf '\n ███████╗█████╔╝ '
-  printf '  https://github.com/SK607'
-  printf '\n ╚════██║██╔═██╗ ' 
-  printf "  $(date +'%A %d-%m-%Y %H:%M:%S')"  
-  printf '\n ███████║██║  ██╗'
-  printf '\n ╚══════╝╚═╝  ╚═╝'
-  printf "$reset\n"
+  if test $(tput cols) -gt 100 && test $(tput lines) -gt 30
+    set -l LC_TIME 'en_US.UTF-8'
+    set -l blue '\e[0;34m'
+    set -l reset '\e[m'
+    printf "$blue"
+    printf '\n ███████╗██╗  ██╗'
+    printf '\n ██╔════╝██║ ██╔╝'
+    printf '  Sergey Konkin'
+    printf '\n ███████╗█████╔╝ '
+    printf '  https://github.com/SK607'
+    printf '\n ╚════██║██╔═██╗ ' 
+    printf "  $(date +'%A %d-%m-%Y %H:%M:%S')"
+    printf '\n ███████║██║  ██╗'
+    printf '\n ╚══════╝╚═╝  ╚═╝'
+    printf "$reset\n"
+  end
 end
 
 ## CONFIGURE ENV VARIABLES
