@@ -41,13 +41,17 @@ function! s:ALEBlock()
 endfunction
 
 function! StatusLine()
-    let status = s:StatusBlock()
-    let lint = s:ALEBlock()
-    let enc = " %{&fenc?&fenc:&enc}"
-    let sep = '%='
-    let fname = " %< %f"
-    let ftype = ' %y'
-    return status.fname.sep.enc.ftype.lint
+    let line  = ''
+    let line .= s:StatusBlock()
+    let line .= ' %<%f'
+    let line .= '%='
+    let git = gitbranch#name()
+    if len(git) != 0
+        let line .= ' '.git
+    endif
+    let line .= s:ALEBlock()
+    let line .= "  %{&filetype!=#''?&filetype:'none'} "
+    return line
 endfunction
 
 set statusline=%!StatusLine()

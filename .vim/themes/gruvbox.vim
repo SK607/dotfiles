@@ -25,11 +25,11 @@ hi TabLinePointerLast guibg=#282c34 guifg=#bdae93
 hi link TabLinePointerLastNC TabLineFill
 
 " statusline {{{2
-hi StatusLine guibg=#665c54 guifg=#bdae93 gui=NONE cterm=NONE
-hi StatusLineNC guibg=#504945 guifg=#bdae93 gui=NONE cterm=NONE
-hi StatusLineNormal guibg=#bdae93 guifg=#282c34 
-hi StatusLineInsert guibg=#fabd2f guifg=#282c34 
-hi StatusLineVisual guibg=#ebdbb2 guifg=#282c34 
-hi StatusLineCommand guibg=#b8bb26 guifg=#282c34 
+hi StatusLine guibg=#434c5e guifg=#d8dee9 gui=NONE cterm=NONE
+hi StatusLineNC guibg=#2e3440 guifg=#d8dee9 gui=NONE cterm=NONE
+hi StatusLineNormal guibg=#434c5e guifg=#d8dee9  
+hi StatusLineInsert guibg=#ebcb8b guifg=#282c34 
+hi StatusLineVisual guibg=#b48ead guifg=#282c34 
+hi StatusLineCommand guibg=#98c379 guifg=#282c34 
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC

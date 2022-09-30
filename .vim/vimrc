@@ -79,6 +79,7 @@ Plug 'https://github.com/tpope/vim-rsi'  " readline-like shortcuts
 Plug 'https://github.com/tpope/vim-repeat'  " patch for vim-surround
 Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)
 Plug 'https://github.com/tpope/vim-commentary'  " comment object (gc)
+Plug 'https://github.com/itchyny/vim-gitbranch'  " name of git branch
 Plug 'https://github.com/tpope/vim-endwise'  " autoclose if, for, ...
 Plug 'https://github.com/jiangmiao/auto-pairs'  " autoclose brackets
 if $XDG_SESSION_TYPE == 'wayland'
@@ -196,7 +197,7 @@ endfunction
 let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
 let config_list = [
     \ 'themes/gruvbox.vim',
-    \ 'plugin_settings/*.vim'
+    \ 'plugins/*.vim'
     \]
 for files in config_list
     for f in glob(g:vim_home.files, 1, 1)
