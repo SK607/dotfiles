@@ -11,8 +11,8 @@ shell:
   #   - --login
 window:
   padding:
-    x: 12
-    y: 6
+    x: 18
+    y: 0  # removes annoying space under vim commandline
   decorations: none
   opacity: 1.0
 live_config_reload: true
