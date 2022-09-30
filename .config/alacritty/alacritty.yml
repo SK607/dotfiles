@@ -12,9 +12,9 @@ shell:
 window:
   padding:
     x: 18
-    y: 0  # removes annoying space under vim commandline
+    y: 6  # removes annoying space under vim commandline
+  dynamic_padding: true
   decorations: none
   opacity: 1.0
 live_config_reload: true
-dynamic_padding: true
 

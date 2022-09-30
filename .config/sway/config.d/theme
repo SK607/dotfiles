@@ -7,10 +7,9 @@ gaps outer 0
 
 # Hide titlebar on windows: 
 default_border pixel 1
-# default_border none
 
 # Default Font
-font pango: Noto Sans Regular 10
+font pango: mononoki Regular 10
 
 # Thin borders:
 smart_borders on
