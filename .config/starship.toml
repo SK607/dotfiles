@@ -55,7 +55,7 @@ truncation_length = 1
 truncation_symbol = ''
 
 [python]
-format = '[$symbol$virtualenv]($style) '
+format = '[$virtualenv]($style) '
 style = 'magenta'
 symbol = ''
 
