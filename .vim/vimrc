@@ -75,6 +75,7 @@ Plug 'https://github.com/junegunn/limelight.vim', { 'do': 'Limelight', 'on': 'Li
 " editor {{{2
 Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
 Plug 'https://github.com/ervandew/supertab'  " <TAB> for autocomplete
+Plug 'https://github.com/sickill/vim-pasta'  " indented paste
 Plug 'https://github.com/tpope/vim-rsi'  " readline-like shortcuts
 Plug 'https://github.com/tpope/vim-repeat'  " patch for vim-surround
 Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)

@@ -40,17 +40,30 @@ function! s:ALEBlock()
   return l:line
 endfunction
 
+function! GitBranch()
+    if !exists('b:statusline_git_branch')
+        let git_branch = gitbranch#name()
+        if len(git_branch) != 0
+            let git_branch = ' '.git_branch
+        endif
+        let b:statusline_git_branch = git_branch
+    endif
+endfunction
+
+augroup MyStatusLine
+    autocmd!
+    autocmd BufReadPost * :silent call GitBranch()
+augroup END
+
 function! StatusLine()
+    let bufnr = winbufnr(g:statusline_winid)
     let line  = ''
     let line .= s:StatusBlock()
     let line .= ' %<%f'
     let line .= '%='
-    let git = gitbranch#name()
-    if len(git) != 0
-        let line .= ' '.git
-    endif
-    let line .= s:ALEBlock()
+    let line .= getbufvar(bufnr, 'statusline_git_branch', '')
     let line .= "  %{&filetype!=#''?&filetype:'none'} "
+    let line .= s:ALEBlock()
     return line
 endfunction
 
