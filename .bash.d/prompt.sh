@@ -1,10 +1,39 @@
 # ███████╗██╗  ██╗  BASH PROMPT
-# ██╔════╝██║ ██╔╝    ┌── ⇅ → user@host *2 gitbranch:dir  
-# ███████╗█████╔╝     └─> |  
+# ██╔════╝██║ ██╔╝    ┌── user@host *2 branch:dir  
+# ███████╗█████╔╝     └─> 
 # ╚════██║██╔═██╗   
 # ███████║██║  ██╗  Sergey Konkin 
 # ╚══════╝╚═╝  ╚═╝  https://github.com/SK607
 
+
+__bash_git_cache() {
+    if [[ "${_PWD_PREV:-none}" != "$PWD" ]]; then
+        export _PWD_PREV=$PWD
+
+        if [[ "${_GIT_ROOT:-none}" != "${PWD:0:${#_GIT_ROOT}}" ]]; then
+            export _GIT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+        fi
+    fi
+
+    if [[ -n "$_GIT_ROOT" ]]; then
+        local git_branch_modify=$(date -r $_GIT_ROOT/.git/HEAD +%s)
+        local git_uncommitted_modify=$(date -r $_GIT_ROOT +%s)
+
+        if [[ ${_GIT_BRANCH_MODIFY:-0} -lt $git_branch_modify ]]; then
+            export _GIT_BRANCH_MODIFY=$git_branch_modify
+            export _GIT_BRANCH="$(git symbolic-ref --short HEAD):"
+        fi
+
+        if [[ ${_GIT_UNCOMMITTED_MODIFY:-0} -lt $git_uncommitted_modify ]]; then
+            export _GIT_UNCOMMITTED_MODIFY=$git_uncommitted_modify
+            export _GIT_UNCOMMITTED="*$(git status --porcelain | wc -l) "
+        fi
+
+    elif [[ -n "$_GIT_BRANCH" ]]; then
+        export _GIT_BRANCH=''
+        export _GIT_UNCOMMITTED=''
+    fi
+}
 
 __bash_prompt() {
     ## COLORS
@@ -25,25 +54,25 @@ __bash_prompt() {
     # arrow
     prompt+="$white┌── "
 
-    # ssh/ login status
-    if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-        prompt+="$white⇅ "
-    fi
+    # user
     if [[ -n "$SUDO_USER" ]]; then
-        prompt+="$white→ "
+        prompt+="$yellow"
+    else
+        prompt+="$white"
     fi
+    prompt+="$USER"
 
-    # user & host
-    prompt+="$white$USER@$HOSTNAME "
+    # host
+    if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+        prompt+="$yellow"
+    else
+        prompt+="$white"
+    fi
+    prompt+="@HOSTNAME "
 
     # git
-    if [[ "$PWD" != "$OLDPWD" ]]; then
-        if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = 'true' ]]; then
-            local branch="$(git rev-parse --abbrev-ref HEAD)"
-            local uncommitted="*$(git status --porcelain | wc -l) "
-            prompt+="$green$uncommitted$branch:"
-        fi
-    fi
+    __bash_git_cache
+    prompt+="$green$_GIT_UNCOMMITTED$_GIT_BRANCH"
 
     # directory
     prompt+="$blue$(basename $PWD)"
@@ -63,5 +92,6 @@ __bash_prompt() {
 }
 
 [[ "$VIRTUAL_ENV_DISABLE_PROMPT" != '1' ]] && export VIRTUAL_ENV_DISABLE_PROMPT='1'
+export -f __bash_git_cache   
 export PROMPT_COMMAND=__bash_prompt
 
