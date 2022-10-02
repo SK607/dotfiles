@@ -31,7 +31,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT='1'
 [[ -x "$(command -v bat)" ]] && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # user-defined variables
 export DOTFILES_PATH="$HOME/code-projects/devops/dotfiles"
-export PROMPT_NERD_ENABLED='1'
 
 
 ### CONFIGURE CLI
@@ -53,6 +52,7 @@ if [[ -x "$(command -v starship)" ]]; then
 else
     [[ -f $HOME/.bash.d/prompt.sh ]] && source $HOME/.bash.d/prompt.sh
 fi
+
 
 ### ADD COMPLETIONS
 if ! shopt -oq posix; then
@@ -125,16 +125,16 @@ alias ls='ls --color=auto'
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias gc='git commit'
+alias ga='git add .'
 alias gs='git status -s'
-alias gd='git diff'
+alias gd='git diff HEAD'
+alias gc='git commit'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'
 [[ -x "$(command -v exa)" ]] && alias exad='exa --group-directories-first --icons -a'
 [[ -x "$(command -v exa)" ]] && alias exadg='exa --group-directories-first --icons -al --git'
 [[ -x "$(command -v tree)" ]] && alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
-[[ -x "$(command -v nnn)" ]] && alias nnnd='LC_COLLATE="C" nnn'
 [[ -x "$(command -v bat)" ]] && alias batd='bat -p'
 
 # additional commands

@@ -129,9 +129,10 @@ alias ls='ls --color=auto'
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias gc='git commit'
+alias ga='git add .'
 alias gs='git status -s'
-alias gd='git diff'
+alias gd='git diff HEAD'
+alias gc='git commit'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'
@@ -141,9 +142,6 @@ if test -x "$(command -v exa)"
 end
 if test -x "$(command -v tree)"
   alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
-end
-if test -x "$(command -v nnn)"
-  alias nnnd='LC_COLLATE="C" nnn'
 end
 if test -x "$(command -v bat)"
   alias batd='bat -p'
