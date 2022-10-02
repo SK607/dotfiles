@@ -183,7 +183,7 @@ set -e envd path biggest
 
 # pacman
 if test -x "$(command -v pacman)"
-    alias pacman='sudo pacman --needed --color=always'
+    alias pacman='sudo pacman --color=always'
     alias pacupd='sudo pacman --color=always -Syyu'
     alias paclock='sudo rm /var/lib/pacman/db.lck'
     alias pacclean='sudo pacman --color=always -Rns $(pacman -Qtdq)'
