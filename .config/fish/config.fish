@@ -18,6 +18,7 @@ function fish_greeting
   end
 end
 
+
 ## CONFIGURE ENV VARIABLES
 # extend PATH
 if test -d ~/.local/bin
@@ -52,16 +53,6 @@ if test -f ~/.config/fish/fish_plugins
     set fzf_preview_file_cmd bat -p --color=always
     set fzf_fd_opts --hidden
   end
-end
-# configure nnn
-if test -x "$(command -v nnn)"
-  set -x NNN_OPTS 'cEHrx'
-  set -x NNN_BMS "c:$HOME/code-projects;d:$HOME/Downloads;p:$HOME/Pictures"
-  set -x NNN_ORDER "t:$HOME/Downloads;t:$HOME/Pictures"
-  set -x NNN_PLUG 'p:preview-tui;g:git-diff;i:swayimg'
-  set -x NNN_ARCHIVE '\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$'
-  set -x NNN_FIFO '/tmp/nnn.fifo'
-  set -x SPLIT 'v'
 end
 # user-defined variables
 set -x DOTFILES_PATH "$HOME/code-projects/devops/dotfiles"
@@ -139,7 +130,8 @@ alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias gc='git commit'
-alias gs='git status'
+alias gs='git status -s'
+alias gd='git diff'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'

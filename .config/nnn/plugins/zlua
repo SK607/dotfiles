@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+NNN_ZLUA="$HOME/.local/opt/z.lua/z.lua"
+
+if ! type fzf >/dev/null 2>&1; then
+    echo 'fzf not found'
+    exit 127
+fi
+
+if ! [[ -f "$NNN_ZLUA" ]]; then
+    echo "z.lua not found: $NNN_ZLUA"
+    exit 127
+fi
+
+
+printf "jump to: "
+read -r line
+
+odir="$(lua "$NNN_ZLUA" -l "$line" | fzf --reverse --tac --no-sort --no-multi -0 -1 --height 35%)"
+printf "%s" "0c$(echo "$odir" | awk '{print $2}')" > "$NNN_PIPE"
+

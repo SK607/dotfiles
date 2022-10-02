@@ -1,4 +1,14 @@
 #!/usr/bin/env sh
 
-FILES=$(swayimg -mf -w 282c34 $PWD)
+images=$(swayimg -m -w ${SWAYIMG_BG:-282c34} $PWD)
+
+if [[ -n "$images" ]]; then
+    selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+
+    # write selection
+    printf "%s" "$images" | tr '\n' '\0' > "$selection"
+
+    # notify user
+    cat $selection | tr '\0' '\n' | less -R
+fi
 
