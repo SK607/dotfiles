@@ -1,15 +1,49 @@
 priority -50
 
-snippet #cwd "Working Directory Detection" b
+snippet cwd "Script Dirname Detection" b
 CWD="$( dirname -- "$( readlink -f -- "\$0"; )"; )"
 endsnippet
 
-snippet #cv "Command Presence" b
-[ -x "$(command -v ${0:word})" ] &&
+snippet cv "Command Exists oneline" b
+[[ -x "$(command -v ${0:word})" ]] &&
 endsnippet
 
-snippet #cvif "Command Presence" b
-if [ -x "$(command -v ${1:word})" ]; then
+snippet ifcv "Command Exists If block" b
+if [[ -x "$(command -v ${1:word})" ]]; then
 	${0:${VISUAL}}
 fi
 endsnippet
+
+snippet help "Add script help" b
+help() {
+   echo '${1:description}'
+   echo
+   echo 'USAGE:'
+   echo '    ${2:command} [OPTIONS]'
+   echo
+   echo 'OPTIONS:'
+   echo '    -h, --help'
+   echo '        Print this help message.'
+   echo '    -${3:option}'
+   echo '        ${4:option description}'
+}
+endsnippet
+
+snippet opts "Parse script options" b
+while true; do
+   case "\$1" in
+      -h | --help ) help; exit ;;
+      -c | --command ) COMMAND=\$2; shift 2 ;;
+      -o | --option ) OPTION='1'; shift ;;
+      ${1:option}
+      * )
+         if [[ -n "\$1" ]]; then
+            echo "ERROR: unknown option '\$1'"
+            exit
+         fi
+         break ;;
+  esac
+done
+endsnippet
+   
+	
