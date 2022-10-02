@@ -125,6 +125,8 @@ alias ls='ls --color=auto'
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
+alias gc='git commit'
+alias gs='git status -s'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'
