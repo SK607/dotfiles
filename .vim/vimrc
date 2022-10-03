@@ -99,7 +99,7 @@ Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
 " Plug 'https://github.com/fladson/vim-kitty'  " syntax for kitty.conf
 Plug 'https://github.com/sirver/ultisnips'  " snippet engine
 Plug 'https://github.com/honza/vim-snippets'  " snippets
-Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEToggle' }  " lint (F7, def, doc, err)
+Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEEnable' }  " lint (F7, def, doc, err)
 Plug 'https://github.com/sbdchd/neoformat'  " format
 Plug 'https://github.com/preservim/tagbar', { 'on': 'TagbarToggle' }  " navigation (F5)
 Plug 'https://github.com/mhinz/vim-signify', { 'on': 'SignifyToggle' }  " git (F6, <L>gd, <L>gp <L>gu)
@@ -143,12 +143,7 @@ nnoremap <F3> :HexokinaseToggle<CR>
 nnoremap <F4> :Limelight!!<CR>
 nnoremap <F5> :TagbarToggle<CR>
 nnoremap <F6> :SignifyToggle<CR>
-nnoremap <F7> :ALEToggle<CR>
-" insert mode navigation
-inoremap <C-h> <C-o>h
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>l
+nnoremap <F7> :ALEEnable<CR>
 " Remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

@@ -29,16 +29,16 @@ function! s:StatusBlock()
     return color.' '.name.' '.color_reset
 endfunction
 
-function! s:ALEBlock()
-  if get(g:, 'ale_enabled', 0) == 0
-    return ''
-  endif
-  let l:line = ' ' . get(g:, 'ale_sign_error', 'e') .
-             \ ' ' . l:counts.error .
-             \ ' ' . get(g:, 'ale_sign_warning', 'w') .
-             \ ' ' . l:counts.warning
-  return l:line
-endfunction
+" function! s:ALEBlock()
+"   if get(g:, 'ale_enabled', 0) == 0
+"     return ''
+"   endif
+"   let l:line = ' ' . get(g:, 'ale_sign_error', 'e') .
+"              \ ' ' . l:counts.error .
+"              \ ' ' . get(g:, 'ale_sign_warning', 'w') .
+"              \ ' ' . l:counts.warning
+"   return l:line
+" endfunction
 
 function! GitBranch()
     if !exists('b:statusline_git_branch')
@@ -63,7 +63,7 @@ function! StatusLine()
     let line .= '%='
     let line .= getbufvar(bufnr, 'statusline_git_branch', '')
     let line .= "  %{&filetype!=#''?&filetype:'none'} "
-    let line .= s:ALEBlock()
+    " let line .= s:ALEBlock()
     return line
 endfunction
 
