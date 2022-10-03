@@ -1,5 +1,5 @@
 # DEFAULTS
-export FZF_DEFAULT_OPTS="$FZF_THEME --bind up:preview-up,down:preview-down"
+export FZF_DEFAULT_OPTS="--bind up:preview-up,down:preview-down $FZF_THEME"
 
 
 # HISTORY search
@@ -9,7 +9,7 @@ if [[ -x "$(command -v bat)" ]]; then
 fi
 
 __writecmd__() {
-    local cmd="$@"
+    local cmd=$*
     READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$cmd${READLINE_LINE:$READLINE_POINT}"
     READLINE_POINT=$(( READLINE_POINT + ${#cmd} ))
 }
@@ -28,7 +28,7 @@ __fhist__() {
         --reverse \
         --preview-window down:hidden:3:wrap \
         --preview "${FZF_HIST_PREVIEW}" \
-        --height ${FZF_TMUX_HEIGHT:-40%} \
+        --height "${FZF_TMUX_HEIGHT:-40%}" \
         --prompt '> ' \
         --bind 'ctrl-c:execute-silent(echo -n {..} | xclip -sel clip)+abort' \
         --bind 'ctrl-s:toggle-preview' \
@@ -51,7 +51,7 @@ fi
 
 fcd() {
     local CMD DIR
-    CMD="fd --type d --follow --no-hidden -a . $@"
+    CMD="fd --type d --follow --no-hidden -a . $*"
     DIR=$(
     FZF_DEFAULT_COMMAND="$CMD" \
         fzf $FZF_DEFAULT_OPTS \
@@ -59,14 +59,14 @@ fcd() {
         --reverse \
         --preview-window hidden:wrap \
         --preview "$FZF_DIR_PREVIEW" \
-        --height ${FZF_TMUX_HEIGHT:-40%} \
+        --height "${FZF_TMUX_HEIGHT:-40%}" \
         --prompt '> ' \
         --bind 'ctrl-s:toggle-preview' \
         --bind "ctrl-a:change-prompt(all> )+reload($CMD --unrestricted)" \
         --bind "ctrl-b:change-prompt(> )+reload($CMD)" \
         --header 'C-s(how)  C-a(ll)  C-b(ase)' 
     )
-    [ -n "$DIR" ] && cd "$DIR"
+    [ -n "$DIR" ] && cd "$DIR" || exit 1
 }
 
 
@@ -78,7 +78,7 @@ fi
 
 fvi() {
     local CMD FILES
-    CMD="fd --type f --follow --no-hidden -a . $@"
+    CMD="fd --type f --follow --no-hidden -a . $*"
     FILES=$(
     FZF_DEFAULT_COMMAND="$CMD" \
         fzf $FZF_DEFAULT_OPTS \
@@ -86,7 +86,7 @@ fvi() {
         --reverse \
         --preview-window hidden:wrap \
         --preview "$FZF_FILE_PREVIEW" \
-        --height ${FZF_TMUX_HEIGHT:-40%} \
+        --height "${FZF_TMUX_HEIGHT:-40%}" \
         --prompt '> ' \
         --bind 'ctrl-s:toggle-preview' \
         --bind "ctrl-a:change-prompt(all> )+reload($CMD --unrestricted)" \
@@ -94,7 +94,7 @@ fvi() {
         --header 'C-s(how)  C-a(ll)  C-b(ase)' 
     )
     echo "$FILES"
-    [ -n "${FILES}" ] && vim -O -- $FILES
+    [ -n "${FILES}" ] && vim -O -- "$FILES" || exit 1
 }
 
 
@@ -164,15 +164,15 @@ __fdiff__() {
         PREVIEW_PAGER="delta | ${PREVIEW_PAGER}"
         ENTER_PAGER="delta | sed -e '1,4d' | ${ENTER_PAGER}"
     fi
-    local PREVIEW_COMMAND='git diff --color=always '$@' -- \
-        $(echo $(git diff --name-status -R '$@' | grep {}) | cut -d" " -f 2-) \
+    local PREVIEW_COMMAND='git diff --color=always '$*' -- \
+        $(echo $(git diff --name-status -R '$*' | grep {}) | cut -d" " -f 2-) \
         | '$PREVIEW_PAGER
-    local ENTER_COMMAND='git diff --color=always '$@' -U10000 -- \
-        $(echo $(git diff --name-status -R '$@' | grep {}) | cut -d" " -f 2-) \
+    local ENTER_COMMAND='git diff --color=always '$*' -U10000 -- \
+        $(echo $(git diff --name-status -R '$*' | grep {}) | cut -d" " -f 2-) \
         | '$ENTER_PAGER
 
-    git diff --name-only $@ |
-        fzf ${FZF_DEFAULT_OPTS} \
+    git diff --name-only "$*" |
+        fzf "${FZF_DEFAULT_OPTS}" \
         --ansi \
         --reverse \
         --height=100% \
@@ -205,7 +205,7 @@ fgit() {
     git log --graph \
         --color=always \
         --format="%C(yellow)%h %C(auto)%as %s - %C(cyan)%an" |
-        fzf ${FZF_DEFAULT_OPTS} \
+        fzf "${FZF_DEFAULT_OPTS}" \
         --ansi \
         --reverse \
         --height=100% \

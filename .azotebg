@@ -12,4 +12,3 @@ if [[ -d $WP_PATH ]]; then
     swaybg -o eDP-1 -i "$WP_FILE" -m fill &
 fi
 
-

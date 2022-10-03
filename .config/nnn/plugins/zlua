@@ -7,7 +7,7 @@ if ! type fzf >/dev/null 2>&1; then
     exit 127
 fi
 
-if ! [[ -f "$NNN_ZLUA" ]]; then
+if ! test -f "$NNN_ZLUA"; then
     echo "z.lua not found: $NNN_ZLUA"
     exit 127
 fi

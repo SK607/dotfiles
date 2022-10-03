@@ -39,18 +39,18 @@ shopt -s histappend  # append to the history file
 shopt -s cmdhist  # save multi-line as single line
 shopt -s cdspell  # auto-correct minor dirname errors
 # nnn, fzf, ls themes
-[[ -f $HOME/.bash.d/theme.sh ]] && source $HOME/.bash.d/theme.sh
+[[ -f "$HOME/.bash.d/theme.sh" ]] && source "$HOME/.bash.d/theme.sh"
 # nnn configuration
-[[ -f $HOME/.bash.d/nnn.sh ]] && source $HOME/.bash.d/nnn.sh
+[[ -f "$HOME/.bash.d/nnn.sh" ]] && source "$HOME/.bash.d/nnn.sh"
 # fzf configuration
-[[ -f $HOME/.bash.d/fzf.sh ]] && source $HOME/.bash.d/fzf.sh
+[[ -f "$HOME/.bash.d/fzf.sh" ]] && source "$HOME/.bash.d/fzf.sh"
 # z.lua configuration
-[[ -d $HOME/.local/opt/z.lua ]] && eval "$(lua $HOME/.local/opt/z.lua/z.lua --init bash enhanced once)"
+[[ -d "$HOME/.local/opt/z.lua" ]] && eval "$(lua "$HOME/.local/opt/z.lua/z.lua" --init bash enhanced once)"
 # prompt
 if [[ -x "$(command -v starship)" ]]; then
     eval "$(starship init bash)"
 else
-    [[ -f $HOME/.bash.d/prompt.sh ]] && source $HOME/.bash.d/prompt.sh
+    [[ -f "$HOME/.bash.d/prompt.sh" ]] && source "$HOME/.bash.d/prompt.sh"
 fi
 
 
@@ -80,7 +80,7 @@ fi
 
 # find dotfile dir and file in it
 edot() {
-    $EDITOR $(fd --type file --unrestricted --ignore-case --full-path --absolute-path "$@"  "$DOTFILES_PATH")
+    $EDITOR "$(fd --type file --unrestricted --ignore-case --full-path --absolute-path "$@"  "$DOTFILES_PATH")"
 }
 
 # extract archive
@@ -88,20 +88,20 @@ ex ()
 {
   if [ -f "$1" ] ; then
     case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"   ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1";;
+      *.7z)        7z x "$1"      ;;
+      *.deb)       ar x "$1"      ;;
+      *.tar.xz)    tar xf "$1"    ;;
+      *.tar.zst)   unzstd "$1"    ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
