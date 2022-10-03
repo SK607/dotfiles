@@ -1,5 +1,5 @@
 if [[ -x "$(command -v nnn)" ]]; then
-    export NNN_OPTS='cEHrx'
+    export NNN_OPTS='cErx'
     export NNN_BMS="c:$HOME/code-projects;d:$HOME/Downloads;p:$HOME/Pictures;v:$HOME/Videos"
     export NNN_ORDER="t:$HOME/Downloads;t:$HOME/Pictures"
     export NNN_PLUG='p:preview-tui;g:git-diff;i:swayimg;z:zlua;r:git-root'

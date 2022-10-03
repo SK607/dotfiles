@@ -1,5 +1,5 @@
 if test -x "$(command -v nnn)"
-  set -x NNN_OPTS 'cEHrx'
+  set -x NNN_OPTS 'cErx'
   set -x NNN_BMS "c:$HOME/code-projects;d:$HOME/Downloads;p:$HOME/Pictures;v:$HOME/Videos"
   set -x NNN_ORDER "t:$HOME/Downloads;t:$HOME/Pictures"
   set -x NNN_PLUG 'p:preview-tui;g:git-diff;i:swayimg;z:zlua;r:git-root'
