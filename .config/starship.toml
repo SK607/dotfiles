@@ -1,5 +1,6 @@
 format="""
 [┌──](bold dimmed white)\
+$shell\
 $username\
 $hostname\
 $git_status\
@@ -12,8 +13,16 @@ $line_break\
 """
 add_newline = true
 
+[shell]
+format = ' [$indicator]($style)'
+disabled = false
+fish_indicator = ' '
+bash_indicator = ' '
+zsh_indicator = ' '
+style = 'dimmed white'
+
 [username]
-format = ' [$user]($style)'
+format = '[$user]($style)'
 style_root = 'dimmed white'
 style_user = 'dimmed white'
 show_always = true
@@ -27,13 +36,13 @@ disabled = false
 ssh_only = false
 
 [git_status]
-format = '[$all_status]($style) '
+format = '[($all_status )]($style)'
 style = 'green'
 conflicted = '!'
 ahead = '⇡'
 behind = '⇣' 
 diverged = '↕'
-up_to_date = ''
+up_to_date = ''
 untracked = '+'
 stashed = '.'
 modified = '*'

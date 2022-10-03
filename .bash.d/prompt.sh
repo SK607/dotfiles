@@ -68,7 +68,7 @@ __bash_prompt() {
     else
         prompt+="$white"
     fi
-    prompt+="@HOSTNAME "
+    prompt+="@$HOSTNAME "
 
     # git
     __bash_git_cache
