@@ -2,7 +2,9 @@ let g:ale_completion_enabled = 1
 let g:ale_python_auto_poetry = 1
 let g:ale_linters = {
 \   'python': ['pylint', 'pylsp'],
-\   'sh': ['language_server', 'shellcheck']
+\   'sh': ['language_server', 'shellcheck'],
+\   'go': ['golangci-lint'],
+\   'vim': ['vint', 'vimls']
 \}
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
