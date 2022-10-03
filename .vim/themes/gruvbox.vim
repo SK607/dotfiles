@@ -4,10 +4,16 @@ hi QuickScopePrimary gui=underline
 hi QuickScopeSecondary gui=underline
 hi Normal guibg=#282c34
 hi VertSplit guibg=#282c34
+" ALE & signify
 hi SignColumn guibg=#282c34
-hi SignifySignAdd guibg=#282c34 guifg=#b8bb26
-hi SignifySignChange guibg=#282c34 guifg=#fe8019
-hi SignifySignDelete guibg=#282c34  guifg=#fb4934
+hi GruvboxRedSign guibg=#282c34 
+hi GruvboxGreenSign guibg=#282c34 
+hi GruvboxYellowSign guibg=#282c34 
+hi GruvboxBlueSign guibg=#282c34 
+hi GruvboxPurpleSign guibg=#282c34 
+hi GruvboxAquaSign guibg=#282c34 
+hi GruvboxOrangeSign guibg=#282c34 
+" line numbers
 hi LineNr guifg=#b8bb26 
 hi LineNrAbove guifg=#bdae93 
 hi LineNrBelow guifg=#bdae93 
