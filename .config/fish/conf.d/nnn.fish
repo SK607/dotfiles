@@ -6,6 +6,7 @@ if test -x "$(command -v nnn)"
   set -x NNN_ARCHIVE '\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$'
   set -x NNN_FIFO '/tmp/nnn.fifo'
   set -x SPLIT 'v'
+  set -x LC_COLLATE 'C'
 
   # https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.fish
   function n --wraps nnn --description 'support nnn quit and change directory'
@@ -20,7 +21,6 @@ if test -x "$(command -v nnn)"
         set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
     end
 
-    set LC_COLLATE "C"
     command nnn $argv
 
     if test -e $NNN_TMPFILE
