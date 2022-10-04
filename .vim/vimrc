@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " EDITOR {{{1 -----------------------------------------------------------------
 set nocompatible  " arrows + etc @ vi cmd
 set mouse=iv  " enable mouse
@@ -31,8 +32,8 @@ set nomodeline   " security
 set shortmess+=sAI  " hide search hit & swapfile warnings, intro message
 set switchbuf=usetab  " if opening buffer, search first in opened windows
 set background=dark
-if &term == "alacritty"        
-  let &term = "xterm-256color"
+if &term ==? 'alacritty'        
+  let &term = 'xterm-256color'
 endif
 if &t_Co >= 256
   set termguicolors
@@ -46,22 +47,25 @@ set redrawtime=1000  " more time for loading syntax on large file
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set autoindent  " continue on new line
 set breakindent  " continue on wrapped line
-autocmd BufWinEnter,BufNewFile * set formatoptions-=cro  " no comment continuation
 set listchars=tab:▶▶,trail:■,nbsp:■ " show invisible chars
 set nolist  " hide invisible chars by default
-autocmd FileType vim,conf set foldmethod=marker
-autocmd FileType markdown set foldmethod=expr
-autocmd FileType json,yaml set foldmethod=syntax
-autocmd FileType json,csv,txt,xml set redrawtime=10000
+augroup MySyntax
+    autocmd BufWinEnter,BufNewFile * set formatoptions-=cro  " no comment continuation
+    autocmd FileType vim,conf set foldmethod=marker
+    autocmd FileType markdown set foldmethod=expr
+    autocmd FileType json,yaml set foldmethod=syntax
+    autocmd FileType json,csv,txt,xml set redrawtime=10000
+augroup END
 let g:is_bash = 1  " force bash syntax for .sh
 let g:markdown_folding = 1  " enable markdown folding
 
 " PLUGINS {{{1 ----------------------------------------------------------------
-" autoinstall vim-plug {{{2
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    augroup AutoInstallVimPlug
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    augroup END
 endif
 
 
@@ -82,7 +86,7 @@ Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)
 Plug 'https://github.com/tpope/vim-commentary'  " comment object (gc)
 Plug 'https://github.com/tpope/vim-endwise'  " autoclose if, for, ...
 " Plug 'https://github.com/jiangmiao/auto-pairs'  " autoclose brackets
-if $XDG_SESSION_TYPE == 'wayland'
+if $XDG_SESSION_TYPE ==? 'wayland'
     Plug 'https://github.com/jasonccox/vim-wayland-clipboard'
 endif
 Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
@@ -185,7 +189,7 @@ augroup END
 " edit dotfile {{{2
 function! s:EditDotfile(name)
     let dotpath=system('fd --type file --unrestricted --ignore-case --full-path --absolute-path ' . shellescape(a:name) . ' "$HOME/code-projects/devops/dotfiles"')
-    execute "tabnew " . dotpath 
+    execute 'tabnew ' . dotpath 
 endfunction
 
 " PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
