@@ -6,13 +6,13 @@ hi Normal guibg=#282c34
 hi VertSplit guibg=#282c34
 " ALE & signify
 hi SignColumn guibg=#282c34
-hi GruvboxRedSign guibg=#282c34 
-hi GruvboxGreenSign guibg=#282c34 
-hi GruvboxYellowSign guibg=#282c34 
-hi GruvboxBlueSign guibg=#282c34 
-hi GruvboxPurpleSign guibg=#282c34 
-hi GruvboxAquaSign guibg=#282c34 
-hi GruvboxOrangeSign guibg=#282c34 
+hi GruvboxRedSign guibg=NONE
+hi GruvboxGreenSign guibg=NONE
+hi GruvboxYellowSign guibg=NONE
+hi GruvboxBlueSign guibg=NONE
+hi GruvboxPurpleSign guibg=NONE
+hi GruvboxAquaSign guibg=NONE
+hi GruvboxOrangeSign guibg=NONE
 " line numbers
 hi LineNr guifg=#b8bb26 
 hi LineNrAbove guifg=#bdae93 
