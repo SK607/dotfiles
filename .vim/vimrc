@@ -85,7 +85,6 @@ Plug 'https://github.com/tpope/vim-repeat'  " patch for vim-surround
 Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)
 Plug 'https://github.com/tpope/vim-commentary'  " comment object (gc)
 Plug 'https://github.com/tpope/vim-endwise'  " autoclose if, for, ...
-" Plug 'https://github.com/jiangmiao/auto-pairs'  " autoclose brackets
 if $XDG_SESSION_TYPE ==? 'wayland'
     Plug 'https://github.com/jasonccox/vim-wayland-clipboard'
 endif
@@ -118,8 +117,6 @@ map Q <Nop>
 " save changes {{{2
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
-" save as sudo {{{2
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " quit vim {{{2
 nnoremap ZQ :q!<CR>
 " quickfix navigation {{{2
@@ -147,16 +144,12 @@ nnoremap <F4> :Limelight!!<CR>
 nnoremap <F5> :TagbarToggle<CR>
 nnoremap <F6> :SignifyToggle<CR>
 nnoremap <F7> :ALEEnable<CR>
-" Remap splits navigation to just CTRL + hjkl
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 " abbreviations (<leader> to activate) {{{2
 iab ldash —
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
 
 " COMMANDS {{{1 ---------------------------------------------------------------
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command! -nargs=1 Edot call s:EditDotfile(<f-args>)
 command! Rvim execute ':source $MYVIMRC'
 command! RemoveTrailing call RemoveTrailingSpaces()

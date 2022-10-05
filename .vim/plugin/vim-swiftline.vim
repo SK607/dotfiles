@@ -109,7 +109,7 @@ enddef
 
 augroup SwiftLine
     autocmd!
-    autocmd BufReadPost,BufWritePost * call s:GitBranch()
+    autocmd BufReadPost,BufWritePost * :silent call s:GitBranch()
     autocmd BufWritePost * :silent call s:ALEStatus()
 augroup END
 
