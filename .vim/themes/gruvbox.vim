@@ -19,20 +19,20 @@ hi LineNrAbove guifg=#bdae93
 hi LineNrBelow guifg=#bdae93 
 
 " tabline {{{2
-hi TabLine guibg=#3b4252 guifg=#e5e9f0 gui=NONE cterm=NONE
-hi TabLineSel guibg=#e5e9f0 guifg=#282c34
+hi TabLine guibg=#3b4252 guifg=#81a1c1 gui=NONE cterm=NONE
+hi TabLineSel guibg=#81a1c1 guifg=#282c34
 hi TabLineFill guibg=#282c34 guifg=#3b4252
-hi TabLinePointer guibg=#e5e9f0 guifg=#3b4252 
+hi TabLinePointer guibg=#81a1c1 guifg=#3b4252 
 hi link TabLinePointerSel TabLine
 hi TabLinePointerNC guibg=#3b4252 guifg=#3b4252 
 hi link TabLinePointerFirst TabLineSel
 hi TabLinePointerFirstNC guibg=#3b4252 guifg=#282c34 
-hi TabLinePointerLast guibg=#282c34 guifg=#e5e9f0 
+hi TabLinePointerLast guibg=#282c34 guifg=#81a1c1 
 hi link TabLinePointerLastNC TabLineFill
 
 " statusline {{{2
-hi StatusLine guibg=#3b4252 guifg=#e5e9f0 gui=NONE cterm=NONE
-hi StatusLineNC guibg=#2e3440 guifg=#e5e9f0 gui=NONE cterm=NONE
+hi StatusLine guibg=#3b4252 guifg=#e5e9f0 gui=NONE cterm=NONE term=NONE
+hi StatusLineNC guibg=#2e3440 guifg=#e5e9f0 gui=NONE cterm=NONE term=NONE
 hi StatusLineNormal guibg=#81a1c1 guifg=#3b4252 
 hi StatusLineInsert guibg=#e5e9f0 guifg=#3b4252
 hi StatusLineVisual guibg=#8fbcbb guifg=#3b4252 
