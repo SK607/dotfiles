@@ -71,7 +71,7 @@ function helpd
 end
 
 function edot
-  $EDITOR $(fd --type file --unrestricted --ignore-case --full-path --absolute-path "$argv"  "$DOTFILES_PATH")
+  $EDITOR $(fd --type file --unrestricted --ignore-case --full-path --absolute-path -1 "$argv" "$DOTFILES_PATH")
 end
 
 function ex --argument archive

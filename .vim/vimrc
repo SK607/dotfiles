@@ -75,7 +75,6 @@ Plug 'https://github.com/gruvbox-community/gruvbox'
     let g:gruvbox_contrast_dark='soft'
     let g:gruvbox_italic = 1
 Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " highlight HEX/RGBA colors (F3)
-Plug 'https://github.com/junegunn/limelight.vim', { 'do': 'Limelight', 'on': 'Limelight' }  " fade text (F4)
 " editor {{{2
 Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
 Plug 'https://github.com/ervandew/supertab'  " <TAB> for autocomplete
@@ -90,7 +89,7 @@ if $XDG_SESSION_TYPE ==? 'wayland'
 endif
 Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
 Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines  (<L>w)
-Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>if)
+Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif)
 Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
 Plug 'https://github.com/vimwiki/vimwiki'  " help files
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
@@ -137,42 +136,35 @@ nnoremap <Leader>cn :let @+ = expand("%:t")<CR>
 " prefill substitute command {{{2
 nnoremap S :%s///ge<Left><Left><Left><Left><C-r>=expand("<cword>")<CR><Right>
 " search / color / hidden symbols / code highlight / tags / git / lint {{{2
-nnoremap <F1> :let @/=""<CR>
-nnoremap <F2> :set list! list?<CR>
+nnoremap <silent> <F1> :let @/=""<CR>
+nnoremap <silent> <F2> :set list! list?<CR>
 nnoremap <F3> :HexokinaseToggle<CR>
-nnoremap <F4> :Limelight!!<CR>
 nnoremap <F5> :TagbarToggle<CR>
 nnoremap <F6> :SignifyToggle<CR>
 nnoremap <F7> :ALEEnable<CR>
 " abbreviations (<leader> to activate) {{{2
+cnoreabbrev <expr> th 'tab help'
 iab ldash —
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
 
-" COMMANDS {{{1 ---------------------------------------------------------------
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-command! -nargs=1 Edot call s:EditDotfile(<f-args>)
-command! Rvim execute ':source $MYVIMRC'
-command! RemoveTrailing call RemoveTrailingSpaces()
-command! RemoveEmpty execute 'g/^\s*$/d'
-" command MakeTags !ctags -R .  " create tags
 
 " FUNCTIONS {{{1 --------------------------------------------------------------
 " remove trailing spaces {{{2
-function! RemoveTrailingSpaces()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfunction
+def s:RemoveTrailingSpaces()
+    var lsave = winsaveview()
+    keeppatterns :%s/\s\+$//e
+    call winrestview(lsave)
+enddef
 
 " create directories when saving file {{{2
-function s:MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-        let dir=fnamemodify(a:file, ':h')
-        if !isdirectory(dir)
-            call mkdir(dir, 'p')
+def s:MkNonExDir(filename: string, buf: number)
+    if empty(getbufvar(buf, '&buftype')) && filename !~# '\v^\w+\:\/'
+        var dirname = fnamemodify(filename, ':h')
+        if !isdirectory(dirname)
+            call mkdir(dirname, 'p')
         endif
     endif
-endfunction
+enddef
 
 augroup BWCCreateDir
     autocmd!
@@ -180,10 +172,42 @@ augroup BWCCreateDir
 augroup END
 
 " edit dotfile {{{2
-function! s:EditDotfile(name)
-    let dotpath=system('fd --type file --unrestricted --ignore-case --full-path --absolute-path ' . shellescape(a:name) . ' "$HOME/code-projects/devops/dotfiles"')
-    execute 'tabnew ' . dotpath 
-endfunction
+def s:EditDotfile(name: string)
+    var dotpath = system(
+        'fd --type file'
+        .. ' --unrestricted --ignore-case --full-path'
+        .. ' --absolute-path -1'
+        .. ' ' .. shellescape(name)
+        .. ' "$DOTFILES_PATH"'
+        )
+    execute 'tabnew ' .. dotpath 
+enddef
+
+" redirect command output to a new tab {{{2
+" https://gist.github.com/romainl/eae0a260ab9c135390c30cd370c20cd7
+def Redir(cmd: string)
+    var output = execute(cmd)
+    for winnr in range(1, winnr('$'))
+        if !empty(getwinvar(winnr, 'scratch', ''))
+            execute ':' .. winnr .. 'windo close'
+        endif
+    endfor 
+    tabnew
+    w:scratch = 1
+    setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+    call setline(1, split(output, "\n"))
+enddef
+
+
+" COMMANDS {{{1 ---------------------------------------------------------------
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command! -nargs=1 Edot call s:EditDotfile(<f-args>)
+command! Rvim execute ':source $MYVIMRC'
+command! RmTrailingSpaces call s:RemoveTrailingSpaces()
+command! RmEmptyLines execute 'g/^\s*$/d'
+" command MakeTags !ctags -R .  " create tags
+command! -nargs=1 Redir silent call Redir(<f-args>)
+
 
 " PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
 let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
@@ -196,4 +220,3 @@ for files in config_list
         exec 'source' f
     endfor
 endfor
-

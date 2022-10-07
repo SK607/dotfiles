@@ -80,7 +80,7 @@ fi
 
 # find dotfile dir and file in it
 edot() {
-    $EDITOR "$(fd --type file --unrestricted --ignore-case --full-path --absolute-path "$@"  "$DOTFILES_PATH")"
+    $EDITOR "$(fd --type file --unrestricted --ignore-case --full-path --absolute-path -1 "$@"  "$DOTFILES_PATH")"
 }
 
 # extract archive
