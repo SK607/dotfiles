@@ -93,7 +93,6 @@ fvi() {
         --bind "ctrl-b:change-prompt(> )+reload($CMD)" \
         --header 'C-s(how)  C-a(ll)  C-b(ase)' 
     )
-    echo "$FILES"
     [ -n "${FILES}" ] && vim -O -- "$FILES" || exit 1
 }
 
@@ -172,7 +171,7 @@ __fdiff__() {
         | '$ENTER_PAGER
 
     git diff --name-only "$*" |
-        fzf "${FZF_DEFAULT_OPTS}" \
+        fzf ${FZF_DEFAULT_OPTS} \
         --ansi \
         --reverse \
         --height=100% \
@@ -205,7 +204,7 @@ fgit() {
     git log --graph \
         --color=always \
         --format="%C(yellow)%h %C(auto)%as %s - %C(cyan)%an" |
-        fzf "${FZF_DEFAULT_OPTS}" \
+        fzf ${FZF_DEFAULT_OPTS} \
         --ansi \
         --reverse \
         --height=100% \

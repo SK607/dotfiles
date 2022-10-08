@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
+# Description: View/select images in a directory
+# 
+# Dependencies: swayimg
+# 
+# Shell: POSIX compliant
+# Author: Sergey Konkin
+
 images="$(swayimg -m -w "${SWAYIMG_BG:-282c34}" "$PWD")"
 
 if test -n "$images"; then

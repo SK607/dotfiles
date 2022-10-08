@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+
+# Description: Change directory using fzf
+# 
+# Dependencies: nnn-fzf-preview (script)
+#               fd (optional)
+#               bat (optional)
+# 
+# Shell: POSIX compliant
+# Author: Sergey Konkin
+
+if test -x "$(command -v fd)"; then
+    FD='fd --follow --relative-path --strip-cwd-prefix'
+else
+    FD='find -L | sed "s|^./||"'
+fi
+
+PREVIEW_WINDOW='hidden:wrap'
+if test $(tput cols) -lt 70; then
+    PREVIEW_WINDOW+=':down'
+else
+    PREVIEW_WINDOW+=':right'
+fi
+
+
+selected=$(
+    FZF_DEFAULT_COMMAND="$FD" \
+    fzf $FZF_DEFAULT_OPTS \
+        --no-multi \
+        --reverse \
+        --preview-window "$PREVIEW_WINDOW" \
+        --preview 'nnn-fzf-preview {}' \
+        --prompt 'fd-r> ' \
+        --bind 'ctrl-p:toggle-preview' \
+        --bind "ctrl-u:change-prompt(fd-u> )+reload($FD --unrestricted)" \
+        --bind "ctrl-r:change-prompt(fd-r> )+reload($FD)" \
+        --header 'C-p(review) C-u(nrestrictred) C-r(restricted)' 
+)
+
+
+if test -n "$selected"; then
+    if test -f "$selected"; then
+        sdir="$(dirname "$PWD/$selected")"
+    else
+        sdir="$PWD/$selected" 
+    fi
+    printf "%s" "0c$sdir" > "$NNN_PIPE"
+fi
+

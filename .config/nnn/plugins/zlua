@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 
+# Description: change dir via z.lua
+# 
+# Dependencies: z.lua, fzf
+# 
+# Shell: POSIX compliant
+# Author: Sergey Konkin
+
+
 NNN_ZLUA="$HOME/.local/opt/z.lua/z.lua"
 
 if ! type fzf >/dev/null 2>&1; then
@@ -16,6 +24,7 @@ fi
 printf "jump to: "
 read -r line
 
-odir="$(lua "$NNN_ZLUA" -l "$line" | fzf --reverse --tac --no-sort --no-multi -0 -1 --height 35%)"
+odir="$(lua "$NNN_ZLUA" -l "$line" \
+    | fzf --reverse --tac --no-sort --no-multi -0 -1 --height 35%)"
 printf "%s" "0c$(echo "$odir" | awk '{print $2}')" > "$NNN_PIPE"
 

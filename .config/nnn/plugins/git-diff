@@ -1,12 +1,21 @@
 #!/usr/bin/env sh
 
+# Description: if selection is not empty - show git diff
+#              otherwise - show git status
+# 
+# Dependencies: git
+# 
+# Shell: POSIX compliant
+# Author: Sergey Konkin
+
+
 selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
 
 # clear screen
 clear
 
 # show git info
-if [[ -f "$selection" ]]; then
+if test -f "$selection"; then
     xargs -0 git diff < $selection
 else
     git status -s $PWD
