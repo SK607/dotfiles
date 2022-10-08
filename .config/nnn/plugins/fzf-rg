@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+
+# Description: Change directory using rg
+# 
+# Dependencies: rg
+#               bat
+# 
+# Shell: POSIX compliant
+# Author: Sergey Konkin
+
+
+RG='rg --follow --column --line-number --no-heading --color always --smart-case --max-filesize 10M --max-count 1'
+
+PREVIEW_WINDOW='wrap'
+if test $(tput cols) -lt 70; then
+    PREVIEW_WINDOW+=':down'
+else
+    PREVIEW_WINDOW+=':right'
+fi
+
+NNN_SELECTION=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+
+
+IFS=: read -ra found < <(
+    FZF_DEFAULT_COMMAND="$RG ." \
+    fzf $FZF_DEFAULT_OPTS \
+        --ansi \
+        --no-multi \
+        --reverse \
+        --disabled --query '' \
+        --delimiter ':' \
+        --preview-window "$PREVIEW_WINDOW" \
+        --preview 'bat -n {1} --color=always --highlight-line {2}' \
+        --prompt 'rg-r> ' \
+        --bind "change:reload:sleep 0.5; $RG {q} || true" \
+        --bind "ctrl-u:unbind(change,ctrl-u)+change-prompt(rg-u> )+reload($RG --hidden --no-ignore {q} || true)+rebind(change,ctrl-u)" \
+        --bind "ctrl-r:unbind(change,ctrl-r)+change-prompt(rg-r> )+reload($RG {q} || true)+rebind(change,ctrl-r)" \
+        --header 'C-u(nrestricted) C-r(estricted)'
+)
+
+
+if test -n "${found[0]}"; then
+    sdir="$(dirname "$PWD/${found[0]}")"
+    printf "%s" "0c$sdir" > "$NNN_PIPE"
+fi
+

@@ -7,15 +7,16 @@
 # Shell: POSIX compliant
 # Author: Sergey Konkin
 
+
+NNN_SELECTION=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+
 images="$(swayimg -m -w "${SWAYIMG_BG:-282c34}" "$PWD")"
 
+
 if test -n "$images"; then
-    selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
-
     # write selection
-    printf "%s" "$images" | tr '\n' '\0' > "$selection"
-
+    printf "%s" "$images" | tr '\n' '\0' > "$NNN_SELECTION"
     # notify user
-    tr '\0' '\n' <"$selection" | less -R
+    tr '\0' '\n' <"$NNN_SELECTION" | less -R
 fi
 

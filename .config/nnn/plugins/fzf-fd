@@ -5,9 +5,11 @@
 # Dependencies: nnn-fzf-preview (script)
 #               fd (optional)
 #               bat (optional)
+#               exa (optional)
 # 
 # Shell: POSIX compliant
 # Author: Sergey Konkin
+
 
 if test -x "$(command -v fd)"; then
     FD='fd --follow --relative-path --strip-cwd-prefix'
@@ -23,7 +25,7 @@ else
 fi
 
 
-selected=$(
+found=$(
     FZF_DEFAULT_COMMAND="$FD" \
     fzf $FZF_DEFAULT_OPTS \
         --no-multi \
@@ -38,11 +40,11 @@ selected=$(
 )
 
 
-if test -n "$selected"; then
-    if test -f "$selected"; then
-        sdir="$(dirname "$PWD/$selected")"
+if test -n "$found"; then
+    if test -f "$found"; then
+        sdir="$(dirname "$PWD/$found")"
     else
-        sdir="$PWD/$selected" 
+        sdir="$PWD/$found" 
     fi
     printf "%s" "0c$sdir" > "$NNN_PIPE"
 fi

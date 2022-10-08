@@ -2,7 +2,7 @@ if [[ -x "$(command -v nnn)" ]]; then
     export NNN_OPTS='cErux'
     export NNN_BMS="c:$HOME/code-projects;d:$HOME/Downloads;p:$HOME/Pictures;v:$HOME/Videos"
     export NNN_ORDER="t:$HOME/Downloads;t:$HOME/Pictures"
-    export NNN_PLUG='i:swayimg;f:fzf-fd;g:git-diff;p:preview-tui;r:git-root;z:zlua'
+    export NNN_PLUG='d:git-diff;i:swayimg;f:fzf-fd;g:fzf-rg;p:preview-tui;r:git-root;z:zlua'
     export NNN_ARCHIVE='\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$'
     export NNN_FIFO='/tmp/nnn.fifo'
     export SPLIT='v'
