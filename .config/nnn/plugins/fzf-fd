@@ -16,20 +16,13 @@ if test -x "$(command -v fd)"; then
 else
     FD='find -L | sed "s|^./||"'
 fi
-
-PREVIEW_WINDOW='hidden:wrap'
-if test $(tput cols) -lt 70; then
-    PREVIEW_WINDOW+=':down'
-else
-    PREVIEW_WINDOW+=':right'
-fi
+PREVIEW_WINDOW='hidden:wrap:down,70%'
 
 
 found=$(
     FZF_DEFAULT_COMMAND="$FD" \
     fzf $FZF_DEFAULT_OPTS \
         --no-multi \
-        --reverse \
         --preview-window "$PREVIEW_WINDOW" \
         --preview 'nnn-fzf-preview {}' \
         --prompt 'fd-r> ' \

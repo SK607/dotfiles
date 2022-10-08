@@ -1,5 +1,5 @@
 # DEFAULTS
-export FZF_DEFAULT_OPTS="--bind up:preview-up,down:preview-down $FZF_THEME"
+export FZF_DEFAULT_OPTS="$FZF_THEME --bind up:preview-up,down:preview-down --reverse"
 
 
 # HISTORY search

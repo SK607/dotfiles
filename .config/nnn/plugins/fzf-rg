@@ -10,14 +10,7 @@
 
 
 RG='rg --follow --column --line-number --no-heading --color always --smart-case --max-filesize 10M --max-count 1'
-
-PREVIEW_WINDOW='wrap'
-if test $(tput cols) -lt 70; then
-    PREVIEW_WINDOW+=':down'
-else
-    PREVIEW_WINDOW+=':right'
-fi
-
+PREVIEW_WINDOW='wrap:down,70%'
 NNN_SELECTION=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
 
 
@@ -26,7 +19,6 @@ IFS=: read -ra found < <(
     fzf $FZF_DEFAULT_OPTS \
         --ansi \
         --no-multi \
-        --reverse \
         --disabled --query '' \
         --delimiter ':' \
         --preview-window "$PREVIEW_WINDOW" \

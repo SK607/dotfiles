@@ -45,7 +45,7 @@ if test -x "$(command -v bat)"
 end
 # configure fzf
 if test -x "$(command -v fzf)"
-  set -x FZF_DEFAULT_OPTS "$FZF_THEME --bind up:preview-up,down:preview-down"
+  set -x FZF_DEFAULT_OPTS "$FZF_THEME --bind up:preview-up,down:preview-down --reverse"
 end
 if test -f ~/.config/fish/fish_plugins
   if grep 'fzf' ~/.config/fish/fish_plugins 1> /dev/null
