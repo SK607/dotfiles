@@ -15,9 +15,6 @@ let g:fzf_colors =
   \ 'spinner':    ['fg', 'Label'],
   \ 'header':     ['fg', 'Comment'] }
 
-command! FindDir call fzf#run({ 'sink': 'cd', 'source': 'fd --type d --strip-cwd-prefix '.<f-args>.'', 'options': '--preview ''exa --icons --tree --color=always --group-directories-first --sort modified --reverse --ignore-glob "__pycache__|.git" --git-ignore -L 1 {}'' --prompt "$(basename "$PWD")/"' })
-command! FindFile call fzf#run(fzf#wrap({ 'source': 'fd --type f --strip-cwd-prefix '.<f-args>.'', 'options': '--preview ''bat -n --color=always {}'' --prompt "$(basename "$PWD")/"'}))
-
 nnoremap <Leader>fd :FindDir<CR>
 nnoremap <Leader>ff :FindFile<CR>
 nnoremap <Leader>fif :Rg<CR>
