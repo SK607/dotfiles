@@ -137,8 +137,8 @@ alias gc='git commit'
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'
 if test -x "$(command -v exa)"
-  alias exad='exa --group-directories-first --icons -a'
-  alias exadg='exa --group-directories-first --icons -al --git'
+  alias exd='exa --group-directories-first --icons --all'
+  alias exl='exa --group-directories-first --icons --all --long --git'
 end
 if test -x "$(command -v tree)"
   alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
