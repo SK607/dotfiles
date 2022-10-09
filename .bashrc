@@ -132,10 +132,10 @@ alias gc='git commit'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'
-[[ -x "$(command -v exa)" ]] && alias exd='exa --group-directories-first --icons --all'
-[[ -x "$(command -v exa)" ]] && alias exl='exa --group-directories-first --icons --all --long --git'
+[[ -x "$(command -v exa)" ]] && alias la='exa --group-directories-first --icons --all'
+[[ -x "$(command -v exa)" ]] && alias ll='exa --group-directories-first --icons --all --long --git'
 [[ -x "$(command -v tree)" ]] && alias treed='tree -C -I "__pycache__|.git" -tr --dirsfirst'
-[[ -x "$(command -v bat)" ]] && alias batd='bat -p'
+[[ -x "$(command -v bat)" ]] && alias b='bat -p'
 
 # additional commands
 alias jctl='journalctl -p 3 -xb'
