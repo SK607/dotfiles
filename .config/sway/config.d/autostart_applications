@@ -49,9 +49,6 @@ exec /usr/libexec/xdg-desktop-portal
 # Tracker daemon for gnome apps
 exec tracker daemon -s
 
-# Cheatsheet
-exec micro ~/.config/sway/cheatsheet
-
 # nwg-drawer
 exec_always nwg-drawer -r 
 
