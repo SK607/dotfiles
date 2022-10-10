@@ -9,10 +9,10 @@ let g:vimwiki_global_ext = 0
 nnoremap <Leader>ww :VimwikiTabIndex<CR>
 
 " resolve collision with vim-indentwise
-map [= <Plug>(IndentWisePreviousEqualIndent)
-map ]= <Plug>(IndentWiseNextEqualIndent)
-nnoremap h[[ <Plug>VimwikiGoToNextHeader
-nnoremap h]] <Plug>VimwikiGoToPrevHeader
-nnoremap h[= <Plug>VimwikiGoToNextSiblingHeader
-nnoremap h]= <Plug>VimwikiGoToPrevSiblingHeader
+autocmd FileType vimwiki map [= <Plug>(IndentWisePreviousEqualIndent)
+autocmd FileType vimwiki map ]= <Plug>(IndentWiseNextEqualIndent)
+autocmd FileType vimwiki nnoremap {{ <Plug>VimwikiGoToNextHeader
+autocmd FileType vimwiki nnoremap }} <Plug>VimwikiGoToPrevHeader
+autocmd FileType vimwiki nnoremap {= <Plug>VimwikiGoToNextSiblingHeader
+autocmd FileType vimwiki nnoremap }= <Plug>VimwikiGoToPrevSiblingHeader
 
