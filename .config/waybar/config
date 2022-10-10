@@ -1,11 +1,13 @@
 {
+// https://github.com/Alexays/Waybar/wiki/Configuration
+
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30,
     //"width": 1350, // Waybar width
-    // Choose the order of the modules idle_inhibitor
-    "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["tray", "idle_inhibitor", "custom/keyboard-layout", "temperature", "pulseaudio", "clock", "battery"], 
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "idle_inhibitor", "custom/keyboard-layout", "pulseaudio", "temperature", "battery"], 
     
  // Modules configuration
  
@@ -42,9 +44,9 @@
         "spacing": 5
     },
     "clock": {
+        "locale": "en_US.UTF-8",
         "tooltip-format": "{:%A %d %B %Y %H:%M}",
-        "format": "  {:%d %b %H:%M}",	//24 hour format
-        //"timezones": [ "Kolkata" ],
+        "format": "{:%a %d %b %H:%M}",	//24 hour format
         "interval": 20
     },
     "cpu": {
@@ -92,9 +94,9 @@
     },
     "pulseaudio": {
         "scroll-step": 5,
-        "format": "{icon} {volume: >3}%",
-        "format-bluetooth": "{icon} {volume: >3}%",
-        "format-muted":" muted",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted":"0% ﱝ",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -102,7 +104,8 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "muted": "",
+            "default": "墳"
         },
         "on-click": "pavucontrol"
     },

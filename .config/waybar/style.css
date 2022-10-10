@@ -44,30 +44,30 @@ nord15 #b48ead
     color: #eceff4;
     border: 0;
     border-radius: 0;
-    padding: 0 0;
-    /* font-family: IosevkaNerdFont; */
+    padding: 0;
+    margin: 0 3px;
     font-family: mononokiNerdFont;
     font-size: 16px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-bottom:3px;
-   }
+}
 
 window#waybar {
     background: #2e3440;
 }
 
+#workspaces {
+    /* padding-top: 8px; */
+}
+
 #workspaces button {
-    padding: 2px 0px;
-    border-bottom: 2px;
+    margin: 0 0px;
+    padding: 4px 8px;
     color: #eceff4;
-    border-color: #d8dee9;
-    border-style: solid;
-    margin-top:2px;
+    border-radius: 10%;
+    background-color: #434c5e;
 }
 
 #workspaces button.focused {
-    border-color: #81a1c1;
+    background-color: #81a1c1;
 }
 
 #mode {
@@ -139,15 +139,15 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #81a1c1;
+    color: #eceff4;
 }
 
 #pulseaudio.muted {
-    color: #4c566a;
+    color: #eceff4;
 }
 
 #temperature {
-    color: #81a1c1;
+    color: #eceff4;
 }
 
 #temperature.critical {
@@ -155,7 +155,7 @@ window#waybar {
 }
 
 #idle_inhibitor {
-   color: #81a1c1;
+    color: #eceff4;
 }
 
 #tray {
@@ -175,8 +175,6 @@ window#waybar {
 }
 
 #custom-keyboard-layout{
-   color: #81a1c1;
-}   
-
-
+    color: #eceff4;
+}
 
