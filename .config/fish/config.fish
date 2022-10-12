@@ -61,7 +61,7 @@ set -x DOTFILES_PATH "$HOME/code-projects/devops/dotfiles"
 ### CONFIGURE CLI
 # prompt
 if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
+   source (starship init fish --print-full-init | psub)
 end
 
 
