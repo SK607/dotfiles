@@ -5,11 +5,11 @@ CWD="$( dirname -- "$( readlink -f -- "\$0"; )"; )"
 endsnippet
 
 snippet cv "Command Exists oneline" b
-[[ -x "$(command -v ${0:word})" ]] &&
+test -x "$(command -v ${0:word})" &&
 endsnippet
 
 snippet ifcv "Command Exists If block" b
-if [[ -x "$(command -v ${1:word})" ]]; then
+if test -x "$(command -v ${1:word})"; then
 	${0:${VISUAL}}
 fi
 endsnippet
@@ -46,4 +46,3 @@ while true; do
 done
 endsnippet
    
-	
