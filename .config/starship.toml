@@ -65,7 +65,7 @@ truncation_symbol = ''
 
 [python]
 format = '[$virtualenv]($style) '
-style = 'magenta'
+style = 'purple'
 symbol = ''
 
 [cmd_duration]
