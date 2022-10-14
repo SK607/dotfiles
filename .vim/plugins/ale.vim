@@ -1,7 +1,9 @@
 let g:ale_completion_enabled = 1
 let g:ale_python_auto_poetry = 1
+let g:ale_python_pylint_use_msg_id = 1
+
 let g:ale_linters = {
-\   'python': ['pylint', 'pylsp'],
+\   'python': ['pylint', 'pylsp', 'mypy'],
 \   'sh': ['language_server', 'shellcheck'],
 \   'go': ['golangci-lint'],
 \}
