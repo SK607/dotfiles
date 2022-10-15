@@ -70,7 +70,11 @@ fi
 if test -x "$(command -v mypy)"; then
     link_dot .config/mypy "$HOME/.config/mypy"
 fi
+if test -x "$(command -v pylint)"; then
+    link_dot .pylintrc "$HOME/.pylintrc" 
+fi
 if test -x "$(command -v htop)"; then
     link_dot .config/htop "$HOME/.config/htop" 
 fi
+
 
