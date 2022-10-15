@@ -66,3 +66,11 @@ if test -x "$(command -v swaylock)"; then
     link_dot .config/swaylock "$HOME/.config/swaylock"
 fi
 
+## APPS
+if test -x "$(command -v mypy)"; then
+    link_dot .config/mypy "$HOME/.config/mypy"
+fi
+if test -x "$(command -v htop)"; then
+    link_dot .config/htop "$HOME/.config/htop" 
+fi
+
