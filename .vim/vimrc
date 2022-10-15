@@ -120,17 +120,14 @@ inoremap <C-s> <ESC>:w<CR>
 " quit vim {{{2
 nnoremap ZQ :q!<CR>
 " quickfix navigation {{{2
-nnoremap qn :cnext<CR>
-nnoremap qp :cprevious<CR>
-nnoremap qo :copen<CR>
-nnoremap qc :cclose<CR>
+nnoremap <silent> qn :cnext<CR>
+nnoremap <silent> qp :cprevious<CR>
+nnoremap <silent> qo :copen<CR>
+nnoremap <silent> qc :cclose<CR>
 " missing readline shortcuts {{{2
 cnoremap <c-k> <c-\>egetcmdline()[:getcmdpos()-2]<CR>
 " remap indent due to C-d usage {{{2
 inoremap <C-g> <C-o><<
-" newtab {{{2
-nnoremap tn :tabnew
-nnoremap tc :tabclose
 " copypaths {{{2
 nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
 nnoremap <Leader>cn :let @+ = expand("%:t")<CR>
