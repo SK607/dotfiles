@@ -9,3 +9,16 @@ if __name__ == '__main__':
 	)
 	args = parser.parse_args()
 endsnippet
+
+snippet ofr "Open file for reading" b
+with open('${1:path}', 'r', encoding='utf-8') as ${2:file}:
+	${3:data} = $2.read()
+$0
+endsnippet
+
+snippet ofw "Open file for writing" b
+with open('${1:path}', 'w+', encoding='utf-8') as ${2:file}:
+	${3:data} = $2.read()
+$0
+endsnippet
+
