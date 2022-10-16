@@ -5,12 +5,41 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30,
     //"width": 1350, // Waybar width
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "custom/keyboard-layout", "pulseaudio", "temperature", "battery"], 
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "idle_inhibitor",
+        "custom/keyboard-layout",
+        "pulseaudio",
+        "temperature",
+        "battery"
+    ], 
     
  // Modules configuration
- 
+    "backlight": {
+        // "device": "acpi_video1", "intel_backlight"
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-click-right": "brightnessctl -c backlight set 5%-",
+        "on-click": "brightnessctl -c backlight set 5%+"
+    },
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -41,7 +70,8 @@
     },
     "tray": {
         "icon-size": 14,
-        "spacing": 5
+        "spacing": 5,
+        "show-passive-items": true
     },
     "clock": {
         "locale": "en_US.UTF-8",
@@ -49,40 +79,33 @@
         "format": "{:%a %d %b %H:%M}",	//24 hour format
         "interval": 20
     },
-    "cpu": {
-        "format": "﬙ {usage: >3}%",
-        "on-click": "alacritty -e htop"
-    },
-    "memory": {
-        "format": " {: >3}%",
-        "on-click": "alacritty -e htop"
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": " {temperatureC}°C",
-        "format": " {temperatureC}°C",
-	    "interval": 60
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon} {percent: >3}%",
-        "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl -c backlight set 5%-",
-        "on-scroll-up": "brightnessctl -c backlight set +5%"
-    },
     "battery": {
         "states": {
             "good": 80,
             "warning": 30,
             "critical": 15
         },       
-        "format": "{icon} {capacity: >3}%",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
-        //"format-icons": ["", "", "", "", "", "", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "interval": 60
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -90,6 +113,8 @@
         "format-wifi": " {essid}",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠ Disconnected",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits} -  {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits} -  {bandwidthDownBits}",
         "on-click": "alacritty -e nmtui"
     },
     "pulseaudio": {
@@ -104,23 +129,9 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "muted": "",
             "default": "墳"
         },
         "on-click": "pavucontrol"
-    },
-     "custom/pacman": {
-        "format": " {}",
-        "interval": 7200,                     // every two hours
-        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu", // update system
-        "signal": 8
-    },
-    "custom/power": {
-      	"format":"⏻",
-       	"on-click": "nwg-bar",
-      	"tooltip": false,
     },
     "custom/keyboard-layout": {
       	"exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4 | cut -c -2 | tr '[:upper:]' '[:lower:]'",
@@ -132,9 +143,7 @@
       	"tooltip": false,
         // "on-click": "~/.config/waybar/scripts/keyhint.sh",
     },
-    "custom/launcher": {
-    	"format":" ",
-    	"on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    	"tooltip": false,
+    "sway/language": {
+        "format": "< {shortDescription}",
     },
 }
