@@ -78,7 +78,6 @@ Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " 
 " editor {{{2
 Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
 Plug 'https://github.com/ervandew/supertab'  " <TAB> for autocomplete
-Plug 'https://github.com/sickill/vim-pasta'  " indented paste
 Plug 'https://github.com/tpope/vim-rsi'  " readline-like shortcuts
 Plug 'https://github.com/tpope/vim-repeat'  " patch for vim-surround
 Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)
@@ -91,6 +90,7 @@ Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif
 Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
 Plug 'https://github.com/vimwiki/vimwiki'  " help files
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
+Plug 'https://github.com/mg979/vim-visual-multi'
 " devops {{{2
 " Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
@@ -138,6 +138,9 @@ nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
 nnoremap <Leader>cn :let @+ = expand("%:t")<CR>
 " prefill substitute command {{{2
 nnoremap S :%s///ge<Left><Left><Left><Left><C-r>=expand("<cword>")<CR><Right>
+" indent-aware paste
+nnoremap <leader>p p`[v`]=
+nnoremap <leader>P P`[v`]=
 " search / color / hidden symbols / code highlight / tags / git / lint {{{2
 nnoremap <silent> <F1> :let @/=""<CR>
 nnoremap <silent> <F2> :set list! list?<CR>
