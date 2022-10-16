@@ -116,16 +116,23 @@ map Q <Nop>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 " quit vim {{{2
-nnoremap ZQ :q!<CR>
+nnoremap <silent> ZQ :q!<CR>
 " quickfix navigation {{{2
 nnoremap <silent> qn :cnext<CR>
 nnoremap <silent> qp :cprevious<CR>
 nnoremap <silent> qo :copen<CR>
 nnoremap <silent> qc :cclose<CR>
+" navigate windows
+nnoremap <C-LEFT> <C-w>h
+nnoremap <C-DOWN> <C-w>j
+nnoremap <C-UP> <C-w>k
+nnoremap <C-RIGHT> <C-w>l
+nnoremap <s-LEFT> :vertical resize +1 <Cr>
+nnoremap <s-RIGHT> :vertical resize -1 <Cr>
+nnoremap <s-UP> :resize +1 <Cr>
+nnoremap <s-DOWN> :resize -1 <Cr>
 " missing readline shortcuts {{{2
 cnoremap <c-k> <c-\>egetcmdline()[:getcmdpos()-2]<CR>
-" remap indent due to C-d usage {{{2
-inoremap <C-g> <C-o><<
 " copypaths {{{2
 nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
 nnoremap <Leader>cn :let @+ = expand("%:t")<CR>
