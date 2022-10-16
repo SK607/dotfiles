@@ -84,9 +84,7 @@ Plug 'https://github.com/tpope/vim-repeat'  " patch for vim-surround
 Plug 'https://github.com/tpope/vim-surround'  " brackets, tags object (s)
 Plug 'https://github.com/tpope/vim-commentary'  " comment object (gc)
 Plug 'https://github.com/tpope/vim-endwise'  " autoclose if, for, ...
-if $XDG_SESSION_TYPE ==? 'wayland'
-    Plug 'https://github.com/jasonccox/vim-wayland-clipboard'
-endif
+Plug 'https://github.com/christoomey/vim-system-copy'  " copy to system clipboard
 Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
 Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines  (<L>w)
 Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif)
