@@ -206,7 +206,8 @@ enddef
 
 " search in google
 def GoogleIt(query: string)
-    var url = 'https://www.google.com/search?q='
+    " var url = 'https://www.google.com/search?q='
+    var url = 'https://search.brave.com/search?q='
     url ..= substitute(query, '\s\+', '+', 'g')
     system('xdg-open ' .. url)
 enddef
