@@ -30,6 +30,7 @@ set nostartofline  " don't move cursor to line start
 set nolangremap   " for hotkeys
 set nomodeline   " security
 set shortmess+=sAI  " hide search hit & swapfile warnings, intro message
+set shortmess-=S  " enable search result count
 set switchbuf=usetab  " if opening buffer, search first in opened windows
 set background=dark
 if &term ==? 'alacritty'        
