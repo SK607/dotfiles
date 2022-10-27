@@ -2,7 +2,6 @@ colors:
   primary:
     background: '#282c34'
     foreground: '#d8dee9'
-    dim_foreground: '#282c34'
   cursor:
     text: '#2e3440'
     cursor: '#d8dee9'
@@ -10,22 +9,22 @@ colors:
     text: '#2e3440'
     cursor: '#d8dee9'
   selection:
-    text: CellForeground
-    background: '#4c566a'
+    text: '#2e3440'
+    background: '#d8dee9'
   search:
     matches:
-      foreground: CellBackground
-      background: '#88c0d0'
-    footer_bar:
+      foreground: '#98c379'
       background: '#434c5e'
-      foreground: '#d8dee9'
+    focused_match:
+      foreground: '#f9929b'
+      background: '#434c5e'
   hints:
     start:
-      foreground: '#282c34'
-      background: '#88c0d0'
+      foreground: '#88c0d0'
+      background: '#434c5e'
     end:
-      foreground: '#282c34'
-      background: '#88c0d0'
+      foreground: '#88c0d0'
+      background: '#434c5e'
   normal:
     black: '#434c5e'
     red: '#f9929b'

@@ -1,6 +1,6 @@
 # https://github.com/junegunn/fzf/wiki/Color-schemes
 if [[ -x "$(command -v fzf)" ]]; then
-    export FZF_THEME='--color fg:#d3c6aa,bg:#2f383e,hl:#a7c080,fg+:#d3c6aa,bg+:#2f383e,hl+:#83c092,info:#83c092,border:#859289,prompt:#e69875,pointer:#7fbbb3,marker:#dbbc7f,spinner:#dbbc7f,header:#859289'
+    export FZF_THEME='--color fg:#d8dee9,bg:#282c34,hl:#88c0d0,fg+:#d8dee9,bg+:#282c34,hl+:#f9929b,pointer:#f9929b,info:#98c379,spinner:#f9929b,header:#81a1c1,prompt:#81a1c1,marker:#f9929b'
 fi
 
 # https://github.com/jarun/nnn/wiki/Usage#configuration
@@ -12,7 +12,7 @@ fi
 
 # https://github.com/artemsen/swayimg
 if [[ -x "$(command -v swayimg)" ]]; then
-   export SWAYIMG_BG='#2f383e' 
+   export SWAYIMG_BG='282c34' 
 fi
 
 # ls color support

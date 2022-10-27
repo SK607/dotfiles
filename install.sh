@@ -44,7 +44,26 @@ while read line; do
     fi
 done <<< "$DOTS"
 
+
 if test -x "$(command -v bat)"; then
     bat cache --build
+fi
+
+
+if test -x "$(command -v gnome-shell)"; then
+    THEMES=( 'Everforest-Dark-BL Nordic-v40' )
+    for theme in $THEMES;
+    do
+        NAME=$(echo "$theme" | 
+               tr '[:upper:]' '[:lower:]' |
+               grep -oE '^[^-]+' )
+        CONFIG="$HOME/.themes/$theme/gnome-shell/gnome-shell.css"
+        if ! grep -q '@import' "$CONFIG"; then
+            EXTRA="$CWD/themes/$NAME/gnome-shell.css"
+            echo -e "@import url(\"$EXTRA\");\n$(cat $CONFIG)" > $CONFIG
+        fi
+        ln -svf "$CWD/.themes/$NAME/workspaces-bar.css" \
+                "$HOME/.local/share/gnome-shell/extensions/workspaces-bar@fthx/stylesheet.css"
+    done
 fi
 

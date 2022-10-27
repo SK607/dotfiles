@@ -2,7 +2,7 @@
 # https://github.com/arcticicestudio/nord-alacritty
 
 import:
-  - ~/.config/alacritty/theme-everforest.yml
+  - ~/.config/alacritty/theme-nord.yml
   - ~/.config/alacritty/fonts.yml
 shell:
   program: /bin/fish

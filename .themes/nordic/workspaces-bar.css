@@ -1,0 +1,15 @@
+.desktop-label-nonempty-active,
+.desktop-label-nonempty-inactive,
+.desktop-label-empty-active,
+.desktop-label-empty-inactive {
+  padding: 2px;
+  background-color: #3b4252;
+  color: #88c0d0;
+}
+
+.desktop-label-nonempty-active,
+.desktop-label-empty-active {
+  background-color: #88c0d0;
+  color: #3b4252;
+}
+

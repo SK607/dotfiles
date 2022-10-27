@@ -1,0 +1,16 @@
+@import url("gnome-shell-base.css");
+
+stage {
+  font-size: 14pt;
+}
+
+#panel {
+  height: 30px;
+  background-color: rgba(43, 51, 57, 1); 
+  font-size: 14pt;
+}
+
+.popup-menu {
+  font-size: 12pt;
+}
+
