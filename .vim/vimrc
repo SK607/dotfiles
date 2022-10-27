@@ -1,7 +1,7 @@
 scriptencoding utf-8
 " EDITOR {{{1 -----------------------------------------------------------------
 set nocompatible  " arrows + etc @ vi cmd
-set mouse=iv  " enable mouse
+set mouse=iva  " enable mouse
 set number relativenumber  " add line numbers
 set splitbelow splitright  " change default positioning
 set showtabline=2  " show tab bar
@@ -75,6 +75,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/gruvbox-community/gruvbox'
     let g:gruvbox_contrast_dark='soft'
     let g:gruvbox_italic = 1
+    let g:everforest_better_performance = 1
+Plug 'https://github.com/sainnhe/everforest'
+    let g:everforest_enable_italic = 1
 Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " highlight HEX/RGBA colors (F3)
 " editor {{{2
 Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
@@ -228,7 +231,7 @@ command! -nargs=1 G call GoogleIt(<f-args>)
 " PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
 let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
 let config_list = [
-    \ 'themes/gruvbox.vim',
+    \ 'themes/everforest.vim',
     \ 'plugins/*.vim'
     \]
 for files in config_list

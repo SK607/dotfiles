@@ -49,7 +49,7 @@ __bash_prompt() {
     local blue="\[\e[0;38;5;4m\]"
     local magenta="\[\e[0;38;5;5m\]"
     # local teal="\[\e[0;38;5;6m\]"
-    local white="\[\e[2;38;5;7m\]"
+    local white="\[\e[0;38;5;7m\]"
     local reset="\[\e[m\]"
 
     local prompt=''

@@ -53,7 +53,6 @@ else
     [[ -f "$HOME/.bash.d/prompt.sh" ]] && source "$HOME/.bash.d/prompt.sh"
 fi
 
-
 ### ADD COMPLETIONS
 if ! shopt -oq posix; then
     if  [[ -z "$BASH_COMPLETION_VERSINFO" ]]; then

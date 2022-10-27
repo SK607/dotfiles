@@ -138,3 +138,6 @@ _poetry_ff38fae630fc78e1_complete()
 
 complete -o default -F _poetry_ff38fae630fc78e1_complete poetry
 complete -o default -F _poetry_ff38fae630fc78e1_complete /home/abs/.poetry/bin/poetry
+
+
+complete -c man whereis which

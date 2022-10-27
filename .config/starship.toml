@@ -1,5 +1,5 @@
 format="""
-[┌──](bold dimmed white)\
+[┌──](bold white)\
 $shell\
 $username\
 $hostname\
@@ -9,7 +9,7 @@ $directory\
 $python\
 $cmd_duration\
 $line_break\
-[└─> ](bold dimmed white)
+[└─> ](bold white)
 """
 add_newline = true
 
@@ -19,17 +19,17 @@ disabled = false
 fish_indicator = ' '
 bash_indicator = ' '
 zsh_indicator = ' '
-style = 'dimmed white'
+style = 'white'
 
 [username]
 format = '[$user]($style)'
-style_root = 'dimmed white'
-style_user = 'dimmed white'
+style_root = 'white'
+style_user = 'white'
 show_always = true
 
 [hostname]
 format = '[@$hostname$ssh_symbol]($style) '
-style = 'dimmed white'
+style = 'white'
 ssh_symbol = ' '
 trim_at = '-'
 disabled = false
