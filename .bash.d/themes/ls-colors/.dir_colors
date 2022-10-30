@@ -654,6 +654,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 *ignore                 00;38;5;6
 *MANIFEST.in            00;38;5;6  # python
 *MANIFEST               00;38;5;6
+*black                  00;38;5;6
 *Flavorfile             00;38;5;6  # vim-flavor
 *manifest.json          00;38;5;6
 *package.json           00;38;5;6

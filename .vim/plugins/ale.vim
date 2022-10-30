@@ -7,6 +7,9 @@ let g:ale_linters = {
 \   'sh': ['language_server', 'shellcheck'],
 \   'go': ['golangci-lint'],
 \}
+let g:ale_fixers = {
+\   'python': ['black']
+\}
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0 

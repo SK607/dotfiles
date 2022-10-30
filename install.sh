@@ -24,6 +24,7 @@ waybar      .config/waybar
 swaylock    .config/swaylock
 mypy        .config/mypy
 pylint      .config/pylint
+black       .config/black
 htop        .config/htop
 zathura     .config/zathura
 EOM
