@@ -7,7 +7,8 @@ ignore-paths=^.*(\\|/)(.venv|aerich|migrations)(\\|/).*$
 disable=
     missing-module-docstring,
     missing-function-docstring,
-    trailing-newlines
+    trailing-newlines,
+    invalid-name
 
 [FORMAT]
 max-module-lines=1000

@@ -4,10 +4,10 @@ hi QuickScopePrimary gui=underline
 hi QuickScopeSecondary gui=underline
 
 " nord theme bg fix
-hi Normal guibg=#282c34
-hi VertSplit guibg=#282c34
-hi EndOfBuffer guibg=#282c34 
-hi Terminal guibg=#282c34
+" hi Normal guibg=#282c34
+" hi VertSplit guibg=#282c34
+" hi EndOfBuffer guibg=#282c34 
+" hi Terminal guibg=#282c34
 
 " tabline
 hi TabLine guibg=#4a555b guifg=#d3c6aa gui=NONE cterm=NONE

@@ -1,4 +1,5 @@
 *.pyc
+*.svg
 tags
 .git/
 __pycache__/

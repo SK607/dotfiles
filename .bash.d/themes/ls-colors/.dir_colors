@@ -46,6 +46,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .dmg                    03;38;5;15  # package
 .crx                    03;38;5;15  # package
 .xpi                    03;38;5;15  # package
+.dat                    03;38;5;15
 .egg                    03;38;5;15
 .gz                     03;38;5;15
 .gzip                   03;38;5;15
@@ -406,7 +407,11 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .hpp.in                 00;38;5;2  # C-family
 .htm                    00;38;5;2  # html-family
 .html                   00;38;5;2  # html-family
+.tpl                    00;38;5;2  # html-family
 .hxx                    00;38;5;2  # C-family
+.hs                     00;38;5;2  # Haskell
+.hs-boot                00;38;5;2  # Haskell
+.hsig                   00;38;5;2  # Haskell
 .i                      00;38;5;2  # C-family
 .iced                   00;38;5;2  # js-family
 .ii                     00;38;5;2  # C-family
@@ -475,11 +480,15 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .xhtml                  00;38;5;2  # html-family
 .yul                    00;38;5;2  # Solidity
 .yulp                   00;38;5;2  # Solidity
+.rs                     00;38;5;2  # Rust
+.sbt                    00;38;5;2  # scala
+.sc                     00;38;5;2  # scala
+.scala                  00;38;5;2  # scala
+.cairo                  00;38;5;2  # Cairo
 ## disabled
 # .applescript            00;38;5;2  # applescript
 # .as                     00;38;5;2  # ActionScript
 # .bas                    00;38;5;2  # basic
-# .cairo                  00;38;5;2  # Cairo
 # .cginc                  00;38;5;2
 # .clj                    00;38;5;2  # closure
 # .cljc                   00;38;5;2  # closure
@@ -496,9 +505,6 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 # .hlsl                   00;38;5;2  # HLSL
 # .hlsli                  00;38;5;2  # HLSL
 # .hrl                    00;38;5;2  # erlang
-# .hs                     00;38;5;2  # Haskell
-# .hs-boot                00;38;5;2  # Haskell
-# .hsig                   00;38;5;2  # Haskell
 # .ps1                    00;38;5;2  # shell (Powershell)
 # .psd1                   00;38;5;2  # shell (Powershell)
 # .psm1                   00;38;5;2  # shell (Powershell)
@@ -506,14 +512,12 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 # .pssc                   00;38;5;2  # shell (Powershell)
 # .pug                    00;38;5;2  # Pug
 # .pyt                    00;38;5;2  # python (toolbox)
-# .rs                     00;38;5;2  # Rust
-# .sbt                    00;38;5;2  # scala
-# .sc                     00;38;5;2  # scala
-# .scala                  00;38;5;2  # scala
 # .shader                 00;38;5;2
 # .vb                     00;38;5;2  # basic
 # .vba                    00;38;5;2  # basic
 # .vbs                    00;38;5;2  # basic
+# .kt                     00;38;5;2  # kotlin
+# .kts                    00;38;5;2  # kotlin
 
 
 ## DATA
@@ -613,6 +617,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .mdtext                 00;38;5;7  # markdown
 .mdtxt                  00;38;5;7  # markdown
 .mdwn                   00;38;5;7  # markdown
+.wiki                   00;38;5;7  # vimwiki
 .mkd                    00;38;5;7  # markdown
 .pod                    00;38;5;7  # markup
 .rst                    00;38;5;7  # markup
@@ -649,6 +654,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 *ignore                 00;38;5;6
 *MANIFEST.in            00;38;5;6  # python
 *MANIFEST               00;38;5;6
+*Flavorfile             00;38;5;6  # vim-flavor
 *manifest.json          00;38;5;6
 *package.json           00;38;5;6
 *product.json           00;38;5;6
@@ -678,12 +684,14 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .timer                  00;38;5;6  # systemd
 .snapshot               00;38;5;6  # systemd
 .bash_aliases           00;38;5;6  # shell
-.bash_completions       00;38;5;6  # shell
+.bash_completion        00;38;5;6  # shell
 .bash_functions         00;38;5;6  # shell
 .bash_login             00;38;5;6  # shell
 .bash_logout            00;38;5;6  # shell
 .bash_profile           00;38;5;6  # shell
 .bash_variables         00;38;5;6  # shell
+.fish_variables         00;38;5;6  # shell
+.fish_plugins           00;38;5;6  # shell
 .ca-bundle              00;38;5;6  # certificate
 .merged-ca-bundle       00;38;5;6  # certificate
 .user-ca-bundle         00;38;5;6  # certificate
@@ -734,6 +742,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .key                    00;38;5;6  # certificate
 .keystore               00;38;5;6  # certificate
 .list                   00;38;5;6  # mime.list
+.types                  00;38;5;6  # mime.types
 .ovpn                   00;38;5;6
 .fish                   00;38;5;6  # shell
 .p12                    00;38;5;6  # certificate
@@ -756,6 +765,8 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .toml                   00;38;5;6
 .tox                    00;38;5;6  # python
 .vim                    00;38;5;6  # editor
+.vader                  00;38;5;6  # editor (vim test suite)
+.snippets               00;38;5;6  # editor
 .xprofile               00;38;5;6  # shell
 .xsession               00;38;5;6  # shell
 .Xsession               00;38;5;6  # shell
@@ -832,7 +843,11 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 *#                      00;38;5;8
 *.log.?                 00;38;5;8
 *_history               00;38;5;8
+*cookie                 00;38;5;8
+*history                00;38;5;8
+*lock                   00;38;5;8
 *lock.json              00;38;5;8
+*lockfile               00;38;5;8
 *~                      00;38;5;8
 .0                      00;38;5;8
 .1                      00;38;5;8
@@ -844,58 +859,62 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .7                      00;38;5;8
 .8                      00;38;5;8
 .9                      00;38;5;8
+.10                     00;38;5;8
+.BAK                    00;38;5;8
+.DIST                   00;38;5;8
+.OLD                    00;38;5;8
+.ORIG                   00;38;5;8
+.a                      00;38;5;8  # unix system lib
+.aria2                  00;38;5;8  # dump
 .aux                    00;38;5;8
 .bak                    00;38;5;8
-.BAK                    00;38;5;8
 .bbl                    00;38;5;8
+.bkp                    00;38;5;8
 .blg                    00;38;5;8
 .cache                  00;38;5;8
 .class                  00;38;5;8
 .coverage               00;38;5;8  # python
 .coverage.*             00;38;5;8  # python
 .dist                   00;38;5;8
-.DIST                   00;38;5;8
 .dll                    00;38;5;8  # unix system lib 
-*lock                   00;38;5;8
-*lockfile               00;38;5;8
 .dump                   00;38;5;8  # dump
-.stackdump              00;38;5;8  # dump
-.zcompdump              00;38;5;8  # dump
-.zwc                    00;38;5;8  # dump
-.aria2                  00;38;5;8  # dump
-.example                00;38;5;8
-.ind                    00;38;5;8
-.idx                    00;38;5;8
-.log                    00;38;5;8
-.pack                   00;38;5;8
-.map                    00;38;5;8
-.pid                    00;38;5;8
-.state                  00;38;5;8
 .err                    00;38;5;8
 .error                  00;38;5;8
-.stderr                 00;38;5;8
+.example                00;38;5;8
+.plugins                00;38;5;8
+.idx                    00;38;5;8
+.ind                    00;38;5;8
+.lesshst                00;38;5;8
+.log                    00;38;5;8
+.map                    00;38;5;8
+.netrwhist              00;38;5;8
 .o                      00;38;5;8  # unix system lib
-.a                      00;38;5;8  # unix system lib
 .old                    00;38;5;8
-.OLD                    00;38;5;8
 .orig                   00;38;5;8
-.ORIG                   00;38;5;8
+.pack                   00;38;5;8
+.pacnew                 00;38;5;8
 .part                   00;38;5;8
+.pid                    00;38;5;8
 .pyc                    00;38;5;8
 .pyc                    00;38;5;8  # python
 .pyd                    00;38;5;8  # python
 .pyo                    00;38;5;8  # python
-.reg                    00;38;5;8  # WIN
 .rbc                    00;38;5;8
+.reg                    00;38;5;8  # WIN
+.sassc                  00;38;5;8
 .so                     00;38;5;8  # unix system lib
+.stackdump              00;38;5;8  # dump
+.state                  00;38;5;8
+.stderr                 00;38;5;8
 .swo                    00;38;5;8
 .swp                    00;38;5;8
 .temp                   00;38;5;8
 .tmp                    00;38;5;8
-.sassc                  00;38;5;8
-.pacnew                 00;38;5;8
 .un~                    00;38;5;8
 .viminfo                00;38;5;8
+.wget-hsts              00;38;5;8
+.zcompdump              00;38;5;8  # dump
+.zwc                    00;38;5;8  # dump
 ## disabled
 # .DS_Store               00;38;5;8  # OSX
 # .localized              00;38;5;8  # OSX

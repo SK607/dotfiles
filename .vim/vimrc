@@ -39,6 +39,7 @@ endif
 if &t_Co >= 256
   set termguicolors
 endif
+let g:vim_theme='everforest'
 
 " SYNTAX {{{1 -----------------------------------------------------------------
 syntax enable  " hightlight syntax
@@ -69,15 +70,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     augroup END
 endif
 
-
 call plug#begin('~/.vim/plugged')
 " style {{{2
-Plug 'https://github.com/gruvbox-community/gruvbox'
-    let g:gruvbox_contrast_dark='soft'
-    let g:gruvbox_italic = 1
-    let g:everforest_better_performance = 1
-Plug 'https://github.com/sainnhe/everforest'
-    let g:everforest_enable_italic = 1
+if g:vim_theme ==? 'gruvbox'
+    Plug 'https://github.com/gruvbox-community/gruvbox'
+        let g:gruvbox_contrast_dark='soft'
+        let g:gruvbox_italic = 1
+elseif g:vim_theme ==? 'everforest'
+    Plug 'https://github.com/sainnhe/everforest'
+        let g:everforest_enable_italic = 1
+        let g:everforest_better_performance = 1
+endif
 Plug 'https://github.com/RRethy/vim-hexokinase', { 'do': 'make hexokinase' }  " highlight HEX/RGBA colors (F3)
 " editor {{{2
 Plug 'https://github.com/farmergreg/vim-lastplace'  " open at last edit
@@ -94,13 +97,12 @@ Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif
 Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
 Plug 'https://github.com/vimwiki/vimwiki'  " help files
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
-Plug 'https://github.com/mg979/vim-visual-multi'
+" Plug 'https://github.com/mg979/vim-visual-multi'
 " devops {{{2
 " Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
     let g:polyglot_disabled = ['sensible']
     let g:polyglot_disabled = ['vimwiki']
-" Plug 'https://github.com/fladson/vim-kitty'  " syntax for kitty.conf
 Plug 'https://github.com/sirver/ultisnips'  " snippet engine
 Plug 'https://github.com/honza/vim-snippets'  " snippets
 Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEEnable' }  " lint (F7, def, doc, err)
@@ -231,7 +233,7 @@ command! -nargs=1 G call GoogleIt(<f-args>)
 " PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
 let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
 let config_list = [
-    \ 'themes/everforest.vim',
+    \ 'themes/'.g:vim_theme.'.vim',
     \ 'plugins/*.vim'
     \]
 for files in config_list
