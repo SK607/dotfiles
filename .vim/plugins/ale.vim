@@ -8,6 +8,7 @@ let g:ale_linters = {
 \   'go': ['golangci-lint'],
 \}
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black']
 \}
 let g:ale_linters_explicit = 1
@@ -25,8 +26,17 @@ let g:ale_set_loclist = 0
 let g:ale_open_list = 0
 let g:ale_completion_max_suggestions = 10
 let g:ale_echo_cursor = 0
+let g:ale_hover_cursor = 0
+let g:ale_floating_preview = 1
+let g:ale_warn_about_trailing_blank_lines = 0
+let g:ale_warn_about_trailing_whitespace = 0
+let g:ale_fix_on_save = 0
+" let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
+let g:ale_floating_window_border = [] 
 
-nnoremap def :ALEGoToDefinition -tab<CR>
-nnoremap doc :ALEHover<CR>
-nnoremap err :ALEDetail<CR>
+nnoremap <Leader>as :ALEGoToDefinition<CR>
+nnoremap <Leader>ad :ALEHover<CR>
+nnoremap <Leader>ae :ALEDetail<CR>
+nnoremap <Leader>af :ALEFix<CR>
+nnoremap <Leader>ai :ALEInfo<CR>
 
