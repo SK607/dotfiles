@@ -99,14 +99,13 @@ Plug 'https://github.com/vimwiki/vimwiki'  " help files
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
 " Plug 'https://github.com/mg979/vim-visual-multi'
 " devops {{{2
-" Plug 'https://github.com/editorconfig/editorconfig-vim'
+Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
     let g:polyglot_disabled = ['sensible']
     let g:polyglot_disabled = ['vimwiki']
 Plug 'https://github.com/sirver/ultisnips'  " snippet engine
 Plug 'https://github.com/honza/vim-snippets'  " snippets
 Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEEnable' }  " lint (F7, def, doc, err)
-Plug 'https://github.com/sbdchd/neoformat'  " format
 Plug 'https://github.com/preservim/tagbar', { 'on': 'TagbarToggle' }  " navigation (F5)
 Plug 'https://github.com/mhinz/vim-signify', { 'on': 'SignifyToggle' }  " git (F6, <L>gd, <L>gp <L>gu)
 Plug 'https://github.com/vim-test/vim-test'  " tests (<L>tn, L<tf>, L<ta>, L<tl>, L<tv>)

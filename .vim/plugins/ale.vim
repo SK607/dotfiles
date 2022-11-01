@@ -6,10 +6,12 @@ let g:ale_linters = {
 \   'python': ['pylint', 'pylsp', 'mypy'],
 \   'sh': ['language_server', 'shellcheck'],
 \   'go': ['golangci-lint'],
+\   'html': ['vscodehtml', 'htmlhint'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black']
+\   'python': ['black'],
+\   'html': ['html-beautify']
 \}
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
