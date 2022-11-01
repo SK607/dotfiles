@@ -12,9 +12,11 @@
 ### CONFIGURE ENV VARIABLES
 # extend PATH
 [[ -d $HOME/.local/bin ]] && export PATH=$HOME/.local/bin${PATH:+:${PATH}}
+[[ -d $HOME/node_modules/.bin ]] && export PATH=$HOME/node_modules/.bin${PATH:+:${PATH}}
 [[ -d $HOME/.poetry/bin ]] && export PATH=$HOME/.poetry/bin${PATH:+:${PATH}}
 [[ -d /usr/local/go/bin ]] && export PATH=/usr/local/go/bin${PATH:+:${PATH}}
 [[ -d /usr/local/cuda-10.0/bin ]] && export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+
 # number of commands stored (cached) in memory
 export HISTSIZE=
 # number of commands stored in .bash_history (empty=unlimited)

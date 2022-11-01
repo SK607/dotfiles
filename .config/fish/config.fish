@@ -21,14 +21,11 @@ end
 
 ## CONFIGURE ENV VARIABLES
 # extend PATH
-if test -d ~/.local/bin
-    if not contains -- ~/.local/bin $PATH
-        set -p PATH ~/.local/bin
-    end
-end
-if test -d ~/.poetry/bin
-    if not contains -- ~/.poetry/bin $PATH
-        set -p PATH ~/.poetry/bin
+for bin_path in ~/.local/bin ~/node_modules/.bin ~/.poetry/bin
+    if test -d $bin_path
+        if not contains -- $bin_path $PATH
+            set -p PATH $bin_path
+        end
     end
 end
 # export variable need for qt-theme
