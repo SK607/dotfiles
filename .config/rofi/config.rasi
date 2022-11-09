@@ -8,7 +8,7 @@ configuration {
     drun-match-fields: "name,comment";
     show-icons: true;
     application-fallback-icon: "application-x-addon";
-    terminal: "urxvt";
+    terminal: "alacritty";
     fixed-num-lines: true;
     sidebar-mode: false;
     matching: "normal";
