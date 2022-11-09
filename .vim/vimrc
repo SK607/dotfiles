@@ -184,12 +184,23 @@ augroup END
 
 " edit dotfile {{{2
 def s:EditDotfile(name: string)
+    var query = shellescape(name)
     var dotpath = system(
-        'fd --type file'
-        .. ' --unrestricted --ignore-case --full-path'
-        .. ' --absolute-path -1'
-        .. ' ' .. shellescape(name)
+        'fd'
+        .. ' --type file'
+        .. ' --unrestricted'
+        .. ' --ignore-case'
+        .. ' --full-path'
+        .. ' --absolute-path'
+        .. ' ' .. query
         .. ' "$DOTFILES_PATH"'
+        .. ' | '
+        .. 'fzf'
+        .. ' --select-1'
+        .. ' --exit-0'
+        .. ' --filter ' .. query
+        .. ' | '
+        .. 'head -n 1'
         )
     execute 'tabnew ' .. dotpath 
 enddef

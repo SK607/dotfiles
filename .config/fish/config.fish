@@ -68,7 +68,20 @@ function helpd
 end
 
 function edot
-  $EDITOR $(fd --type file --unrestricted --ignore-case --full-path --absolute-path -1 "$argv" "$DOTFILES_PATH")
+  $EDITOR "$(\
+    fd \
+      --type file \
+      --unrestricted \
+      --ignore-case \
+      --full-path \
+      --absolute-path \
+      "$argv" "$DOTFILES_PATH" \
+    | fzf \
+      --select-1 \
+      --exit-0 \
+      --filter "$argv" \
+    | head -n 1 \
+    )"
 end
 
 function ex --argument archive
