@@ -789,6 +789,7 @@ STICKY_OTHER_WRITABLE   03;38;5;4 # dir that is sticky and other-writable (+t,o+
 .xcsettings             00;38;5;6  # Xcode
 .xcuserstate            00;38;5;6  # Xcode
 .xcworkspacedata        00;38;5;6  # Xcode
+.rasi                   00;38;5;6  # rofi
 ## disabled
 # .atom                   00;38;5;6  # editor
 # .csh                    00;38;5;6  # shell

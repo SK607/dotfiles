@@ -19,6 +19,7 @@ nnn         .config/nnn/plugins
 bat         .config/bat
 fastfetch   .config/fastfetch
 neofetch    .config/neofetch
+rofi        .config/rofi
 sway        .config/sway
 waybar      .config/waybar
 swaylock    .config/swaylock

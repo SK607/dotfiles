@@ -1,0 +1,84 @@
+* {
+    font:             "mononoki Nerd Font 16";
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+    bg0:              #2B3339;
+    bg1:              #323D43;
+    fg0:              #D3C6AA;
+    active-color:     #83C092;
+    urgent-color:     #DBBC7F;
+    selected-color:   #D3C6AA;
+    highlight-color:  #A7C080;
+    highlight-style:  bold #A7C080;
+    vertical-align:   0.5;
+    background-color: transparent;
+    text-color:       @fg0;
+}
+
+window {
+    location:         north;
+    width:            60%;
+    y-offset:         20%;
+    background-color: @bg0;
+    border-color:     @selected-color;
+    border:           1px;
+    padding:          1em;
+}
+
+inputbar {
+    padding:          0.5em;
+    margin:           0px 0px 1em 0px;
+    background-color: @bg1;
+}
+
+textbox {
+    padding:          0.5em;
+    background-color: @bg1;
+}
+
+prompt {
+    enabled:          false;
+}
+
+entry {
+    text-color:       @highlight-color;
+    text-style:       bold;
+}
+
+listview {
+    padding:          0.25em 0;
+    lines:            8;
+    columns:          1;
+    fixed-height:     false;
+}
+
+element {
+    padding:          0.5em;
+    spacing:          1em;
+    border:           1px;
+    border-color:     @bg0;
+    text-color:       @fg0;
+}
+
+element urgent {
+    text-color:       @urgent-color;
+}
+
+element active {
+    text-color:       @active-color;
+}
+
+element selected {
+    border-color:     @selected-color;
+}
+
+element-icon {
+    size:             1.25em;
+}
+
+element-text {
+    text-color:       inherit;
+    highlight:        @highlight-style;
+}
+

@@ -1,0 +1,34 @@
+configuration {
+    modi: "combi,filebrowser";
+    combi-modi: "window,drun";
+    window-format: "{c} / <span size='small'><i>{t}</i></span>";
+    window-match-fields: "class,title";
+    window-thumbnail: true;
+    drun-display-format: "{name} / [<span size='small'><i>{comment}</i></span>]";
+    drun-match-fields: "name,comment";
+    show-icons: true;
+    application-fallback-icon: "application-x-addon";
+    terminal: "urxvt";
+    fixed-num-lines: true;
+    sidebar-mode: false;
+    matching: "normal";
+    case-sensitive: false;
+    sort: true;
+    sorting-method: "fzf";
+    scroll-method: 0;
+    filebrowser {
+        directories-first: true;
+        sorting-method: "name";
+        directory: "/home/abs/Pictures/Screenshots";
+    }
+    run {
+        display-name: " ";
+    }
+    drun {
+        display-name: " ";
+    }
+    window {
+        display-name: " ";
+    }
+}
+@theme "theme-everforest.rasi"
