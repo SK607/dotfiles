@@ -220,14 +220,6 @@ def Redir(cmd: string)
     call setline(1, split(output, "\n"))
 enddef
 
-" search in google
-def GoogleIt(query: string)
-    " var url = 'https://www.google.com/search?q='
-    var url = 'https://search.brave.com/search?q='
-    url ..= substitute(query, '\s\+', '+', 'g')
-    system('xdg-open ' .. url)
-enddef
-
 
 " COMMANDS {{{1 ---------------------------------------------------------------
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -237,7 +229,6 @@ command! RmTrailingSpaces call s:RemoveTrailingSpaces()
 command! RmEmptyLines execute 'g/^\s*$/d'
 " command MakeTags !ctags -R .  " create tags
 command! -nargs=1 Redir silent call Redir(<f-args>)
-command! -nargs=1 G call GoogleIt(<f-args>)
 
 
 " PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
