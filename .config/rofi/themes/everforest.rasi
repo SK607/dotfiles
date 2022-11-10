@@ -23,28 +23,46 @@ window {
     background-color: @bg0;
     border-color:     @selected-color;
     border:           1px;
-    padding:          1em;
+    padding:          0 0.5em;
 }
 
 inputbar {
-    padding:          0.5em;
-    margin:           0px 0px 1em 0px;
+    margin:           0.5em 0 1em 0;
     background-color: @bg1;
+    padding:          0.5em;
+    children:         [ "textbox-prompt-colon", "entry", "mode-switcher"];
 }
-
 textbox {
-    padding:          0.5em;
     background-color: @bg1;
 }
-
+textbox-prompt-colon {
+    enabled:          true;
+    expand:           false;
+    str:              " ";
+    padding:          0 0 0 0.25em;
+}
 prompt {
     enabled:          false;
 }
-
 entry {
-    text-color:       @highlight-color;
-    text-style:       bold;
+    cursor:           text;
+    expand:           true;
+    padding:          0 0 0 1em;
+    placeholder:      "Search...";
 }
+
+mode-switcher {
+    spacing: 0;
+    expand: false;
+}
+button {
+    cursor: pointer;
+    background-color: @bg1;
+}
+button selected {
+    text-color: @active-color;
+}
+
 
 listview {
     padding:          0.25em 0;

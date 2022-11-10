@@ -8,6 +8,11 @@ configuration {
     drun-match-fields: "name,comment";
     show-icons: true;
     application-fallback-icon: "application-x-addon";
+    display-run: " ";
+    display-drun: " ";
+    display-window: " ";
+    display-filebrowser: " ";
+    display-combi: " ";
     terminal: "alacritty";
     fixed-num-lines: true;
     sidebar-mode: false;
@@ -21,14 +26,5 @@ configuration {
         sorting-method: "name";
         directory: "/home/abs/Pictures/Screenshots";
     }
-    run {
-        display-name: " ";
-    }
-    drun {
-        display-name: " ";
-    }
-    window {
-        display-name: " ";
-    }
 }
-@theme "theme-everforest.rasi"
+@theme "everforest.rasi"

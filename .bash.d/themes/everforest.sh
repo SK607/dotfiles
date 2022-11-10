@@ -12,7 +12,7 @@ fi
 
 # https://github.com/artemsen/swayimg
 if [[ -x "$(command -v swayimg)" ]]; then
-   export SWAYIMG_BG='#2f383e' 
+   export SWAYIMG_BG='2f383e' 
 fi
 
 # ls color support

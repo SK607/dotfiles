@@ -41,7 +41,7 @@ shopt -s histappend  # append to the history file
 shopt -s cmdhist  # save multi-line as single line
 shopt -s cdspell  # auto-correct minor dirname errors
 # nnn, fzf, ls themes
-[[ -f "$HOME/.bash.d/theme.sh" ]] && source "$HOME/.bash.d/theme.sh"
+[[ -f "$HOME/.bash.d/themes/everforest.sh" ]] && source "$HOME/.bash.d/themes/everforest.sh"
 # nnn configuration
 [[ -f "$HOME/.bash.d/nnn.sh" ]] && source "$HOME/.bash.d/nnn.sh"
 # fzf configuration

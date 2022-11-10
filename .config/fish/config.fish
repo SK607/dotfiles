@@ -1,4 +1,4 @@
-## GREETING
+### GREETING
 function fish_greeting
   if test $(tput cols) -gt 100 && test $(tput lines) -gt 30
     set -l LC_TIME 'en_US.UTF-8'
@@ -19,7 +19,11 @@ function fish_greeting
 end
 
 
-## CONFIGURE ENV VARIABLES
+### CONFIGURE ENV VARIABLES
+# theme for CLI apps
+if test -f "$HOME/.config/fish/themes/everforest.fish"
+    source "$HOME/.config/fish/themes/everforest.fish"
+end
 # extend PATH
 for bin_path in ~/.local/bin ~/node_modules/.bin ~/.poetry/bin
     if test -d $bin_path
