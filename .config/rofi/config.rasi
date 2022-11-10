@@ -1,5 +1,5 @@
 configuration {
-    modi: "combi,filebrowser";
+    modi: "combi,pass:~/.config/rofi/scripts/pass.sh,search:~/.config/rofi/scripts/search.sh";
     combi-modi: "window,drun";
     window-format: "{c} / <span size='small'><i>{t}</i></span>";
     window-match-fields: "class,title";
@@ -8,11 +8,14 @@ configuration {
     drun-match-fields: "name,comment";
     show-icons: true;
     application-fallback-icon: "application-x-addon";
+    combi-hide-mode-prefix: true;
     display-run: " ";
     display-drun: " ";
     display-window: " ";
     display-filebrowser: " ";
     display-combi: " ";
+    display-pass: " ";
+    display-search: "爵 ";
     terminal: "alacritty";
     fixed-num-lines: true;
     sidebar-mode: false;
@@ -21,10 +24,5 @@ configuration {
     sort: true;
     sorting-method: "fzf";
     scroll-method: 0;
-    filebrowser {
-        directories-first: true;
-        sorting-method: "name";
-        directory: "/home/abs/Pictures/Screenshots";
-    }
 }
 @theme "everforest.rasi"
