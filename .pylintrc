@@ -1,6 +1,16 @@
 [MAIN]
 load-plugins=
-    pylint_quotes
+    pylint_quotes,
+    pylint.extensions.private_import,
+    pylint.extensions.no_self_use,
+    pylint.extensions.for_any_all,
+    pylint.extensions.comparison_placement,
+    pylint.extensions.empty_comment,
+    pylint.extensions.confusing_elif,
+    pylint.extensions.while_used,
+    pylint.extensions.docparams,
+    pylint.extensions.docstyle,
+    pylint.extensions.mccabe
 ignore-paths=^.*(\\|/)(.venv|aerich|migrations)(\\|/).*$
 
 [MESSAGES CONTROL]
