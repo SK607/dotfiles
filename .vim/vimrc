@@ -93,6 +93,7 @@ Plug 'https://github.com/tpope/vim-endwise'  " autoclose if, for, ...
 Plug 'https://github.com/christoomey/vim-system-copy'  " copy to system clipboard
 Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
 Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines  (<L>w)
+Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif)
 Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
 Plug 'https://github.com/vimwiki/vimwiki'  " help files
