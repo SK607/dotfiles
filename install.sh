@@ -1,21 +1,29 @@
 #!/usr/bin/env bash
 
-link_config() {
+make_link() {
     if ! test -d "$(dirname "$2")"; then
         mkdir -p "$(dirname "$2")"
     fi
     ln -sfvn "$1" "$2"
 }
 
-copy_dotfiles() {
+link_dotfile() {
+    local settings="$1"
+    local wd="$2"
+    local settings_arr
+    read -ra settings_arr -d '' <<<"$settings"
+    local cmd="${settings_arr[0]}"
+    local path="${settings_arr[1]}"
+    if test -x "$(command -v "$cmd")"; then
+        make_link "$wd/$path" "$HOME/$path"
+    fi
+}
+
+install_dotfiles() {
     local wd="$1"
-    local settings_line settings cmd path
-    while read -r settings_line; do
-        read -ra settings -d '' <<<"$settings_line"
-        cmd="${settings[0]}"
-        path="${settings[1]}"
-        if test -x "$(command -v "$cmd")"; then
-            link_config "$wd/$path" "$HOME/$path"
+    while read -r config_line; do
+        if ! [[ $config_line = '' || $config_line = \#* ]]; then
+            link_dotfile "$config_line" "$wd"
         fi
     done < "$wd/install.cfg"
 }
@@ -26,7 +34,6 @@ update_cache() {
     fi
 }
 
-
 CWD="$( dirname -- "$( readlink -f -- "$0"; )"; )"
-copy_dotfiles "$CWD"
+install_dotfiles "$CWD"
 update_cache
