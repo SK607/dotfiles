@@ -1,0 +1,19 @@
+priority -50
+
+snippet booktemplate "Book Summary Template" b
+# About
+| Topic     | Description                                               |
+| :------   | :---------                                                |
+| Name      | ${1:name}                                                 |
+| Author    | ${2:author}                                               |
+| FirstRead | `date +%Y-%m-%d`                                          |
+
+# Summary
+
+# Links
+- [${4:tip}](${5})
+
+# Content
+
+## ${6:first chapter}
+endsnippet
