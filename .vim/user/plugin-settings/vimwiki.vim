@@ -5,14 +5,19 @@ let g:vimwiki_list = [{
     \ 'ext': '.md'
     \ }]
 let g:vimwiki_global_ext = 0
+let g:vimwiki_key_mappings = { 'table_mappings': 0, }
+let g:vimwiki_folding='expr'
 
 nnoremap <Leader>ww :VimwikiTabIndex<CR>
 
-" resolve collision with vim-indentwise
-autocmd FileType vimwiki map [= <Plug>(IndentWisePreviousEqualIndent)
-autocmd FileType vimwiki map ]= <Plug>(IndentWiseNextEqualIndent)
-autocmd FileType vimwiki nnoremap {{ <Plug>VimwikiGoToNextHeader
-autocmd FileType vimwiki nnoremap }} <Plug>VimwikiGoToPrevHeader
-autocmd FileType vimwiki nnoremap {= <Plug>VimwikiGoToNextSiblingHeader
-autocmd FileType vimwiki nnoremap }= <Plug>VimwikiGoToPrevSiblingHeader
-
+augroup VimWikiSettings
+    " resolve collision with vim-indentwise
+    autocmd FileType vimwiki map [= <Plug>(IndentWisePreviousEqualIndent)
+    autocmd FileType vimwiki map ]= <Plug>(IndentWiseNextEqualIndent)
+    autocmd FileType vimwiki nnoremap {{ <Plug>VimwikiGoToPrevHeader
+    autocmd FileType vimwiki nnoremap }} <Plug>VimwikiGoToNextHeader
+    autocmd FileType vimwiki nnoremap {= <Plug>VimwikiGoToPrevSiblingHeader
+    autocmd FileType vimwiki nnoremap }= <Plug>VimwikiGoToNextSiblingHeader
+    autocmd FileType vimwiki nnoremap {+ <Plug>VimwikiGoToParentHeader
+    autocmd FileType vimwiki nnoremap }+ <Plug>VimwikiGoToParentHeader
+augroup END
