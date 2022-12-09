@@ -181,14 +181,19 @@ unset envd path biggest
 # pacman
 if [ -x "$(command -v pacman)" ]; then
     alias pacman='sudo pacman --color=always'
-    alias pacupd='sudo pacman --color=always -Syyu'
-    alias paclock='sudo rm /var/lib/pacman/db.lck'
-    alias pacclean='sudo pacman --color=always -Rns $(pacman -Qtdq)'
-    alias pacrecent="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-    alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-    alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-    alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-    alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-    alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+    alias pac-search='sudo pacman -Ss'
+    alias pac-update='sudo pacman -Syyu'
+    alias pac-rm='sudo pacman -Rns'
+    alias pac-list='sudo pacman Q'
+    alias pac-list-user='sudo pacman -Qe'
+    alias pac-list-recent="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+    alias pac-clean-cache='sudo pacman -Sc'
+    alias pac-clean-orphan='sudo pacman -Rns $(pacman -Qtdq)' 
+    alias pac-clean-lock='sudo rm /var/lib/pacman/db.lck'
+    alias pac-mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+    alias pac-mirror-d="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+    alias pac-mirror-s="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+    alias pac-mirror-a="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+    alias pac-mirror-x="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 fi
 
