@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 
 list_accounts() {
-    accounts=$(\
-        fd --type file --unrestricted --color 'never' \
-        . "$HOME/.password-store/" \
-    )
-    for account in $accounts; do
-       name=$(echo "$account" | \
-           sed -rn "s/^.+password-store\/(.+)\.gpg$/\1/p")
-       echo -en "$name\0icon\x1fdialog-password\n"
-    done
+    fd --type file --no-ignore --color 'never' \
+        . "$HOME/.password-store/"
+}
+
+clean_name() {
+    sed -r "s/^[a-z\/]+\.password-store\/(.+)\.gpg$/\1\\\0icon\\\x1fdialog-password/"
+}
+
+list_menu() {
+    echo -en "$(list_accounts | clean_name)"
 }
 
 
 if test -z "$1"; then
-    list_accounts
+    list_menu
 else
     pass -c "$1" > /dev/null 2>&1 &
+    # pass -c2 "$1"
 fi
-
