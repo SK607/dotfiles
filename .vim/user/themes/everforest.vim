@@ -1,7 +1,8 @@
 colors everforest
 
-hi QuickScopePrimary gui=underline
-hi QuickScopeSecondary gui=underline
+hi QuickScopePrimary cterm=underline term=underline gui=underline
+hi QuickScopeSecondary cterm=underline term=underline gui=underline
+hi SpellBad cterm=underline term=underline gui=underline
 
 " nord theme bg fix
 " hi Normal guibg=#282c34
@@ -24,8 +25,8 @@ hi link TabLinePointerLastNC TabLineFill
 " statusline
 hi StatusLine guibg=#4a555b guifg=#d3c6aa gui=NONE cterm=NONE term=NONE
 hi StatusLineNC guibg=#404c51 guifg=#d3c6aa gui=NONE cterm=NONE term=NONE
-hi StatusLineNormal guibg=#a7c080 guifg=#4a555b 
-hi StatusLineInsert guibg=#d3c6aa guifg=#4a555b
+hi StatusLineNormal guibg=#d3c6aa guifg=#4a555b 
+hi StatusLineInsert guibg=#d699b6 guifg=#4a555b
 hi StatusLineVisual guibg=#e67e80 guifg=#4a555b 
 hi StatusLineCommand guibg=#83c092 guifg=#4a555b 
 hi! link StatusLineTerm StatusLine

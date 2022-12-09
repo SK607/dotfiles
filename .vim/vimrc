@@ -1,5 +1,5 @@
 scriptencoding utf-8
-" EDITOR {{{1 -----------------------------------------------------------------
+" EDITOR {{{1
 set nocompatible  " arrows + etc @ vi cmd
 set mouse=iva  " enable mouse
 set number relativenumber  " add line numbers
@@ -8,6 +8,7 @@ set showtabline=2  " show tab bar
 set laststatus=2  " show statusline
 set noshowmode  " already displayed in statusline
 set showcmd  " show pending keys
+set cursorline  " highlight active line
 set hlsearch incsearch  " highlight search matches on typing
 set ignorecase smartcase  " case-insensitive search for lowercase
 set path+=**  " tab completion for file-related tasks
@@ -33,7 +34,7 @@ set shortmess+=sAI  " hide search hit & swapfile warnings, intro message
 set shortmess-=S  " enable search result count
 set switchbuf=usetab  " if opening buffer, search first in opened windows
 set background=dark
-if &term ==? 'alacritty'        
+if &term ==? 'alacritty'
   let &term = 'xterm-256color'
 endif
 if &t_Co >= 256
@@ -41,7 +42,7 @@ if &t_Co >= 256
 endif
 let g:vim_theme='everforest'
 
-" SYNTAX {{{1 -----------------------------------------------------------------
+" SYNTAX {{{1
 syntax enable  " hightlight syntax
 filetype plugin indent on  " filetype-based rules
 set nofoldenable  " disable folding
@@ -61,7 +62,7 @@ augroup END
 let g:is_bash = 1  " force bash syntax for .sh
 let g:markdown_folding = 1  " enable markdown folding
 
-" PLUGINS {{{1 ----------------------------------------------------------------
+" PLUGINS {{{1
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -98,9 +99,8 @@ Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif
 Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
 Plug 'https://github.com/vimwiki/vimwiki'  " help files
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
-" Plug 'https://github.com/mg979/vim-visual-multi'
 " devops {{{2
-Plug 'https://github.com/editorconfig/editorconfig-vim'
+" Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
     let g:polyglot_disabled = ['sensible']
     let g:polyglot_disabled = ['vimwiki']
@@ -113,7 +113,7 @@ Plug 'https://github.com/vim-test/vim-test'  " tests (<L>tn, L<tf>, L<ta>, L<tl>
 " Plug 'https://github.com/dstein64/vim-startuptime'  " debug vim
 call plug#end()
 
-" KEYS {{{1 -------------------------------------------------------------------
+" KEYS {{{1
 map <Space> <Leader>
 map q <Nop>
 map s <Nop>
@@ -128,11 +128,13 @@ nnoremap <silent> qn :cnext<CR>
 nnoremap <silent> qp :cprevious<CR>
 nnoremap <silent> qo :copen<CR>
 nnoremap <silent> qc :cclose<CR>
-" navigate windows
-nnoremap <C-LEFT> <C-w>h
-nnoremap <C-DOWN> <C-w>j
-nnoremap <C-UP> <C-w>k
-nnoremap <C-RIGHT> <C-w>l
+" buffer navigation {{{2
+nnoremap <Leader>b :bn<CR>
+nnoremap <Leader>B :bp<CR>
+" vertical navigationn
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+" window navigation {{{2
 nnoremap <s-LEFT> :vertical resize +1 <Cr>
 nnoremap <s-RIGHT> :vertical resize -1 <Cr>
 nnoremap <s-UP> :resize +1 <Cr>
@@ -144,7 +146,7 @@ nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
 nnoremap <Leader>cn :let @+ = expand("%:t")<CR>
 " prefill substitute command {{{2
 nnoremap S :%s///ge<Left><Left><Left><Left><C-r>=expand("<cword>")<CR><Right>
-" indent-aware paste
+" indent-aware paste {{{3
 nnoremap <leader>p p`[v`]=
 nnoremap <leader>P P`[v`]=
 " search / color / hidden symbols / code highlight / tags / git / lint {{{2
@@ -160,7 +162,7 @@ iab ldash —
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
 
 
-" FUNCTIONS {{{1 --------------------------------------------------------------
+" FUNCTIONS {{{1
 " remove trailing spaces {{{2
 def s:RemoveTrailingSpaces()
     var lsave = winsaveview()
@@ -203,7 +205,7 @@ def s:EditDotfile(name: string)
         .. ' | '
         .. 'head -n 1'
         )
-    execute 'tabnew ' .. dotpath 
+    execute 'tabnew ' .. dotpath
 enddef
 
 " redirect command output to a new tab {{{2
@@ -214,7 +216,7 @@ def Redir(cmd: string)
         if !empty(getwinvar(winnr, 'scratch', ''))
             execute ':' .. winnr .. 'windo close'
         endif
-    endfor 
+    endfor
     tabnew
     w:scratch = 1
     setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
@@ -222,7 +224,7 @@ def Redir(cmd: string)
 enddef
 
 
-" COMMANDS {{{1 ---------------------------------------------------------------
+" COMMANDS {{{1
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command! -nargs=1 Edot call s:EditDotfile(<f-args>)
 command! Rvim execute ':source $MYVIMRC'
@@ -232,7 +234,7 @@ command! RmEmptyLines execute 'g/^\s*$/d'
 command! -nargs=1 Redir silent call Redir(<f-args>)
 
 
-" PLUGIN SETTINGS & EXTRAS {{{1 ------------------------------------------------
+" PLUGIN SETTINGS & EXTRAS {{{1
 let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))
 let config_list = [
     \ 'user/themes/'.g:vim_theme.'.vim',
