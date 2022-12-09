@@ -1,6 +1,8 @@
 ### GREETING
 function fish_greeting
-  if test $(tput cols) -gt 100 && test $(tput lines) -gt 30
+  if test $(tput cols) -gt 100 \
+      && test $(tput lines) -gt 30 \
+      && not test "$POETRY_ACTIVE" = '1'
     set -l LC_TIME 'en_US.UTF-8'
     set -l blue '\e[0;34m'
     set -l reset '\e[m'
