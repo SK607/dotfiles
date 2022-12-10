@@ -31,3 +31,7 @@ hi StatusLineVisual guibg=#e67e80 guifg=#4a555b
 hi StatusLineCommand guibg=#83c092 guifg=#4a555b 
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
+
+" set cursor to bar in insert mode and to block otherwise
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"

@@ -9,6 +9,11 @@ shell:
   # program: /bin/bash
   # args:
   #   - --login
+cursor:
+  style:
+    shape: Beam
+  vi_mode_style:
+    shape: Block
 window:
   padding:
     x: 18
