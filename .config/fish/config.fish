@@ -149,7 +149,7 @@ alias ga='git add .'
 alias gs='git status -s'
 alias gd='git diff HEAD'
 alias gc='git commit'
-alias vw='vim -c "VimwikiIndex"'
+alias vw='vim ~/code-projects/devops/vimwiki/index.md'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'

@@ -2,7 +2,7 @@ scriptencoding utf-8
 " EDITOR {{{1
 set nocompatible  " arrows + etc @ vi cmd
 set mouse=iva  " enable mouse
-set number relativenumber  " add line numbers
+" set number relativenumber  " add line numbers
 set splitbelow splitright  " change default positioning
 set showtabline=2  " show tab bar
 set laststatus=2  " show statusline
@@ -96,11 +96,10 @@ Plug 'https://github.com/junegunn/vim-easy-align'  " align (gaip, vipga)
 Plug 'https://github.com/FooSoft/vim-argwrap'  " wrap lines  (<L>w)
 Plug 'https://github.com/junegunn/fzf'
 Plug 'https://github.com/junegunn/fzf.vim'  " fuzzy search (<L>fd, <L>ff, <L>fif)
-Plug 'https://github.com/mcchrish/nnn.vim'  " nnn file explorer (<L>np, <L>ne)
-Plug 'https://github.com/vimwiki/vimwiki'  " help files
+Plug 'https://github.com/vimwiki/vimwiki', { 'for': 'markdown' }  " help files
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, [=)
 " devops {{{2
-" Plug 'https://github.com/editorconfig/editorconfig-vim'
+Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
     let g:polyglot_disabled = ['sensible']
     let g:polyglot_disabled = ['vimwiki']
