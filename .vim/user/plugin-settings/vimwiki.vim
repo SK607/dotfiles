@@ -14,6 +14,8 @@ augroup VimWikiSettings
     " resolve collision with vim-indentwise
     autocmd FileType vimwiki map [= <Plug>(IndentWisePreviousEqualIndent)
     autocmd FileType vimwiki map ]= <Plug>(IndentWiseNextEqualIndent)
+    autocmd FileType vimwiki map [+ <Plug>(IndentWiseNextGreaterIndent)
+    autocmd FileType vimwiki map ]+ <Plug>(IndentWisePreviousGreaterIndent)
     autocmd FileType vimwiki nnoremap {{ <Plug>VimwikiGoToPrevHeader
     autocmd FileType vimwiki nnoremap }} <Plug>VimwikiGoToNextHeader
     autocmd FileType vimwiki nnoremap {= <Plug>VimwikiGoToPrevSiblingHeader

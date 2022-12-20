@@ -1,4 +1,5 @@
 export EDITOR=vim
+export SUDO_EDITOR=vim
 export VISUAL=vim
 export BROWSER=firefox
 export TERM=alacritty
@@ -7,6 +8,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 # Session
+
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway

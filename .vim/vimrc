@@ -2,6 +2,7 @@ scriptencoding utf-8
 " EDITOR {{{1
 set nocompatible  " arrows + etc @ vi cmd
 set mouse=iva  " enable mouse
+set noruler  " hide line/column number
 " set number relativenumber  " add line numbers
 set splitbelow splitright  " change default positioning
 set showtabline=2  " show tab bar
@@ -155,6 +156,9 @@ nnoremap <F3> :HexokinaseToggle<CR>
 nnoremap <F5> :TagbarToggle<CR>
 nnoremap <F6> :SignifyToggle<CR>
 nnoremap <F7> :ALEEnable<CR>
+" mark word instead of jump
+nnoremap <silent> * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
+nnoremap <silent> # :let @/='<C-R>=expand("<cword>")<CR>'<CR>:set hlsearch<CR>
 " abbreviations (<leader> to activate) {{{2
 cnoreabbrev <expr> th 'tab help'
 iab ldash —
