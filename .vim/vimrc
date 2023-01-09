@@ -24,6 +24,7 @@ set autoread  " reload unchanged files automatically
 set nofsync  " no disk flush force
 set undofile  " persistent undo
 set undodir=~/.vim/undo/
+set viminfo+=n~/.vim/viminfo
 set noswapfile
 set nobackup
 set backspace=indent,eol,start  " ctrl-w,ctrl-u in insert mode
@@ -35,11 +36,11 @@ set shortmess+=sAI  " hide search hit & swapfile warnings, intro message
 set shortmess-=S  " enable search result count
 set switchbuf=usetab  " if opening buffer, search first in opened windows
 set background=dark
-if &term ==? 'alacritty'
-  let &term = 'xterm-256color'
+if &term ==? 'alacritty' || &term ==? 'foot'
+    let &term = 'xterm-256color'
 endif
 if &t_Co >= 256
-  set termguicolors
+    set termguicolors
 endif
 let g:vim_theme='everforest'
 

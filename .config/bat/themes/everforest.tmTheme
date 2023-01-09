@@ -357,6 +357,28 @@
       </dict>
       <dict>
         <key>name</key>
+        <string>Manpage Heading</string>
+        <key>scope</key>
+        <string>markup.heading</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#e68183</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Manpage CMD</string>
+        <key>scope</key>
+        <string>entity.name.command-line-option</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#dbbc7f</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
         <string>Markdown heading1</string>
         <key>scope</key>
         <string>heading.1.markdown, markup.heading.setext.1.markdown</string>

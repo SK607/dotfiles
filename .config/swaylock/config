@@ -3,7 +3,7 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image="$HOME/.local/share/wallpapers/$(ls $HOME/.local/share/wallpapers | shuf -n 1)"
+image="$(ls -d $HOME/.local/share/wallpapers/*.jpg | shuf -n 1)"
 scaling=fill
 font=UbuntuMono
 font-size=20
@@ -13,13 +13,13 @@ font-size=20
 indicator-radius=90
 # line-uses-ring
 line-color=#3b4252
-text-color=#d8dee9
+text-color=#d3c6aa
 inside-color=#2e344098
-inside-ver-color=#5e81ac
-line-ver-color=#5e81ac
-ring-ver-color=#5e81ac98
-ring-color=#4c566a
-key-hl-color=#5e81ac
-separator-color=#4c566a
-layout-text-color=#eceff4
-line-wrong-color=#d08770
+inside-ver-color=#a7c080
+line-ver-color=#a7c080
+ring-ver-color=#a7c08098
+ring-color=#2f383e
+key-hl-color=#a7c080
+separator-color=#2f383e
+layout-text-color=#d3c6aa
+line-wrong-color=#e67e80

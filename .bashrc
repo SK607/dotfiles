@@ -9,32 +9,6 @@
 [[ $- != *i* ]] && return
 
 
-### CONFIGURE ENV VARIABLES
-# extend PATH
-[[ -d $HOME/.local/bin ]] && export PATH=$HOME/.local/bin${PATH:+:${PATH}}
-[[ -d $HOME/node_modules/.bin ]] && export PATH=$HOME/node_modules/.bin${PATH:+:${PATH}}
-[[ -d $HOME/.poetry/bin ]] && export PATH=$HOME/.poetry/bin${PATH:+:${PATH}}
-[[ -d /usr/local/go/bin ]] && export PATH=/usr/local/go/bin${PATH:+:${PATH}}
-[[ -d /usr/local/cuda-10.0/bin ]] && export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
-
-# number of commands stored (cached) in memory
-export HISTSIZE=
-# number of commands stored in .bash_history (empty=unlimited)
-export HISTFILESIZE=
-# (ignorespace) lines starting with a white space + (ignoredups) duplicated + (erasedups)
-export HISTCONTROL=ignoreboth
-# exclude commands from history
-export HISTIGNORE='[ \t]*:exit:pwd'
-# ls date style
-export TIME_STYLE=long-iso
-# remove python shell prompt
-export VIRTUAL_ENV_DISABLE_PROMPT='1'
-# set bat as manpager
-[[ -x "$(command -v bat)" ]] && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-# user-defined variables
-export DOTFILES_PATH="$HOME/code-projects/devops/dotfiles"
-
-
 ### CONFIGURE CLI
 shopt -s checkwinsize  # auto-adjust term size
 shopt -s histappend  # append to the history file
@@ -54,6 +28,7 @@ if [[ -x "$(command -v starship)" ]]; then
 else
     [[ -f "$HOME/.bash.d/prompt.sh" ]] && source "$HOME/.bash.d/prompt.sh"
 fi
+
 
 ### ADD COMPLETIONS
 if ! shopt -oq posix; then
@@ -123,6 +98,45 @@ ex ()
   fi
 }
 
+# foot shell integration
+# https://codeberg.org/dnkl/foot/wiki#user-content-bash
+if [[ $TERM =~ ^foot ]]; then
+  osc7_cwd() {
+      local strlen=${#PWD}
+      local encoded=""
+      local pos c o
+      for (( pos=0; pos<strlen; pos++ )); do
+          c=${PWD:$pos:1}
+          case "$c" in
+              [-/:_.!\'\(\)~[:alnum:]] ) o="${c}" ;;
+              * ) printf -v o '%%%02X' "'${c}" ;;
+          esac
+          encoded+="${o}"
+      done
+      printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
+  }
+  PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }osc7_cwd
+fi
+
+# nnn
+if [[ -x "$(command -v nnn)" ]]; then
+    # https://github.com/jarun/nnn/tree/master/misc/quitcd
+    n () {
+        if [[ "${NNNLVL:-0}" -ge 1 ]]; then
+            echo "nnn is already running"
+            return
+        fi
+
+        export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+        LC_COLLATE='C' \nnn "$@"
+
+        if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+        fi
+    }
+fi
+
 
 ### ADD ALIASES
 # https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
@@ -143,7 +157,7 @@ alias ga='git add .'
 alias gs='git status -s'
 alias gd='git diff HEAD'
 alias gc='git commit'
-alias vw='vim ~/code-projects/devops/vimwiki/index.md'
+alias vw='vim ~/Code/devops/vimwiki/index.md'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'

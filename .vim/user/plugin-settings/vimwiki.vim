@@ -1,5 +1,5 @@
 let g:vimwiki_list = [{
-    \ 'path': '~/code-projects/devops/vimwiki/',
+    \ 'path': '~/Code/devops/vimwiki/',
     \ 'syntax': 'markdown',
     \ 'nested_syntaxes': {'bash': 'bash', 'python': 'python'},
     \ 'ext': '.md'

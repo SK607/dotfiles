@@ -1,4 +1,21 @@
 ### GREETING
+function echo_battery
+  set -l capacity $(acpi -b | grep -oP '\d{2,}(?=%)')
+  set -l icon ''
+  if acpi -a | grep -q 'on-line'
+    set icon ''
+  else if test "$capacity" -gt 90
+    set icon ''
+  else if test "$capacity" -gt 75
+    set icon ''
+  else if test "$capacity" -gt 50
+    set icon ''
+  else if test "$capacity" -gt 25
+    set icon ''
+  end
+  echo "$icon $capacity%%"
+end
+
 function fish_greeting
   if test $(tput cols) -gt 100 \
       && test $(tput lines) -gt 30 \
@@ -7,15 +24,15 @@ function fish_greeting
     set -l blue '\e[0;34m'
     set -l reset '\e[m'
     printf "$blue"
-    printf '\n ███████╗██╗  ██╗'
-    printf '\n ██╔════╝██║ ██╔╝'
-    printf '  Sergey Konkin'
-    printf '\n ███████╗█████╔╝ '
-    printf '  https://github.com/SK607'
-    printf '\n ╚════██║██╔═██╗ ' 
+    printf '\n ███████╗ ██╗  ██╗'
+    printf '\n ██╔════╝ ██║ ██╔╝'
     printf "  $(date +'%A %d-%m-%Y %H:%M:%S')"
-    printf '\n ███████║██║  ██╗'
-    printf '\n ╚══════╝╚═╝  ╚═╝'
+    printf '\n ███████╗ █████╔╝ '
+    printf "  Battery: $(echo_battery)"
+    printf '\n ╚════██║ ██╔═██╗ ' 
+    printf "  ACPI: $(acpi -t | grep -oP '\d+\.\d')°C"
+    printf '\n ███████║ ██║  ██╗'
+    printf '\n ╚══════╝ ╚═╝  ╚═╝'
     printf "$reset\n"
   end
 end
@@ -25,26 +42,6 @@ end
 # theme for CLI apps
 if test -f "$HOME/.config/fish/themes/everforest.fish"
     source "$HOME/.config/fish/themes/everforest.fish"
-end
-# extend PATH
-for bin_path in ~/.local/bin ~/node_modules/.bin ~/.poetry/bin
-    if test -d $bin_path
-        if not contains -- $bin_path $PATH
-            set -p PATH $bin_path
-        end
-    end
-end
-# export variable need for qt-theme
-if type "qtile" >> /dev/null 2>&1
-   set -x QT_QPA_PLATFORMTHEME "qt5ct"
-end
-# ls date style
-set -x TIME_STYLE 'long-iso'
-# remove python shell prompt
-set -x VIRTUAL_ENV_DISABLE_PROMPT '1'
-# set bat as manpager
-if test -x "$(command -v bat)"
-  set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 end
 # configure fzf
 if test -x "$(command -v fzf)"
@@ -57,8 +54,6 @@ if test -f ~/.config/fish/fish_plugins
     set fzf_fd_opts --hidden
   end
 end
-# user-defined variables
-set -x DOTFILES_PATH "$HOME/code-projects/devops/dotfiles"
 
 
 ### CONFIGURE CLI
@@ -129,6 +124,30 @@ function ex --argument archive
   end
 end
 
+if test -x "$(command -v nnn)"
+  # https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.fish
+  function n --wraps nnn --description 'support nnn quit and change directory'
+    if test -n "$NNNLVL" -a "$NNNLVL" -ge 1
+        echo "nnn is already running"
+        return
+    end
+
+    if test -n "$XDG_CONFIG_HOME"
+        set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
+    else
+        set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+    end
+
+    # set -x LC_COLLATE 'C'
+    command nnn $argv
+
+    if test -e $NNN_TMPFILE
+        source $NNN_TMPFILE
+        /usr/bin/rm $NNN_TMPFILE
+    end
+  end
+end
+
 
 ### ADD ALIASES
 # https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
@@ -149,7 +168,7 @@ alias ga='git add .'
 alias gs='git status -s'
 alias gd='git diff HEAD'
 alias gc='git commit'
-alias vw='vim ~/code-projects/devops/vimwiki/index.md'
+alias vw='vim ~/Code/devops/vimwiki/index.md'
 
 # non-harmless defaults
 alias lsd='LC_COLLATE=C ls --group-directories-first --color=auto --almost-all'

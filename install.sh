@@ -37,3 +37,5 @@ update_cache() {
 CWD="$( dirname -- "$( readlink -f -- "$0"; )"; )"
 install_dotfiles "$CWD"
 update_cache
+
+# fix bug with fastfetch & nnn plugins
