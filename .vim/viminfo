@@ -10,9 +10,16 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~MSle0~/restart
+
 # Command Line History (newest to oldest):
 
 # Search String History (newest to oldest):
+?/monitorj
+|2,1,1673373457,47,"monitorj"
+?/restart
+|2,1,1673373299,47,"restart"
 
 # Expression History (newest to oldest):
 
@@ -21,21 +28,103 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+""0	LINE	0
+	# riverctl map normal Super period
+|3,1,0,1,1,0,1673373565,"# riverctl map normal Super period"
+"1	LINE	0
+	
+|3,0,1,1,1,0,1673373518,""
+"2	LINE	0
+	
+|3,0,2,1,1,0,1673373463,""
+"3	LINE	0
+	
+|3,0,3,1,1,0,1673373461,""
+"4	LINE	0
+	
+|3,0,4,1,1,0,1673373391,""
+"5	LINE	0
+	# Make certain views start floating
+|3,0,5,1,1,0,1673373387,"# Make certain views start floating"
+"6	LINE	0
+	# Set keyboard repeat rate
+|3,0,6,1,1,0,1673373385,"# Set keyboard repeat rate"
+"7	LINE	0
+	
+|3,0,7,1,1,0,1673373385,""
+"8	LINE	0
+	# riverctl csd-filter-add app-id "gedit"
+|3,0,8,1,1,0,1673373376,"# riverctl csd-filter-add app-id \"gedit\""
+"9	LINE	0
+	# Set app-ids and titles of views which should use client side decorations
+|3,0,9,1,1,0,1673373375,"# Set app-ids and titles of views which should use client side decorations"
+"-	CHAR	0
+	 
+|3,0,36,0,1,0,1673373510," "
 
 # global variables:
-!YCM_HIGHLIGHT_GROUP	DIC	{'parameter': 'TSParameter', 'typeParameter': 'TSType', 'namespace': 'TSNamespace', 'event': 'TSLabel', 'method': 'TSMethod', 'enumMember': 'TSVariableBuiltin', 'variable': 'TSVariable', 'class': 'TSType', 'member': 'TSVariable', 'property': 'TSProperty'}
+!YCM_HIGHLIGHT_GROUP	DIC	{'parameter': 'TSParameter', 'enumMember': 'TSVariableBuiltin', 'typeParameter': 'TSType', 'method': 'TSMethod', 'namespace': 'TSNamespace', 'event': 'TSLabel', 'class': 'TSType', 'member': 'TSVariable', 'variable': 'TSVariable', 'property': 'TSProperty'}
 
 # File marks:
-'0  6  11  ~/code-projects/devops/dotfiles/.gitignore
-|4,48,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
+'0  22  32  ~/code-projects/devops/dotfiles/.config/river/init
+|4,48,22,32,1673373574,"~/code-projects/devops/dotfiles/.config/river/init"
+'1  6  11  ~/code-projects/devops/dotfiles/.gitignore
+|4,49,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
 
 # Jumplist (newest first):
+-'  22  32  ~/code-projects/devops/dotfiles/.config/river/init
+|4,39,22,32,1673373574,"~/code-projects/devops/dotfiles/.config/river/init"
+-'  156  31  ~/code-projects/devops/dotfiles/.config/river/init
+|4,39,156,31,1673373408,"~/code-projects/devops/dotfiles/.config/river/init"
+-'  152  0  ~/code-projects/devops/dotfiles/.config/river/init
+|4,39,152,0,1673373389,"~/code-projects/devops/dotfiles/.config/river/init"
+-'  14  0  ~/code-projects/devops/dotfiles/.config/river/init
+|4,39,14,0,1673373301,"~/code-projects/devops/dotfiles/.config/river/init"
+-'  1  0  ~/code-projects/devops/dotfiles/.config/river/init
+|4,39,1,0,1673373191,"~/code-projects/devops/dotfiles/.config/river/init"
+-'  6  11  ~/code-projects/devops/dotfiles/.gitignore
+|4,39,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
 -'  6  11  ~/code-projects/devops/dotfiles/.gitignore
 |4,39,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
 -'  1  0  ~/code-projects/devops/dotfiles/.gitignore
 |4,39,1,0,1673372781,"~/code-projects/devops/dotfiles/.gitignore"
+-'  1  0  ~/code-projects/devops/dotfiles/.gitignore
+|4,39,1,0,1673372781,"~/code-projects/devops/dotfiles/.gitignore"
 
 # History of marks within files (newest to oldest):
+
+> ~/code-projects/devops/dotfiles/.config/river/init
+	*	1673373573	0
+	"	22	32
+	^	23	33
+	.	23	32
+	+	2	0
+	+	4	0
+	+	6	0
+	+	13	42
+	+	15	0
+	+	12	0
+	+	15	0
+	+	16	0
+	+	15	0
+	+	157	0
+	+	156	0
+	+	149	0
+	+	151	0
+	+	159	0
+	+	156	31
+	+	12	0
+	+	15	0
+	+	11	0
+	+	18	1
+	+	19	27
+	+	18	2
+	+	24	0
+	+	20	0
+	+	24	0
+	+	20	28
+	+	22	33
+	+	23	32
 
 > ~/code-projects/devops/dotfiles/.gitignore
 	*	1673372789	0
