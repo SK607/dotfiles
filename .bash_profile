@@ -14,14 +14,16 @@ export PYTHONSTARTUP="$HOME/.config/python/pythonstartup"
 export _ZL_DATA="$HOME/.cache/.zlua"
 
 ### Wayland
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_DBUS_REMOTE=1
-export QT_QPA_PLATFORM="wayland;xcb"    # enables wayland support if available (xcb is an x11 fallback e.g. for zoom)
-export QT_QPA_PLATFORMTHEME="gtk3"
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-# export QT_QPA_PLATFORMTHEME="qt5ct"     # install qt5ct for a more extensive wayland support
-# export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket   # brave bugfix
-# export SSH_AUTH_SOCK=/run/user/$(id -u)/keyring/ssh
+if test -x "$(command -v river)"; then
+    export MOZ_ENABLE_WAYLAND=1
+    export MOZ_DBUS_REMOTE=1
+    export QT_QPA_PLATFORM="wayland;xcb"    # enables wayland support if available (xcb is an x11 fallback e.g. for zoom)
+    export QT_QPA_PLATFORMTHEME="gtk3"
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    # export QT_QPA_PLATFORMTHEME="qt5ct"     # install qt5ct for a more extensive wayland support
+    # export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket   # brave bugfix
+    # export SSH_AUTH_SOCK=/run/user/$(id -u)/keyring/ssh
+fi
 
 ### CLI
 # PATH
