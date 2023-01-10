@@ -26,6 +26,10 @@ if test -x "$(command -v river)"; then
 fi
 
 ### CLI
+# XDG
+[[ -z "$XDG_CONFIG_HOME" ]] && export XDG_CONFIG_HOME="$HOME/.config"
+[[ -z "$XDG_DATA_HOME" ]] && export XDG_DATA_HOME="$HOME/.local/share"
+[[ -z "$XDG_CACHE_HOME" ]] && export XDG_CACHE_HOME="$HOME/.cache"
 # PATH
 [[ -d $HOME/.local/bin ]] && export PATH=$HOME/.local/bin${PATH:+:${PATH}}
 [[ -d $HOME/node_modules/.bin ]] && export PATH=$HOME/node_modules/.bin${PATH:+:${PATH}}
