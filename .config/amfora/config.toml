@@ -1,0 +1,98 @@
+# You can always get the latest defaults on GitHub.
+# https://github.com/makeworld-the-better-one/amfora/blob/master/default-config.toml
+
+# Please also check out the Amfora Wiki for more help
+# https://github.com/makeworld-the-better-one/amfora/wiki
+# gemini://makeworld.space/amfora-wiki/
+
+# Bookmarks are stored in
+# ~/.local/share/amfora/bookmarks.xml
+# $XDG_DATA_HOME/amfora/bookmarks.xml
+
+[a-general]
+home = "gemini://gemini.circumlunar.space"
+search = "gemini://geminispace.info/search"
+
+# https://xyproto.github.io/splash/docs/
+highlight_code = true
+hightlight_style = "doom-one"
+
+[auth]
+# https://github.com/makeworld-the-better-one/amfora/wiki/Client-Certificates
+# Authentication settings
+# Note the use of single quotes for values, so that backslashes will not be escaped.
+
+[auth.certs]
+# Client certificates
+# Set domain name equal to path to client cert
+# "example.com" = 'mycert.crt'
+
+[auth.keys]
+# Client certificate keys
+# Set domain name equal to path to key for the client cert above
+# "example.com" = 'mycert.key'
+
+
+[keybindings]
+bind_bottom       = ":"
+bind_quit         = "q"
+bind_reload       = "R"
+bind_back         = "H"
+bind_forward      = "L"
+bind_next_tab     = "J"
+bind_prev_tab     = "K"
+bind_edit         = "o"
+bind_new_tab      = "O"
+bind_save         = "S"
+bind_home         = "h"
+bind_bookmarks    = "b"
+bind_add_bookmark = "B"
+
+
+[theme]
+# collection of themes:
+# https://github.com/makeworld-the-better-one/amfora/tree/master/contrib/themes
+# everforest palette:
+# https://github.com/sainnhe/everforest/blob/master/palette.md
+
+bg = "#2f383e"
+tab_num = "#a7c080"
+tab_divider = "#4b565c"
+bottombar_label = "#a7c080"
+bottombar_text = "#d3c6aa"
+bottombar_bg = "#4b565c"
+hdg_1 = "#e67e80"
+hdg_2 = "#e69875"
+hdg_3 = "#dbbc7f"
+amfora_link = "#7fbbb3"
+foreign_link = "#d699b6"
+link_number = "#83c092"
+regular_text = "#d3c6aa"
+quote_text = "#a7c080"
+preformatted_text = "#dbbc7f"
+list_text = "#83c092"
+btn_bg = "#4b565c"
+btn_text = "#d3c6aa"
+dl_choice_modal_bg = "#4b565c"
+dl_choice_modal_text = "#d3c6aa"
+dl_modal_bg = "#4b565c"
+dl_modal_text = "#d3c6aa"
+info_modal_bg = "#4b565c"
+info_modal_text = "#d3c6aa"
+error_modal_bg = "#e67e80"
+error_modal_text = "#d3c6aa"
+yesno_modal_bg = "#4b565c"
+yesno_modal_text = "#d3c6aa"
+tofu_modal_bg = "#4b565c"
+tofu_modal_text = "#d3c6aa"
+subscription_modal_bg = "#4b565c"
+subscription_modal_text = "#d3c6aa"
+input_modal_bg = "#4b565c"
+input_modal_text = "#d3c6aa"
+input_modal_field_bg = "#4b565c"
+input_modal_field_text = "#d3c6aa"
+bkmk_modal_bg = "#4b565c"
+bkmk_modal_text = "#d3c6aa"
+bkmk_modal_label = "#d3c6aa"
+bkmk_modal_field_bg = "#4b565c"
+bkmk_modal_field_text = "#d3c6aa"

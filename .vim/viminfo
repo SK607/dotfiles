@@ -11,11 +11,45 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/restart
+~MSle0~/bookm
+
+# Last Substitute Search Pattern:
+~MSle0&4c566a
+
+# Last Substitute String:
+$4b565c
 
 # Command Line History (newest to oldest):
+:hi
+|2,0,1673376409,,"hi"
+:hl
+|2,0,1673376406,,"hl"
+:sp ~/notes/software-design/patterns.md
+|2,0,1673376364,,"sp ~/notes/software-design/patterns.md"
+:%s/4c566a/4b565c/ge
+|2,0,1673376183,,"%s/4c566a/4b565c/ge"
+:%s/3b4252/4b565c/ge
+|2,0,1673376137,,"%s/3b4252/4b565c/ge"
+:%s/eceff4/d3c6aa/ge
+|2,0,1673376076,,"%s/eceff4/d3c6aa/ge"
+:vs ~/.config/alacritty/themes/everforest.yml
+|2,0,1673375955,,"vs ~/.config/alacritty/themes/everforest.yml"
 
 # Search String History (newest to oldest):
+?/bookm
+|2,1,1673376860,47,"bookm"
+? 4c566a
+|2,1,1673376183,,"4c566a"
+? 3b4252
+|2,1,1673376137,,"3b4252"
+? eceff4
+|2,1,1673376076,,"eceff4"
+?/tab
+|2,1,1673375133,47,"tab"
+?/highlight_code
+|2,1,1673374482,47,"highlight_code"
+?/subscriptions
+|2,1,1673374138,47,"subscriptions"
 ?/monitorj
 |2,1,1673373457,47,"monitorj"
 ?/restart
@@ -28,70 +62,423 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	# riverctl map normal Super period
-|3,1,0,1,1,0,1673373565,"# riverctl map normal Super period"
-"1	LINE	0
-	
-|3,0,1,1,1,0,1673373518,""
+"0	LINE	0
+	search = "gemini://geminispace.info/search"
+|3,0,0,1,1,0,1673374940,"search = \"gemini://geminispace.info/search\""
+""1	LINE	0
+	    <bookmark href="gemini://tilde.club/~filip/">
+	        <title>test</title>
+	    </bookmark>
+|3,1,1,1,3,0,1673377474,"    <bookmark href=\"gemini://tilde.club/~filip/\">","        <title>test</title>","    </bookmark>"
 "2	LINE	0
-	
-|3,0,2,1,1,0,1673373463,""
+	    <bookmark href="gemini://germination.systems/known-feeds">
+	        <title>feeds</title>
+	    </bookmark>
+|3,0,2,1,3,0,1673377456,"    <bookmark href=\"gemini://germination.systems/known-feeds\">","        <title>feeds</title>","    </bookmark>"
 "3	LINE	0
-	
-|3,0,3,1,1,0,1673373461,""
+	    <bookmark href="gemini://geminispace.info/">
+	        <title>Search</title>
+	    </bookmark>
+|3,0,3,1,3,0,1673377443,"    <bookmark href=\"gemini://geminispace.info/\">","        <title>Search</title>","    </bookmark>"
 "4	LINE	0
-	
-|3,0,4,1,1,0,1673373391,""
+	    <bookmark href="gemini://medusae.space/">
+	        <title>medusae.space</title>
+	    </bookmark>
+|3,0,4,1,3,0,1673377413,"    <bookmark href=\"gemini://medusae.space/\">","        <title>medusae.space</title>","    </bookmark>"
 "5	LINE	0
-	# Make certain views start floating
-|3,0,5,1,1,0,1673373387,"# Make certain views start floating"
-"6	LINE	0
-	# Set keyboard repeat rate
-|3,0,6,1,1,0,1673373385,"# Set keyboard repeat rate"
-"7	LINE	0
 	
-|3,0,7,1,1,0,1673373385,""
+|3,0,5,1,1,0,1673377265,""
+"6	LINE	0
+	# All keybindings:
+	# bind_bottom
+	# bind_edit
+	# bind_home
+	# bind_moveup
+	# bind_movedown
+	# bind_moveleft
+	# bind_moveright
+	# bind_pgup
+	# bind_pgdn
+	# bind_new_tab
+	# bind_close_tab
+	# bind_next_tab
+	# bind_prev_tab
+	# bind_quit
+	# bind_help
+	# bind_sub: for viewing the subscriptions page
+	# bind_add_sub
+	# bind_beginning: moving to beginning of page (top left)
+	# bind_end: same but the for the end (bottom left)
+|3,0,6,1,20,0,1673377264,"# All keybindings:","# bind_bottom","# bind_edit","# bind_home","# bind_moveup","# bind_movedown","# bind_moveleft","# bind_moveright","# bind_pgup","# bind_pgdn","# bind_new_tab","# bind_close_tab","# bind_next_tab","# bind_prev_tab","# bind_quit","# bind_help","# bind_sub: for viewing the subscriptions page","# bind_add_sub","# bind_beginning: moving to beginning of page (top left)",>52
+|<"# bind_end: same but the for the end (bottom left)"
+"7	LINE	0
+	bind_copy_page_url = "Y"
+|3,0,7,1,1,0,1673377258,"bind_copy_page_url = \"Y\""
 "8	LINE	0
-	# riverctl csd-filter-add app-id "gedit"
-|3,0,8,1,1,0,1673373376,"# riverctl csd-filter-add app-id \"gedit\""
+	bind_copy_target_url
+|3,0,8,1,1,0,1673377251,"bind_copy_target_url"
 "9	LINE	0
-	# Set app-ids and titles of views which should use client side decorations
-|3,0,9,1,1,0,1673373375,"# Set app-ids and titles of views which should use client side decorations"
+	# bind_copy_target_url
+	
+	# All keybindings:
+	# bind_bottom
+	# bind_edit
+	# bind_home
+	# bind_moveup
+	# bind_movedown
+	# bind_moveleft
+	# bind_moveright
+	# bind_pgup
+	# bind_pgdn
+	# bind_new_tab
+	# bind_close_tab
+	# bind_next_tab
+	# bind_prev_tab
+	# bind_quit
+	# bind_help
+	# bind_sub: for viewing the subscriptions page
+	# bind_add_sub
+	# bind_beginning: moving to beginning of page (top left)
+	# bind_end: same but the for the end (bottom left)
+|3,0,9,1,22,0,1673377140,"# bind_copy_target_url","","# All keybindings:","# bind_bottom","# bind_edit","# bind_home","# bind_moveup","# bind_movedown","# bind_moveleft","# bind_moveright","# bind_pgup","# bind_pgdn","# bind_new_tab","# bind_close_tab","# bind_next_tab","# bind_prev_tab","# bind_quit","# bind_help","# bind_sub: for viewing the subscriptions page","# bind_add_sub","# bind_beginning: moving to beginning of page (top left)",>52
+|<"# bind_end: same but the for the end (bottom left)"
 "-	CHAR	0
-	 
-|3,0,36,0,1,0,1673373510," "
+	#2e3440
+|3,0,36,0,1,0,1673375972,"#2e3440"
 
 # global variables:
-!YCM_HIGHLIGHT_GROUP	DIC	{'parameter': 'TSParameter', 'enumMember': 'TSVariableBuiltin', 'typeParameter': 'TSType', 'method': 'TSMethod', 'namespace': 'TSNamespace', 'event': 'TSLabel', 'class': 'TSType', 'member': 'TSVariable', 'variable': 'TSVariable', 'property': 'TSProperty'}
+!YCM_HIGHLIGHT_GROUP	DIC	{'variable': 'TSVariable', 'parameter': 'TSParameter', 'typeParameter': 'TSType', 'namespace': 'TSNamespace', 'method': 'TSMethod', 'enumMember': 'TSVariableBuiltin', 'event': 'TSLabel', 'member': 'TSVariable', 'class': 'TSType', 'property': 'TSProperty'}
 
 # File marks:
-'0  22  32  ~/code-projects/devops/dotfiles/.config/river/init
-|4,48,22,32,1673373574,"~/code-projects/devops/dotfiles/.config/river/init"
-'1  6  11  ~/code-projects/devops/dotfiles/.gitignore
-|4,49,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
+'0  10  6  ~/.local/share/amfora/bookmarks.xml
+|4,48,10,6,1673377478,"~/.local/share/amfora/bookmarks.xml"
+'1  6  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,49,6,24,1673377397,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'2  22  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,50,22,24,1673377382,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'3  22  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,51,22,24,1673377382,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'4  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,52,3,0,1673377273,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'5  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,53,3,0,1673377273,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'6  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,54,3,0,1673377273,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'7  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,55,3,0,1673377273,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+'8  38  25  ~/code-projects/devops/dotfiles/install.cfg
+|4,56,38,25,1673373703,"~/code-projects/devops/dotfiles/install.cfg"
+'9  22  32  ~/code-projects/devops/dotfiles/.config/river/init
+|4,57,22,32,1673373574,"~/code-projects/devops/dotfiles/.config/river/init"
 
 # Jumplist (newest first):
--'  22  32  ~/code-projects/devops/dotfiles/.config/river/init
-|4,39,22,32,1673373574,"~/code-projects/devops/dotfiles/.config/river/init"
--'  156  31  ~/code-projects/devops/dotfiles/.config/river/init
-|4,39,156,31,1673373408,"~/code-projects/devops/dotfiles/.config/river/init"
--'  152  0  ~/code-projects/devops/dotfiles/.config/river/init
-|4,39,152,0,1673373389,"~/code-projects/devops/dotfiles/.config/river/init"
--'  14  0  ~/code-projects/devops/dotfiles/.config/river/init
-|4,39,14,0,1673373301,"~/code-projects/devops/dotfiles/.config/river/init"
--'  1  0  ~/code-projects/devops/dotfiles/.config/river/init
-|4,39,1,0,1673373191,"~/code-projects/devops/dotfiles/.config/river/init"
--'  6  11  ~/code-projects/devops/dotfiles/.gitignore
-|4,39,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
--'  6  11  ~/code-projects/devops/dotfiles/.gitignore
-|4,39,6,11,1673372792,"~/code-projects/devops/dotfiles/.gitignore"
--'  1  0  ~/code-projects/devops/dotfiles/.gitignore
-|4,39,1,0,1673372781,"~/code-projects/devops/dotfiles/.gitignore"
--'  1  0  ~/code-projects/devops/dotfiles/.gitignore
-|4,39,1,0,1673372781,"~/code-projects/devops/dotfiles/.gitignore"
+-'  10  6  ~/.local/share/amfora/bookmarks.xml
+|4,39,10,6,1673377478,"~/.local/share/amfora/bookmarks.xml"
+-'  1  0  ~/.local/share/amfora/bookmarks.xml
+|4,39,1,0,1673377403,"~/.local/share/amfora/bookmarks.xml"
+-'  6  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,6,24,1673377397,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  6  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,6,24,1673377397,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  22  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,22,24,1673377393,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  22  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,22,24,1673377393,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  22  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,22,24,1673377382,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  22  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,22,24,1673377382,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,3,0,1673377370,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,3,0,1673377370,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,3,0,1673377370,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,3,0,1673377370,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,3,0,1673377273,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  3  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,3,0,1673377273,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  7  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,7,0,1673377271,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  7  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,7,0,1673377271,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  7  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,7,0,1673377271,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  7  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,7,0,1673377271,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  7  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,7,0,1673377271,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  7  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,7,0,1673377271,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  11  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,11,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  15  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,15,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  11  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,11,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  15  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,15,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  11  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,11,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  15  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,15,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  11  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,11,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  15  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,15,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  11  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,11,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  15  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,15,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  11  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,11,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  15  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,15,0,1673377270,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  19  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,19,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  24  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,24,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  29  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,29,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  23  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,23,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  28  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,28,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  19  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,19,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  24  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,24,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  29  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,29,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  19  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,19,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  23  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,23,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  28  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,28,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  19  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,19,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  24  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,24,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  29  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,29,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  23  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,23,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  28  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,28,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  19  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,19,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  24  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,24,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  29  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,29,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  19  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,19,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  23  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,23,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  28  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,28,0,1673377269,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  35  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,35,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  34  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,34,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  35  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,35,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  34  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,34,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  35  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,35,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  34  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,34,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  35  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,35,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  34  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,34,0,1673377268,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  49  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,49,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  48  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,48,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  49  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,49,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  48  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,48,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  49  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,49,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  48  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,48,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  49  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,49,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  48  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,48,0,1673377267,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  50  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,50,0,1673377142,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  50  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,50,0,1673377142,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  49  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,49,0,1673377142,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  50  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,50,0,1673377142,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  50  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,50,0,1673377142,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  49  0  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,49,0,1673377142,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  47  5  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,47,5,1673376864,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  48  5  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,48,5,1673376864,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  47  5  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,47,5,1673376864,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  47  5  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,47,5,1673376864,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  48  5  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,48,5,1673376864,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  47  5  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,47,5,1673376864,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  10  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,10,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  9  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,9,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  8  2  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,8,2,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  10  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,10,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  9  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,9,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  8  2  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,8,2,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  10  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,10,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  9  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,9,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  8  2  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,8,2,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  10  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,10,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  9  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,9,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  8  2  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,8,2,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  10  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,10,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  9  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,9,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  8  2  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,8,2,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  10  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,10,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  9  24  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,9,24,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
+-'  8  2  ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+|4,39,8,2,1673376861,"~/code-projects/devops/dotfiles/.config/amfora/config.toml"
 
 # History of marks within files (newest to oldest):
+
+> ~/.local/share/amfora/bookmarks.xml
+	*	1673377477	0
+	"	10	6
+	^	10	27
+	.	15	0
+	+	15	0
+	+	6	0
+	+	7	21
+	+	12	0
+	+	13	24
+	+	15	0
+	+	9	0
+	+	7	19
+	+	10	26
+	+	15	0
+
+> ~/code-projects/devops/dotfiles/.config/amfora/config.toml
+	*	1673377395	0
+	"	6	24
+	^	21	77
+	.	21	76
+	+	51	0
+	+	10	36
+	+	17	20
+	+	18	27
+	+	16	39
+	+	51	0
+	+	16	0
+	+	14	0
+	+	16	0
+	+	14	0
+	+	16	26
+	+	16	0
+	+	19	20
+	+	16	0
+	+	19	0
+	+	16	0
+	+	14	0
+	+	49	24
+	+	50	0
+	+	51	0
+	+	99	0
+	+	16	0
+	+	15	0
+	+	13	0
+	+	51	0
+	+	51	86
+	+	51	1721
+	+	58	0
+	+	98	0
+	+	51	0
+	+	58	0
+	+	98	0
+	+	58	12
+	+	62	0
+	+	63	0
+	+	82	24
+	+	97	0
+	+	60	0
+	+	59	17
+	+	67	21
+	+	68	22
+	+	69	21
+	+	59	17
+	+	72	27
+	+	73	19
+	+	64	15
+	+	65	15
+	+	66	8
+	+	65	13
+	+	55	20
+	+	56	0
+	+	53	22
+	+	57	0
+	+	65	15
+	+	66	9
+	+	61	25
+	+	69	21
+	+	71	20
+	+	73	19
+	+	71	20
+	+	49	0
+	+	50	0
+	+	50	22
+	+	50	0
+	+	21	76
+
+> ~/code-projects/devops/dotfiles/.config/alacritty/themes/everforest.yml
+	*	1673376600	0
+	"	43	0
+
+> ~/code-projects/devops/vimwiki/software-design/patterns.md
+	*	1673376599	0
+	"	3	4
+	^	3	7
+	.	3	6
+	+	3	6
+
+> ~/code-projects/devops/dotfiles/install.cfg
+	*	1673373702	0
+	"	38	25
+	^	38	26
+	.	38	25
+	+	38	25
 
 > ~/code-projects/devops/dotfiles/.config/river/init
 	*	1673373573	0
