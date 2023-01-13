@@ -1,7 +1,3 @@
-# DEFAULTS
-export FZF_DEFAULT_OPTS="$FZF_THEME --bind up:preview-up,down:preview-down --reverse"
-
-
 # HISTORY search
 export FZF_HIST_PREVIEW='echo {}'
 if [[ -x "$(command -v bat)" ]]; then

@@ -200,7 +200,7 @@ def s:EditDotfile(name: string)
         .. ' --full-path'
         .. ' --absolute-path'
         .. ' ' .. query
-        .. ' "$DOTFILES_PATH"'
+        .. ' "$DOTFILES_HOME"'
         .. ' | '
         .. 'fzf'
         .. ' --select-1'
