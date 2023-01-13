@@ -1,6 +1,6 @@
 ### CONFIGURE ENV VARIABLES
 # unified fish/bash env variable import
-set -l ENV_CFG "$HOME/.config/shell/env.cfg"
+set -l ENV_CFG "$HOME/.config/bash/env.cfg"
 if test -f "$ENV_CFG"
   egrep -v '^#|^\s*$' "$ENV_CFG" | while read line
     echo $line | read -t scope variable value
@@ -83,7 +83,7 @@ end
 
 
 ### ADD ALIASES
-set -l ALIAS_CFG "$HOME/.config/shell/alias.cfg"
+set -l ALIAS_CFG "$HOME/.config/bash/alias.cfg"
 if test -f "$ALIAS_CFG"
   egrep -v '^#|^\s*$' "$ALIAS_CFG" | while read line
     echo $line | read -t scope variable value

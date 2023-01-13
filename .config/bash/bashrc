@@ -4,7 +4,7 @@
 
 ### CONFIGURE ENV
 # unified fish/bash env variable import
-ENV_CFG="$HOME/.config/shell/env.cfg"
+ENV_CFG="$HOME/.config/bash/env.cfg"
 if test -f "$ENV_CFG"; then
   while read line; do
     read scope variable value <<< $line
@@ -30,14 +30,14 @@ export HISTIGNORE='[ \t]*:exit:pwd'  # exclude commands from history
 
 ### CONFIGURE CLI
 # fzf configuration
-[[ -f "$HOME/.config/shell/fzf.sh" ]] && source "$HOME/.config/shell/fzf.sh"
+[[ -f "$HOME/.config/bash/fzf.sh" ]] && source "$HOME/.config/bash/fzf.sh"
 # z.lua configuration
 [[ -d "$HOME/.local/opt/z.lua" ]] && eval "$(lua "$HOME/.local/opt/z.lua/z.lua" --init bash enhanced once)"
 # prompt
 if [[ -x "$(command -v starship)" ]]; then
   eval "$(starship init bash)"
 else
-  [[ -f "$HOME/.config/shell/prompt.sh" ]] && source "$HOME/.config/shell/prompt.sh"
+  [[ -f "$HOME/.config/bash/prompt.sh" ]] && source "$HOME/.config/bash/prompt.sh"
 fi
 
 
@@ -126,7 +126,7 @@ fi
 
 
 ### ADD ALIASES
-ALIAS_CFG="$HOME/.config/shell/alias.cfg"
+ALIAS_CFG="$HOME/.config/bash/alias.cfg"
 if test -f "$ALIAS_CFG"; then
   while read line
   do
