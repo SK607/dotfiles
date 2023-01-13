@@ -103,8 +103,7 @@ Plug 'https://github.com/jeetsukumaran/vim-indentwise'  " indent moves ([-, [+, 
 " devops {{{2
 Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sheerun/vim-polyglot'  " syntax
-    let g:polyglot_disabled = ['sensible']
-    let g:polyglot_disabled = ['vimwiki']
+    let g:polyglot_disabled = ['sensible', 'vimwiki']
 Plug 'https://github.com/sirver/ultisnips'  " snippet engine
 Plug 'https://github.com/honza/vim-snippets'  " snippets
 Plug 'https://github.com/dense-analysis/ale', { 'on': 'ALEEnable' }  " lint (F7, def, doc, err)
